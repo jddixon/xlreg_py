@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>xlreg_py</title>
+  <meta name="GENERATOR" content="Blackfriday Markdown Processor v1.1" />
+  <meta charset="utf-8" />
+</head>
+<body>
+
+<h1>xlreg_py</h1>
+
+<p>A Python client for the xlReg cluster registry.</p>
+
+<p><strong>xlReg</strong> is a service which allows you to register a number of machines
+which will cooperate as a cluser of intercommunicating servers.  Each
+server has two RSA keys.  One is used for creating digital signatures
+and the other for encrypting communications.  Each joining member
+registers the public key part of each of its RSA private keys with the
+xlReg server.  It also registers one or more IP addresses through which
+peers or clients can communicate.  The server provides each registrant with
+a unique ID, a 32-byte value.  After machines join the cluster the server
+provides each with contact information for the other members of the
+cluster (ID, IP address(es), and sig and comms public keys).  The
+cluster members can then use this information to communicate without
+further assistance from the xlReg server.</p>
+
+</body>
+</html>
