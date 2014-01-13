@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# ~/dev/go/src/github.com/jddixon/upax_go/update.gh-pages
+# ~/dev/py/xlreg_py/update.gh-pages
 #
-cd ~/dev/go/src/github.com/jddixon/upax_go
+cd ~/dev/py/xlreg_py
 echo "you should have edited index.md and checked the results in index.html"
 git add index.html
 git commit -m "updating index.html"
