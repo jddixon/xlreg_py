@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# ~/dev/py/xlreg_py/generate.gh-pages
+#
+cd ~/dev/py/xlreg_py
+blackfriday-tool -page  \
+    -css style/normalize.css  \
+    -css style/main.css \
+    index.md index.html
+echo "you should check index.html with a browser"
