@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# ~/dev/py/xlreg_py/update.gh-pages
+# ~/dev/gh-pages/xlreg_py/update.gh-pages
 #
-cd ~/dev/py/xlreg_py
+cd ~/dev/gh-pages/xlreg_py
 echo "you should have edited index.md and checked the results in index.html"
 git add index.html
 git commit -m "updating index.html"

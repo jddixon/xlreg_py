@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# ~/dev/py/xlreg_py/generate.gh-pages
+# ~/dev/gh-pages/xlreg_py/generate.gh-pages
 #
-cd ~/dev/py/xlreg_py
+cd ~/dev/gh-pages/xlreg_py
 blackfriday-tool -page  \
     -css style/normalize.css  \
     -css style/main.css \
