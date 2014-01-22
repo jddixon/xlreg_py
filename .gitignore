@@ -1,7 +1,2 @@
-CVS
 junk*
-.svn*
-build
-*.egg-info
 *.swp
-*.pyc
