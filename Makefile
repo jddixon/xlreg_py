@@ -1,13 +1,7 @@
-p.pb.go: p.proto
-	mkdir -p _pb
-	protoc --go_out=_pb $<
-	cat _pb/$@\
-	|gofmt >$@
-	rm -rf _pb
+# xlreg_py/Makefile
+#
+# XXX Need to fetch p.proto from XLREG_PROTO_HOME
+#
+xlReg/p.pb.go: p.proto
+	protoc --python_out=xlReg p.proto
 
-#r.pb.go: r.proto
-#	mkdir -p _pb
-#	protoc --go_out=_pb $<
-#	cat _pb/$@\
-#	|gofmt >$@
-#	rm -rf _pb

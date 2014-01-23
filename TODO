@@ -2,6 +2,8 @@ xlreg_py/TODO
 
 2013-12-26
     * Makefile needs fixing
+        - add "protoc --python_out=xlReg p.proto" command               * DONE
+        - get p.proto from $XLREG_PROTO_HOME
 
 2013-12-24
     * git remote set-url origin https;//github.com/jddixon/xlreg_py     * DONE
