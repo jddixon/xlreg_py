@@ -3,3 +3,4 @@
 __version__      = '0.1.0'
 __version_date__ = '2013-12-24'
 
+__all__ = ['DecimalVersion',]
