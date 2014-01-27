@@ -4,26 +4,30 @@ class DecimalVersion(object):
 
     # __slots__ = ['value',]
 
-    def __init__(self, a, b=None, c=None, d=None):
-        if a == None:
+    def __init__(self, aIn, bIn=None, cIn=None, dIn=None):
+        if aIn == None:
             raise RuntimeError("Nil major version")
-
-        # need to verify that a,b,c,d are numeric
-
-        if 0 < a or 255 < a:
-            raise RuntimeError("version number part a out of range")
-        if b == None:
+        a = int(aIn)
+        if a < 0 or 255 < a:
+            raise RuntimeError("version number part a '%d' out of range" % a)
+        if bIn == None:
             b = 0
-        elif 0 < b or 255 < b:
-            raise RuntimeError("version number part b out of range")
-        if c == None:
+        else:
+            b = int(bIn)
+            if b < 0 or 255 < b:
+                raise RuntimeError("version part b '%d' out of range" % b)
+        if cIn == None:
             c = 0
-        elif 0 < c or 255 < c:
-            raise RuntimeError("version number part c out of range")
-        if d == None:
+        else:
+            c = int(cIn)
+            if c < 0 or 255 < c:
+                raise RuntimeError("version part c '%d' out of range" % c)
+        if dIn == None:
             d = 0
-        elif 0 < d or 255 < d:
-            raise RuntimeError("version number part d out of range")
+        else:
+            d = int(dIn)
+            if d < 0 or 255 < d:
+                raise RuntimeError("version part d '%d' out of range" % d)
 
         self.value = (0xff & a)         | ((0xff & b) << 8)  |  \
                      ((0xff & c) << 16) | ((0xff & d) << 24)
@@ -38,15 +42,33 @@ class DecimalVersion(object):
     def getD(self):
         return (self.value >> 24) & 0xff
 
+    def __eq__ (self, other):
+
+        if type(other) != DecimalVersion:
+            return False
+        return self.value == other.value
+
+    def __str__(self):
+        a = self.getA()
+        b = self.getB()
+        c = self.getC()
+        d = self.getD()
+        if d != 0:
+            s = "%d.%d.%d.%d" % (a,b,c,d)
+        elif c != 0:
+            s = "%d.%d.%d" % (a,b,c)
+        else:
+            s = "%d.%d" % (a,b)
+        return s
 
 def parseDecimalVersion(s):
     """expect the parameter s to look like a.b.c.d or a shorter version"""
 
-    if s == none or s=="":
+    if s == None or s=="":
         raise RuntimeError("nil or empty version string")
 
     dv = None
-    ss = str.split(".")
+    ss = s.split(".")
     length = len(ss)
     if length == 1:
         dv = DecimalVersion(ss[0])
