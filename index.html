@@ -19,32 +19,37 @@ and join clusters.</p>
 
 <p>An xlReg cluster is a number of machines
 which will cooperate as a set of intercommunicating servers.  Each
-such server has two RSA keys.  One is used for creating digital signatures
-and the other for encrypting communications.  Each server also has at
+such server has two RSA keys.  One, the <em>sig</em> key, is used for creating digital signatures.
+The other, the <em>comms</em> key, is used for encrypting communications.  Each server also has at
 least one IP address used for intra-cluster communications.  In some
 clusters each will also have a second IP address used for communications
-with clients.</p>
+with cluster clients.</p>
 
 <p>An xlReg client first contacts the server to provide configuration
-information including its RSA public keys.  (It does <em>not</em> register
-its secret RSA private key.)  The xlReg server then issues the client
-with a unique node ID, a 32-byte value.</p>
+information including its RSA public keys.  (The client does <em>not</em> register
+its secret RSA private key.)  The configuration information is signed
+with the applicant&rsquo;s *sig&rdquo; key.  The server then uses the client&rsquo;s
+public key, provided as part of the configuration information, to verify
+the digital signature.  This proves that the configuration information
+is intact and that the applicant has the private key corresponding to the
+public key.  In other words, the server has in a certain sense confirmed
+the applicant&rsquo;s identity.  Having done this, the xlReg server issues the client
+with a unique node ID, a 32-byte value, completing client registration.</p>
 
-<p>Once an xlReg client has identified itself to the registry and proved
-that it has the private key corresponding to its RSA public key, it
-can register clusters or join existing clusters.</p>
+<p>Once an xlReg client has identified itself to the registry it
+can register new clusters or join existing clusters.</p>
 
 <p>After a machine joins a cluster the server
 provides it with contact information for the other members of the
-cluster (ID, IP address(es), and sig and comms public keys).  The
-cluster members can then use this information to communicate without
-further assistance from the xlReg server.</p>
+cluster (ID, IP address(es), and <strong>sig</strong> and <strong>comms</strong> public keys).  The
+cluster members can then use this information to communicate with
+one another.  They need no further assistance from the xlReg server.</p>
 
-<p>Cluster members will normally communicate with one another and clients
-using agreed-upon protocols, but xlReg has no knowledge of these
-(although xlReg itself uses Google Protobuf protocols for this purpose).</p>
+<p>Cluster members will communicate with one another and clients
+using protocols agreed-upon among themselves, but xlReg has no knowledge
+of these.</p>
 
-<p>#xlreg_py# is currently in development.</p>
+<p><strong>xlreg_py</strong> is currently in development.</p>
   <div class="f">
     <div class="logo" style="text-align: right">
       <a href="http://www.xlattice.org">
