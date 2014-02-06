@@ -25,9 +25,17 @@ least one IP address used for intra-cluster communications.  In some
 clusters each will also have a second IP address used for communications
 with cluster clients.</p>
 
+<p>The xlReg server itself, its clients, and so the cluster members all are
+or behave like
+<a href="http://jddixon.github.io/xlattice_go/node.html">XLattice nodes</a>.
+That is, they are self-contained fault-tolerant entities with some
+persistent store.  These nodes may be located anywhere on the global
+Internet, or on private networks with access to the network in which
+the xlReg server resides.`</p>
+
 <p>An xlReg client first contacts the server to provide configuration
 information including its RSA public keys.  (The client does <em>not</em> register
-its secret RSA private key.)  The configuration information is signed
+its secret RSA private keys.)  The configuration information is signed
 with the applicant&rsquo;s *sig&rdquo; key.  The server then uses the client&rsquo;s
 public key, provided as part of the configuration information, to verify
 the digital signature.  This proves that the configuration information
