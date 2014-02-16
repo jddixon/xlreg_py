@@ -1,5 +1,21 @@
 xlreg_py/TODO
 
+2014-02-13
+    * install pycrypto (www.pycrypto.org) 2.6.1 or better               * DONE
+    * test interoperation of 
+        - C OpenSSL RSA_PKCS1_OAEP_PADDING
+        - Go rsa.{En,De}cryptOAEP
+        - Java Cipher.getInstance("RSA/NONE/OAEPWithSHA1AndMGF1Padding")
+            * possibly can use ECB instead of NONE, but latter preferred
+        - PyCrypto PKCS_OAEP
+        - Ruby rsa-oaep-mgf1p, possibly:
+        http://informationcard.rubyforge.org/svn/gem/tags/0.1.0/lib/information_card/decrypter.rb
+    * consider OpenSSL gold standard, put test values in a public place
+        - private 2048-bit RSA key
+        - public part
+        - value to be encrypted 
+        - expected encrypted value
+
 2013-12-26
     * Makefile needs fixing
         - add "protoc --python_out=xlReg p.proto" command               * DONE
