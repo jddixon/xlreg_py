@@ -14,18 +14,20 @@
 
 <p>A Python client for the xlReg cluster registry.  <strong>xlreg_py</strong>
 makes it easy to create new small clusters some or all of whose members are
-written in C.  xlreg_c is expected to be used primarily for testing, where
+written in Python.  xlreg_py is expected to be used primarily
+for testing, where
 the ability to create and launch new, unique, distinct clusters in seconds
 will be a major advantage.</p>
 
 <p><a href="http://jddixon.github.com/xlattice_go/xlReg.html">xlReg</a>
 is a service which provides clients with unique nodeIDs and allows them
-to register and join clusters.</p>
+to register and join new clusters and collect configuration information
+about existing clusters.</p>
 
 <p>An xlReg cluster is a number of machines
 which cooperate as a set of intercommunicating servers.  Each
-such server has two RSA keys.  One, the <em>sig</em> key, is used for creating
-digital signatures.  The other, the <em>comms</em> key, is used for encrypting
+such server has two RSA keys.  One, the <strong>sig</strong> key, is used for creating
+digital signatures.  The other, the <strong>comms</strong> key, is used for encrypting
 communications; most often the comms key is used for creating keys for
 block ciphers. That is, the comms key is used only for agreeing on the
 much faster block cipher key used during the rest of the communications
@@ -48,11 +50,10 @@ an xlReg server resides.`</p>
 specific keys at start-up or it will generate a new pair of  keys and save
 them to persistent store.</p>
 
-<p>A booting xlReg client establishes an encrypted connection to the
-xlReg server.
-If this is its first conversation with the server, the client then provides
-the server with configuration information including its RSA public keys.  (The
-client does <strong>not</strong> register its secret RSA <strong>private</strong> keys.)
+<p>A booting xlReg client establishes an encrypted connection to the xlReg server.
+If this is its first conversation with the xlReg server, the client then
+provides the server with configuration information including its RSA public
+keys.  (The client does <strong>not</strong> register its secret RSA <strong>private</strong> keys.)
 The configuration information is signed with the applicant&rsquo;s private
 *sig&rdquo; key.  The server uses the
 client&rsquo;s public key, provided as part of the configuration information, to
@@ -111,6 +112,13 @@ is available at the <a href="http://www.xlattice.org">XLattice website</a>.</p>
 <a href="http://jddixon.github.io/xlattice_go/xlReg_protocol.html">xlReg protocol</a>.
 An xlReg server has been in test for several months.  We will shortly make
 available for public use an instance of that server on the global Internet.</p>
+
+<p>The xlReg server and its supporting libraries are written in
+<a href="http://golang.org">the Go programming language</a>, a high-performance
+systems programming language incorporating certain features of
+<a href="http://en.wikipedia.org/wiki/Tony_Hoare">Tony Hoare</a>&rsquo;s
+revolutionary <strong>CSP</strong>,
+<a href="http://www.usingcsp.com">Communicating Sequential Processes</a>.</p>
 
 <p>Software developers can currently obtain the xlReg source code at
 <a href="https://github.com/jddixon/xlattice_go/">xlattice_go&rsquo;s website</a> on github
