@@ -19,6 +19,8 @@ for testing, where
 the ability to create and launch new, unique, distinct clusters in seconds
 will be a major advantage.</p>
 
+<p><img src="img/xl-registration.jpg" alt="xl-registration" style="float:left" "members registering with xlReg"></p>
+
 <p><a href="http://jddixon.github.com/xlattice_go/xlReg.html">xlReg</a>
 is a service which provides clients with unique nodeIDs and allows them
 to register and join new clusters and collect configuration information
@@ -49,6 +51,8 @@ an xlReg server resides.`</p>
 <p>Like any XLattice node, the xlReg client can either be configured with some
 specific keys at start-up or it will generate a new pair of  keys and save
 them to persistent store.</p>
+
+<p><img src="img/simple-cluster.jpg" alt="simple-cluster" style="float:right" title="small cluster, no clients"></p>
 
 <p>A booting xlReg client establishes an encrypted connection to the xlReg server.
 If this is its first conversation with the xlReg server, the client then
@@ -92,6 +96,8 @@ with cluster configuration data.  This includes</p>
 <li><strong>sig</strong> public key, and</li>
 <li><strong>comms</strong> public key</li>
 </ul>
+
+<p><img src="img/cluster-with-clients.jpg" alt="cluster-with-clients" style="float:left" title="cluster with clients"></p>
 
 <p>The new cluster member can then use this information to communicate with
 other members.  Cluster members need no further assistance from the
