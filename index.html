@@ -19,7 +19,7 @@ for testing, where
 the ability to create and launch new, unique, distinct clusters in seconds
 will be a major advantage.</p>
 
-<p><img src="img/xl-registration.jpg" alt="xl-registration" style="float:left" "members registering with xlReg"></p>
+<p><img src="img/xl-registration.jpg" alt="xl-registration" style="float:left" title="members registering with xlReg"></p>
 
 <p><a href="http://jddixon.github.com/xlattice_go/xlReg.html">xlReg</a>
 is a service which provides clients with unique nodeIDs and allows them
@@ -107,7 +107,8 @@ xlReg server.</p>
 using protocols agreed-upon among themselves, but the xlReg registry
 has no knowledge of such protocols.</p>
 
-<p><strong>xlreg_py</strong> is currently in development.</p>
+<p><strong>xlreg_py</strong> is currently in development.  This is not
+necessarily a description of running code; it is where we are going.</p>
 
 <p>xlReg is an <a href="http://jddixon.github.io/xlattice_go/">XLattice</a> project.  More
 detailed (but somewhat dated) conceptual information on XLattice
@@ -116,8 +117,24 @@ is available at the <a href="http://www.xlattice.org">XLattice website</a>.</p>
 <p>xlReg servers and clients communicate using the
 <a href="http://code.google.com/p/protobuf/">Gooble Protocol Buffers</a>-based
 <a href="http://jddixon.github.io/xlattice_go/xlReg_protocol.html">xlReg protocol</a>.
-An xlReg server has been in test for several months.  We will shortly make
-available for public use an instance of that server on the global Internet.</p>
+An xlReg server has been in test for several months.</p>
+
+<p>There is currently an xlReg server running on stockton.dixons.org:55555,
+with the public keys shown in the registry credentials below.</p>
+
+<pre><code>regCred {
+    Name: xlReg
+    ID: 21b95b5c697977d266a0c364e12787ad72bf6fc9346ec0edef351cfb6da90c24
+    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCZz5Kdt5XqLRVipmnEEu1eedHmSswP8ZDkbadkRdCrgpGm1OLe79WTrkB0HLW98pjyBooaWLU/thSoB1/2UfkaYdoDHtfHzMKBLUmfR8MCgQaKA3KoOr83wYdtLPYiUmIlg77CjUAuKOPYtd8oy+9TrbM7AwYUZf7Ps/2Lalv7JPQKHX5jyBAjs8nF9LZj+6EhYX0m6RrwyptHjTle7ajQ+6taX+9pZUIY20zu9aiR7j4LNlk2JITOPDk0mr+UsVlI6SfHpuAdy6nsG592bQLT5RF/mD5knh3/EP+b+5yXJHth8myN4UDPIIupinVQ+Vcr0H4y106bebLITWhuJiuN
+
+    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDcpMhDQWgLHLcaU4Ed8fHBwLmNOa5RKECmci5VeDczF01R/VaxUcLnna58NM6m1fajNJlS3Z7xICiCwmYFOfJjQ8weuvXebqKUKTZMBghVRJqjPiWGmz9C07U/sTtRrEg0kEUZKepZ6Z9M7VN7eUJwoi+Avp99enTAKmgotYFXn47vpoLDGeKaviHAVcqOHXoQRLfT1Q6vjs/b+yg9lnxRon9kyf3tLopz64Sor6itkI0WhwdWZ0PJHDFW5SfkBhStBW1gC8vED0HO5bbi5iU1NRPiG+nUHm4UYjiQD2DY2PQGXeogZeaqL7ADy8+V0A7TYOkWZTSulK/IuYBY8Clz
+
+    EndPoints {
+         TcpEndPoint: 50.18.104.7:55555
+    }
+    Version: 0.4.3
+}
+</code></pre>
 
 <p>The xlReg server and its supporting libraries are written in
 <a href="http://golang.org">the Go programming language</a>, a high-performance
