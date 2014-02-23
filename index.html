@@ -18,6 +18,8 @@ for testing, where
 the ability to create and launch new, unique, distinct clusters in seconds
 will be a major advantage.</p>
 
+<h2>The xlReg Service</h2>
+
 <p><img src="img/xl-registration.jpg" alt="xl-registration" style="float:left" title="members registering with xlReg"></p>
 
 <p><a href="http://jddixon.github.com/xlattice_go/xlReg.html">xlReg</a>
@@ -51,6 +53,8 @@ an xlReg server resides.`</p>
 specific keys at start-up or it will generate a new pair of  keys and save
 them to persistent store.</p>
 
+<h2>Registration</h2>
+
 <p><img src="img/simple-cluster.jpg" alt="simple-cluster" style="float:right" title="small cluster, no clients"></p>
 
 <p>A booting xlReg client establishes an encrypted connection to the xlReg server.
@@ -77,6 +81,8 @@ completing client registration.</p>
 
 <p>The third option is used, for example, by nodes intending to become clients
 of an existing cluster.</p>
+
+<h2>Acquiring Configuration Data</h2>
 
 <p>After a new member has joined a cluster the server provides it
 with cluster configuration data.  This includes</p>
@@ -118,6 +124,8 @@ is available at the <a href="http://www.xlattice.org">XLattice website</a>.</p>
 <a href="http://jddixon.github.io/xlattice_go/xlReg_protocol.html">xlReg protocol</a>.
 An xlReg server has been in test for several months.</p>
 
+<h2>Public Development Server</h2>
+
 <p>There is currently an xlReg server running on stockton.dixons.org:55555,
 with the public keys shown in the registry credentials below.</p>
 
@@ -135,12 +143,16 @@ with the public keys shown in the registry credentials below.</p>
 }
 </code></pre>
 
+<h2>Server Implementation</h2>
+
 <p>The xlReg server and its supporting libraries are written in
 <a href="http://golang.org">the Go programming language</a>, a high-performance
 systems programming language incorporating certain features of
 <a href="http://en.wikipedia.org/wiki/Tony_Hoare">Tony Hoare</a>&rsquo;s
 revolutionary <strong>CSP</strong>,
 <a href="http://www.usingcsp.com">Communicating Sequential Processes</a>.</p>
+
+<h2>Source Code</h2>
 
 <p>Software developers can currently obtain the xlReg source code at
 <a href="https://github.com/jddixon/xlattice_go/">xlattice_go&rsquo;s website</a> on github
@@ -152,7 +164,10 @@ your own server.</p>
       <p><a href="LICENSE.html">LICENSE</a></p>
     </div>
     <div class="project">
-      <p><a href="https://github.com/jddixon/xlreg_py">github project</a></p>
+      <a href="https://github.com/jddixon/xlreg_py">      <img src="img/GitHub-Mark-32px.png" 
+        alt="link to project"  
+        style="display: inline-block; margin: 0 auto;">
+       </a>
     </div>
     <div class="logo" >
       <a href="http://www.xlattice.org">
