@@ -18,6 +18,7 @@ div.f div.project {
     width:33%;
     margin-left: 0 auto;
     margin-righ: 0 auto;
+    text-align: center;
 }
 div.f div.logo { 
     display:inline-block;
