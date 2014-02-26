@@ -1,5 +1,10 @@
 xlreg_py/TODO
 
+2014-02-26
+    * https://www.netmeister.org/blog/ssh2pkcs8.html - logic to
+        extract n and e from ssh-rsa and use them to generate 
+        pkcs#8 
+
 2014-02-13
     * install pycrypto (www.pycrypto.org) 2.6.1 or better               * DONE
     * test interoperation of 
