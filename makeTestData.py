@@ -5,6 +5,7 @@
 import  os, subprocess, sys, time
 if sys.version_info < (3,4):
     import sha3
+from Crypto.Cipher import AES
 from xlReg import decimalVersion as dv
 import rnglib
 
@@ -32,11 +33,12 @@ KEY_FILE    = 'key-rsa'
 PUBKEY_FILE = 'key-rsa.pub'
 PEM_FILE    = 'key-rsa.pem'
 
-PATH_TO_KEY     = os.path.join(TEST_DIR, KEY_FILE)
-PATH_TO_PUBKEY  = os.path.join(TEST_DIR, PUBKEY_FILE)
-PATH_TO_PEM     = os.path.join(TEST_DIR, PEM_FILE)
-PATH_TO_HELLO    = os.path.join(TEST_DIR, 'hello-data')
-PATH_TO_REPLY    = os.path.join(TEST_DIR, 'reply-data')
+PATH_TO_KEY             = os.path.join(TEST_DIR, KEY_FILE)
+PATH_TO_PUBKEY          = os.path.join(TEST_DIR, PUBKEY_FILE)
+PATH_TO_PEM             = os.path.join(TEST_DIR, PEM_FILE)
+PATH_TO_HELLO           = os.path.join(TEST_DIR, 'hello-data')
+PATH_TO_REPLY           = os.path.join(TEST_DIR, 'reply-data')
+PATH_TO_ENCRYPTED_REPLY = os.path.join(TEST_DIR, 'reply-encrypted')
 
 def main():
     # set up random number generator --------------------------------
@@ -173,13 +175,24 @@ def main():
     with open(os.path.join(TEST_DIR, 'version2'), 'w') as f:
         f.write(v2)
 
-    # Q: write padding as byte slice
+    # Q: write padding as byte slice --------------------------------
     padding = bytearray(PADDING_LEN)
     # the essence of PKCS7:
     for i in range(PADDING_LEN):
         padding[i] = PADDING_LEN
     with open(os.path.join(TEST_DIR, 'padding'), 'w') as f:
         f.write(padding)
+
+    # R: AES-encrypt padded reply as replyEncrypted -----------------
+    keyBuff = buffer(key1)
+    ivBuff  = buffer(iv1)
+    cipher1s = AES.new(keyBuff, AES.MODE_CBC, ivBuff)
+    outBuff = buffer(replyData)
+    replyEncrypted = cipher1s.encrypt(outBuff)
+
+    # S: write reply-encrypted --------------------------------------
+    with open(os.path.join(TEST_DIR, 'reply-encrypted'), 'w') as f:
+        f.write(replyEncrypted)
 
     # Z: copy stockton.regCred.dat to test_dir ----------------------
     with open('stockton.regCred.dat', 'r') as f:
