@@ -15,12 +15,17 @@ KEY_BYTES   = KEY_BITS / 8
 SHA1_BYTES  = 20
 MAX_MSG     = KEY_BYTES -1 - 2 * SHA1_BYTES # one more than max value
 
-AES_IV_LEN  = 16
-AES_KEY_LEN = 32
-SALT_LEN    =  8
-VERSION_LEN =  4
+AES_IV_LEN      = 16
+AES_KEY_LEN     = 32
+AES_BLOCK_LEN   = 16
+SALT_LEN        =  8
+VERSION_LEN     =  4
 
 HELLO_DATA_LEN = AES_IV_LEN + AES_KEY_LEN + SALT_LEN + VERSION_LEN
+UNPADDED_REPLY_LEN = HELLO_DATA_LEN + SALT_LEN
+PADDING_LEN = ((UNPADDED_REPLY_LEN + AES_BLOCK_LEN - 1)/AES_BLOCK_LEN) * \
+                AES_BLOCK_LEN - UNPADDED_REPLY_LEN
+HELLO_REPLY_LEN = HELLO_DATA_LEN + SALT_LEN + PADDING_LEN
 
 TEST_DIR    = './test_dir'           # XXX OVERWRITES this directory
 KEY_FILE    = 'key-rsa'
@@ -31,6 +36,7 @@ PATH_TO_KEY     = os.path.join(TEST_DIR, KEY_FILE)
 PATH_TO_PUBKEY  = os.path.join(TEST_DIR, PUBKEY_FILE)
 PATH_TO_PEM     = os.path.join(TEST_DIR, PEM_FILE)
 PATH_TO_HELLO    = os.path.join(TEST_DIR, 'hello-data')
+PATH_TO_REPLY    = os.path.join(TEST_DIR, 'reply-data')
 
 def main():
     # set up random number generator --------------------------------
@@ -40,7 +46,7 @@ def main():
     # create test directory if it doesn't exist ---------------------
     if not os.path.exists(TEST_DIR):
         os.makedirs(TEST_DIR)
-    
+
     # A, B: generate an ssh2 key pair in TEST_DIR -------------------
     cmd = [SSH_KEYGEN, '-q', '-t', 'rsa', '-b', str(KEY_BITS),
             '-N', '',                       # empty passphrase
@@ -68,14 +74,14 @@ def main():
     v1s = dv1.__str__()
     with open(os.path.join(TEST_DIR, 'version1.str'), 'w') as f:
         f.write(v1s)
-    
+
     # generate low-quality random data ==============================
     helloData = bytearray(HELLO_DATA_LEN - VERSION_LEN)
     rng.nextBytes(helloData)      # that many random bytes
-  
+
     # append version number -------------------------------
     dv1 = dv.DecimalVersion(1,2,3,4)
-    # XXX silly but will do for now 
+    # XXX silly but will do for now
     # XXX version is big-endian
     helloData.append(dv1.getA())
     helloData.append(dv1.getB())
@@ -89,17 +95,17 @@ def main():
     iv1 = helloData[0:AES_IV_LEN]
     with open(os.path.join(TEST_DIR, 'iv1'), 'w') as f:
         f.write(iv1)
-   
+
     # G: write key1 -------------------------------------------------
     key1 = helloData[AES_IV_LEN:AES_IV_LEN + AES_KEY_LEN]
     with open(os.path.join(TEST_DIR, 'key1'), 'w') as f:
         f.write(key1)
-   
+
     # H: write salt1 ------------------------------------------------
     salt1 = helloData[AES_IV_LEN+AES_KEY_LEN:AES_IV_LEN + AES_KEY_LEN+SALT_LEN]
     with open(os.path.join(TEST_DIR, 'salt1'), 'w') as f:
-        f.write(salt1)
-   
+        f.write(salt1)  # GEEP
+
     # I: write version1 ---------------------------------------------
     version1 = helloData[AES_IV_LEN+AES_KEY_LEN+SALT_LEN:]
     with open(os.path.join(TEST_DIR, 'version1'), 'w') as f:
@@ -115,13 +121,50 @@ def main():
         print "OAEP encryption call failed (result: %d); aborting" % result
         system.exit()
 
-    # K: write version2.str -----------------------------------------
+    # generate more low-quality random data =========================
+    replyData = bytearray(HELLO_DATA_LEN - VERSION_LEN)
+    rng.nextBytes(replyData)      # that many random bytes
+
+    # append version number -------------------------------
     dv2 = dv.DecimalVersion(5,6,7,8)
+    replyData.append(dv2.getA())
+    replyData.append(dv2.getB())
+    replyData.append(dv2.getC())
+    replyData.append(dv2.getD())
+
+    # append salt1 ----------------------------------------
+    for i in range(8):
+        replyData.append(salt1[i])
+
+    # append padding --------------------------------------
+    for i in range(PADDING_LEN):
+        replyData.append(0)
+
+    # K: write reply_data -------------------------------------------
+    with open(PATH_TO_REPLY, 'w') as f:
+        f.write(replyData)
+
+    # L: write iv2 --------------------------------------------------
+    iv2 = replyData[0:AES_IV_LEN]
+    with open(os.path.join(TEST_DIR, 'iv2'), 'w') as f:
+        f.write(iv2)
+
+    # M: write key2 -------------------------------------------------
+    key2 = replyData[AES_IV_LEN:AES_IV_LEN + AES_KEY_LEN]
+    with open(os.path.join(TEST_DIR, 'key2'), 'w') as f:
+        f.write(key2)
+
+    # N: write salt2 ------------------------------------------------
+    salt2 = replyData[AES_IV_LEN+AES_KEY_LEN:AES_IV_LEN + AES_KEY_LEN+SALT_LEN]
+    with open(os.path.join(TEST_DIR, 'salt2'), 'w') as f:
+        f.write(salt2)
+
+    # O: write version2.str -----------------------------------------
     v2s = dv2.__str__()
     with open(os.path.join(TEST_DIR, 'version2.str'), 'w') as f:
         f.write(v2s)
- 
-    # L: write version2 as byte slice -------------------------------
+
+    # P: write version2 as byte slice -------------------------------
     v2 = bytearray(4)
     v2[0] = dv2.getA()
     v2[1] = dv2.getB()
@@ -129,6 +172,14 @@ def main():
     v2[3] = dv2.getD()
     with open(os.path.join(TEST_DIR, 'version2'), 'w') as f:
         f.write(v2)
+
+    # Q: write padding as byte slice
+    padding = bytearray(PADDING_LEN)
+    # the essence of PKCS7:
+    for i in range(PADDING_LEN):
+        padding[i] = PADDING_LEN
+    with open(os.path.join(TEST_DIR, 'padding'), 'w') as f:
+        f.write(padding)
 
     # Z: copy stockton.regCred.dat to test_dir ----------------------
     with open('stockton.regCred.dat', 'r') as f:

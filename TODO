@@ -1,9 +1,13 @@
 xlreg_py/TODO
 
+2014-02-27
+    * correct generation of PKCS7 padding                               * DONE
+
 2014-02-26
     * https://www.netmeister.org/blog/ssh2pkcs8.html - logic to
         extract n and e from ssh-rsa and use them to generate 
         pkcs#8 
+    * modify makeTestData to clear the test directory if it exists
 
 2014-02-13
     * install pycrypto (www.pycrypto.org) 2.6.1 or better               * DONE
