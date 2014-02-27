@@ -120,7 +120,16 @@ def main():
     v2s = dv2.__str__()
     with open(os.path.join(TEST_DIR, 'version2.str'), 'w') as f:
         f.write(v2s)
-   
+ 
+    # L: write version2 as byte slice -------------------------------
+    v2 = bytearray(4)
+    v2[0] = dv2.getA()
+    v2[1] = dv2.getB()
+    v2[2] = dv2.getC()
+    v2[3] = dv2.getD()
+    with open(os.path.join(TEST_DIR, 'version2'), 'w') as f:
+        f.write(v2)
+
     # Z: copy stockton.regCred.dat to test_dir ----------------------
     with open('stockton.regCred.dat', 'r') as f:
         with open(os.path.join(TEST_DIR, 'regCred.dat'), 'w') as g:
