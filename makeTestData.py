@@ -136,9 +136,9 @@ def main():
     for i in range(8):
         replyData.append(salt1[i])
 
-    # append padding --------------------------------------
+    # append PKCS7 padding --------------------------------
     for i in range(PADDING_LEN):
-        replyData.append(0)
+        replyData.append(PADDING_LEN)
 
     # K: write reply_data -------------------------------------------
     with open(PATH_TO_REPLY, 'w') as f:
