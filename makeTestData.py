@@ -28,7 +28,7 @@ PADDING_LEN = ((UNPADDED_REPLY_LEN + AES_BLOCK_LEN - 1)/AES_BLOCK_LEN) * \
                 AES_BLOCK_LEN - UNPADDED_REPLY_LEN
 HELLO_REPLY_LEN = HELLO_DATA_LEN + SALT_LEN + PADDING_LEN
 
-TEST_DIR    = './test_dir'           # XXX OVERWRITES this directory
+TEST_DIR    = './testData/helloAndReply'    # XXX OVERWRITES this directory
 KEY_FILE    = 'key-rsa'
 PUBKEY_FILE = 'key-rsa.pub'
 PEM_FILE    = 'key-rsa.pem'
@@ -48,6 +48,11 @@ def main():
     # create test directory if it doesn't exist ---------------------
     if not os.path.exists(TEST_DIR):
         os.makedirs(TEST_DIR)
+    else:
+        files = os.listdir(TEST_DIR)
+        for file in files:
+            pathToFile = os.path.join(TEST_DIR, file)
+            os.unlink(pathToFile)
 
     # A, B: generate an ssh2 key pair in TEST_DIR -------------------
     cmd = [SSH_KEYGEN, '-q', '-t', 'rsa', '-b', str(KEY_BITS),
