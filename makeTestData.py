@@ -34,14 +34,14 @@ PADDING_LEN = ((UNPADDED_REPLY_LEN + AES_BLOCK_LEN - 1)/AES_BLOCK_LEN) * \
                 AES_BLOCK_LEN - UNPADDED_REPLY_LEN
 HELLO_REPLY_LEN = HELLO_DATA_LEN + SALT_LEN + PADDING_LEN
 
-HR_TEST_DIR = os.path.join(TEST_DATA_DIR, 'helloAndReply')
-KEY_FILE    = 'key-rsa'
-PUBKEY_FILE = 'key-rsa.pub'
-PEM_FILE    = 'key-rsa.pem'
+HR_TEST_DIR    = os.path.join(TEST_DATA_DIR, 'helloAndReply')
+HR_KEY_FILE    = 'key-rsa'
+HR_PUBKEY_FILE = 'key-rsa.pub'
+HR_PEM_FILE    = 'key-rsa.pem'
 
-PATH_TO_KEY             = os.path.join(HR_TEST_DIR, KEY_FILE)
-PATH_TO_PUBKEY          = os.path.join(HR_TEST_DIR, PUBKEY_FILE)
-PATH_TO_PEM             = os.path.join(HR_TEST_DIR, PEM_FILE)
+PATH_TO_HR_KEY          = os.path.join(HR_TEST_DIR, HR_KEY_FILE)
+PATH_TO_HR_PUBKEY       = os.path.join(HR_TEST_DIR, HR_PUBKEY_FILE)
+PATH_TO_HR_PEM          = os.path.join(HR_TEST_DIR, HR_PEM_FILE)
 PATH_TO_HELLO           = os.path.join(HR_TEST_DIR, 'hello-data')
 PATH_TO_REPLY           = os.path.join(HR_TEST_DIR, 'reply-data')
 PATH_TO_ENCRYPTED_REPLY = os.path.join(HR_TEST_DIR, 'reply-encrypted')
@@ -61,11 +61,34 @@ def makeOrClearTestDir(pathToDir):
 def makeRegCredData():
     makeOrClearTestDir(REG_CRED_DATA_DIR)
 
-    # Z: copy stockton.regCred.dat to test_dir ----------------------
+    # A: copy stockton.regCred.dat to test_dir ----------------------
     with open('stockton.regCred.dat', 'r') as f:
         with open(os.path.join(REG_CRED_DATA_DIR, 'regCred.dat'), 'w') as g:
             data = f.read()
             g.write(data)
+
+    # B: parse the regCred file to get name, id, commsPubKey, sigPubKey,
+    #    endPoints, version
+    # XXX STUB XXX
+
+    # C: write to RC_TEST_DIR / name.str
+    # XXX STUB XXX
+
+    # D: write to RC_TEST_DIR / id as bytearray
+    # XXX STUB XXX
+
+    # E: write to RC_TEST_DIR / ck-rsa.pub (ssh-rsa format)
+    # XXX STUB XXX
+
+    # F: write to RC_TEST_DIR / sk-rsa.pub (ssh-rsa format)
+    # XXX STUB XXX
+
+    # G: write to RC_TEST_DIR / endPoints = NL-terminated strings
+    # XXX STUB XXX
+
+    # H: write to RC_TEST_DIR / version, a 4-byte bytearray
+    # XXX STUB XXX
+
 
 # HELLO AND REPLY DATA ##############################################
 
@@ -76,7 +99,7 @@ def makeHelloReplyData(rng):
     # A, B: generate an ssh2 key pair in HR_TEST_DIR -------------------
     cmd = [SSH_KEYGEN, '-q', '-t', 'rsa', '-b', str(KEY_BITS),
             '-N', '',                       # empty passphrase
-            '-f', PATH_TO_KEY]
+            '-f', PATH_TO_HR_KEY]
     result = subprocess.check_call(cmd)
     if result != 0:
         print "ssh-keygen call failed (result: %d); aborting" % result
@@ -86,14 +109,14 @@ def makeHelloReplyData(rng):
 
     # C: generate 'pem' = PKCS8 version of public key ---------------
     # this command writes to stdout
-    f =  open(PATH_TO_PEM, 'w')
-    cmd = [SSH_KEYGEN, '-e', '-m', 'PKCS8', '-f', PATH_TO_PUBKEY, ]
+    f =  open(PATH_TO_HR_PEM, 'w')
+    cmd = [SSH_KEYGEN, '-e', '-m', 'PKCS8', '-f', PATH_TO_HR_PUBKEY, ]
     result = subprocess.check_call(cmd, stdout=f)
     if result != 0:
         print "write to PEM file failed (result: %d); aborting" % result
         f.close()
         system.exit()
-    f.close()
+    f.close()       # GEEP
 
     # D: write version1.str -----------------------------------------
     dv1 = dv.DecimalVersion(1,2,3,4)
@@ -140,7 +163,7 @@ def makeHelloReplyData(rng):
     # J: write hello-encrypted --------------------------------------
     # openssl rsautl -in test_dir/data -inkey test_dir/key-rsa.pem -pubin -encrypt -out test_dir/hello-encrypted -oaep
     cmd = [OPENSSL, 'rsautl', '-in', PATH_TO_HELLO,
-            '-inkey', PATH_TO_PEM, '-pubin', '-encrypt',
+            '-inkey', PATH_TO_HR_PEM, '-pubin', '-encrypt',
             '-oaep', '-out', os.path.join(HR_TEST_DIR, 'hello-encrypted')]
     result = subprocess.check_call(cmd)
     if result != 0:

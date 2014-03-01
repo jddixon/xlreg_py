@@ -1,5 +1,12 @@
 xlreg_py/TODO
 
+2014-02-28
+    * need RegCred object, ParseRegCred and __string__
+    * makeTestData uses this to split Stockton regCred into 
+        constituent parts
+        - write these to testData/regCred/*
+    *
+
 2014-02-27
     * correct generation of PKCS7 padding                               * DONE
 
