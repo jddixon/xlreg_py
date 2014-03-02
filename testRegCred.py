@@ -2,9 +2,12 @@
 
 # testRegCred.py
 
-import  subprocess, sys, time, unittest
+import  os, subprocess, sys, time, unittest
 if sys.version_info < (3,4):
     import sha3
+from Crypto.PublicKey import RSA
+
+from xlReg import decimalVersion as dv
 from xlReg import regCred as rc
 import rnglib as xr
 
@@ -41,7 +44,7 @@ class TestRegCred (unittest.TestCase):
 
 
     def sillyFun(self):
-        print "I do nothing at all"         # JUNK, FOR DEBUGGING 
+        print "I do nothing at all"         # JUNK, FOR DEBUGGING
 
     def _makeOrClearTestDir(self, pathToDir):
         # create test directory if it doesn't exist
@@ -54,18 +57,18 @@ class TestRegCred (unittest.TestCase):
                 os.unlink(pathToFile)
 
     def _makeKeyPair(self, rng, dirPath, keyName):
-
+        """
+        Create ssh RSA key pair (KEY_NAME-rsa and KEY_NAME-rsa.pub)
+        and PEM version of public key (KEY_NAME-rsa.pem) in a directory
+        guaranteed to exist and be writable.
+        """
         self._makeOrClearTestDir(dirPath)
 
         pathToKey = os.path.join(dirPath, keyName + '-rsa')
         pathToPub = os.path.join(dirPath, keyName + '-rsa.pub')
         pathToPem = os.path.join(dirPath, keyName + '-rsa.pem')
 
-        # XXX NONSENSE
-        junk = 47000
-        # "oh hello there"
-
-        # generate an ssh2 key pair in dirPath 
+        # generate an ssh2 key pair in dirPath
         cmd = [SSH_KEYGEN, '-q', '-t', 'rsa', '-b', str(KEY_BITS),
                 '-N', '',                       # empty passphrase
                 '-f', pathToKey]
@@ -73,10 +76,10 @@ class TestRegCred (unittest.TestCase):
         if result != 0:
             print "ssh-keygen call failed (result: %d); aborting" % result
             system.exit()
-    
+
         # from id_rsa.pub generate the pem version of the public key
-    
-        # generate 'pem' = PKCS8 version of public key 
+
+        # generate 'pem' = PKCS8 version of public key
         # this command writes to stdout
         f =  open(pathToPem, 'w')
         cmd = [SSH_KEYGEN, '-e', '-m', 'PKCS8', '-f', pathToPub ]
@@ -85,10 +88,7 @@ class TestRegCred (unittest.TestCase):
             print "write to PEM file failed (result: %d); aborting" % result
             f.close()
             system.exit()
-
-        # XXX STUB: READ AND RETURN THE FILES
-
-        f.close()       # GEEP
+        f.close()
 
     def testConstructor(self):
 
@@ -98,12 +98,35 @@ class TestRegCred (unittest.TestCase):
         name = 'foo'
         id   = self._buildID(rng)
 
+        ckPriv  = RSA.generate(1024, os.urandom)
+        ckPub   = ckPriv.publickey()
+        ck      = ckPub.exportKey(format='OpenSSH')
+        
+        skPriv = RSA.generate(1024, os.urandom)
+        skPub = skPriv.publickey()
+        sk      = skPub.exportKey(format='OpenSSH')
+
+        epCount = 1 + rng.nextInt16(3)  # so from 1 to 3
+        endPoints = []
+        for i in range(epCount):
+            port = 1000 + rng.nextInt16(64000)    # values don't much matter
+            ep = "tcpip:127.0.0.1:%d" % port
+            endPoints.append(ep)
+
+        dv1 = dv.DecimalVersion( rng.nextByte(), rng.nextByte(),
+                                 rng.nextByte(), rng.nextByte())
+
         #                name, id,  ck, sk, endPoints, version
-        rc1 = rc.RegCred(name, id, None, None, None, None)
+        rc1 = rc.RegCred(name, id, ck, sk, endPoints, dv1)
 
-        self.assertEquals(rc1.getName(), name)
-        self.assertEquals(rc1.getID(),   id)
-
+        self.assertEquals(rc1.getName(),        name)
+        self.assertEquals(rc1.getID(),          id)
+        self.assertEquals(rc1.getCommsPubKey(), ck)
+        self.assertEquals(rc1.getSigPubKey(),   sk)
+        eps1 = rc1.getEndPoints()
+        self.assertEquals(len(endPoints), len(eps1))
+        for i in range(len(eps1)) :
+            self.assertEquals(endPoints[i], eps1[i])
 
         # round-trip
         # s = rc1.__str__();

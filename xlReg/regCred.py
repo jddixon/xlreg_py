@@ -1,6 +1,8 @@
 # xlreg_py/xlreg/regCred.py
 
 
+from Crypto.PublicKey import RSA
+
 SHA1_BYTES = 20
 SHA3_BYTES = 32
 
@@ -17,16 +19,38 @@ class RegCred(object):
     # __slots__ = [ '_name', ... ]
 
     def __init__(self, name, id, ck, sk, endPoints, version):
-        if name == None or name == "":
-            raise RuntimeError("nil or empty xlReg name")
+        if name == None or name == '':
+            raise RuntimeError('nil or empty xlReg name')
         self._name = name
         
-        if id == None or id == "":
-            raise RuntimeError("nil or empty xlReg id")
+        if id == None or id == '':
+            raise RuntimeError('nil or empty xlReg id')
         idLen = len(id)
         if idLen != SHA1_BYTES and idLen != SHA3_BYTES:
-            raise RuntimeError("id length not 20 and not 32")
+            raise RuntimeError('id length not 20 and not 32')
         self._id = id
+
+        if ck == None or ck == '':
+            raise RuntimeError('nil or empty xlReg commsPubKkey')
+        # XXX need better check(s)
+        self._commsPubKey = ck
+
+        if sk == None or sk == '':
+            raise RuntimeError('nil or empty xlReg sigPubKkey')
+        # XXX need better chesk(s)
+        self._sigPubKey = sk
+
+        if endPoints == None or len(endPoints) == 0 :
+            raise RuntimeError('nil or empty endPoints list')
+        
+        self._endPoints = []
+        for ep in endPoints:
+            self._endPoints.append(ep)
+
+        if version == None:
+            raise RuntimeError('nil regCred version')
+        # XXX should check it's a 32-bit value
+        self._version = version
 
     # properties 
     def getName(self):
@@ -34,6 +58,18 @@ class RegCred(object):
 
     def getID(self):
         return self._id
+
+    def getCommsPubKey(self):
+        return self._commsPubKey
+
+    def getSigPubKey(self):
+        return self._sigPubKey
+
+    def getEndPoints(self):
+        return self._endPoints
+
+    def getVersion(self):
+        return self._version
 
     #func (rc *RegCred) String() string {
 #
