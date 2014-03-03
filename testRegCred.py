@@ -43,9 +43,6 @@ class TestRegCred (unittest.TestCase):
             pass
 
 
-    def sillyFun(self):
-        print "I do nothing at all"         # JUNK, FOR DEBUGGING
-
     def _makeOrClearTestDir(self, pathToDir):
         # create test directory if it doesn't exist
         if not os.path.exists(pathToDir):
@@ -110,7 +107,7 @@ class TestRegCred (unittest.TestCase):
         endPoints = []
         for i in range(epCount):
             port = 1000 + rng.nextInt16(64000)    # values don't much matter
-            ep = "tcpip:127.0.0.1:%d" % port
+            ep = "TcpEndPoint: 127.0.0.1:%d" % port
             endPoints.append(ep)
 
         dv1 = dv.DecimalVersion( rng.nextByte(), rng.nextByte(),
@@ -128,13 +125,11 @@ class TestRegCred (unittest.TestCase):
         for i in range(len(eps1)) :
             self.assertEquals(endPoints[i], eps1[i])
 
-        # round-trip
-        # s = rc1.__str__();
-        # self.assertEquals("1.2.3.4", s)
-        # rc2 = rc.parseRegCred(s)
-        # self.assertEquals(rc1.__eq__(rc2), True)
-        # self.assertEquals(rc1, rc2)
-
+        # ye olde round-trip
+        s1 = rc1.__str__()
+        rc2 = rc.parseRegCred(s1)
+        s2 = rc2.__str__()
+        self.assertEquals(s2, s1)
 
 if __name__ == '__main__':
     unittest.main()

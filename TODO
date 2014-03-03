@@ -1,7 +1,10 @@
 xlreg_py/TODO
 
-2014-02-28
-    * need RegCred object, ParseRegCred and __str__
+2014-03-01 (02-28, edited)
+    * need RegCred object,                                              * DONE
+        ParseRegCred(),								                    * DONE
+        __str__(),								                        * DONE
+        and round-trip test								                * DONE
     * makeTestData uses this to split Stockton regCred into 
         constituent parts
         - write these to testData/regCred/*
