@@ -7,6 +7,7 @@ if sys.version_info < (3,4):
     import sha3
 from Crypto.Cipher import AES
 from xlReg import decimalVersion as dv
+from xlReg import regCred 
 import rnglib
 
 OPENSSL     = '/usr/bin/openssl'
@@ -62,32 +63,47 @@ def makeRegCredData():
     makeOrClearTestDir(REG_CRED_DATA_DIR)
 
     # A: copy stockton.regCred.dat to test_dir ----------------------
+    regCredData = ''
     with open('stockton.regCred.dat', 'r') as f:
-        with open(os.path.join(REG_CRED_DATA_DIR, 'regCred.dat'), 'w') as g:
-            data = f.read()
-            g.write(data)
+        regCredData = f.read()
+    with open(os.path.join(REG_CRED_DATA_DIR, 'regCred.dat'), 'w') as g:
+        g.write(regCredData)
 
     # B: parse the regCred file to get name, id, commsPubKey, sigPubKey,
     #    endPoints, version
-    # XXX STUB XXX
+    rc          = regCred.parseRegCred(regCredData)
+    name        = rc.getName()
+    id          = rc.getID()            # byte array
+    commsPubKey = rc.getCommsPubKey()   # plain old string
+    sigPubKey   = rc.getSigPubKey()
+    endPoints   = rc.getEndPoints()     # list of strings
+    version     = rc.getVersion()       # DecimalVersion object
 
     # C: write to RC_TEST_DIR / name.str
-    # XXX STUB XXX
+    with open(os.path.join(REG_CRED_DATA_DIR, 'name.str'), 'w') as f:
+        f.write(name)
 
     # D: write to RC_TEST_DIR / id as bytearray
-    # XXX STUB XXX
+    with open(os.path.join(REG_CRED_DATA_DIR, 'id'), 'wb') as f:
+        f.write(id)
 
     # E: write to RC_TEST_DIR / ck-rsa.pub (ssh-rsa format)
-    # XXX STUB XXX
+    with open(os.path.join(REG_CRED_DATA_DIR, 'ck-rsa.pub'), 'w') as f:
+        f.write(commsPubKey)
 
     # F: write to RC_TEST_DIR / sk-rsa.pub (ssh-rsa format)
-    # XXX STUB XXX
+    with open(os.path.join(REG_CRED_DATA_DIR, 'sk-rsa.pub'), 'w') as f:
+        f.write(sigPubKey)
 
     # G: write to RC_TEST_DIR / endPoints = NL-terminated strings
-    # XXX STUB XXX
+    #   without final NL
+    eps = "\n".join(endPoints) 
+    with open(os.path.join(REG_CRED_DATA_DIR, 'endPoints'), 'w') as f:
+        f.write(eps)
 
-    # H: write to RC_TEST_DIR / version, a 4-byte bytearray
-    # XXX STUB XXX
+    # H: write to RC_TEST_DIR / version.str, a string
+    with open(os.path.join(REG_CRED_DATA_DIR, 'version.str'), 'w') as f:
+        f.write(version.__str__())
 
 
 # HELLO AND REPLY DATA ##############################################
