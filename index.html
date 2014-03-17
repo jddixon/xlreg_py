@@ -63,7 +63,7 @@ provides the server with configuration information including its RSA public
 keys.  (The client does <strong>not</strong> register its secret RSA <strong>private</strong> keys.)
 The configuration information is signed with the applicant&rsquo;s private
 *sig&rdquo; key.  The server uses the
-client&rsquo;s public key, provided as part of the configuration information, to
+client&rsquo;s RSA public key, provided as part of the configuration information, to
 verify the client&rsquo;s digital signature on the configuration data.  This proves
 that the configuration information is intact and that the applicant has the
 private key corresponding to the public key.  In other words, the server has
@@ -98,8 +98,8 @@ with cluster configuration data.  This includes</p>
 <ul>
 <li>nodeID,</li>
 <li>IP address(es),</li>
-<li><strong>sig</strong> public key, and</li>
-<li><strong>comms</strong> public key</li>
+<li><strong>sig</strong> RSA public key, and</li>
+<li><strong>comms</strong> RSA public key</li>
 </ul>
 
 <p><img src="img/cluster-with-clients.jpg" alt="cluster-with-clients" style="float:left" title="cluster with clients"></p>
@@ -117,7 +117,7 @@ necessarily a description of running code; it is where we are going.</p>
 
 <p>xlReg is an <a href="http://jddixon.github.io/xlattice_go/">XLattice</a> project.  More
 detailed (but somewhat dated) conceptual information on XLattice
-is available at the <a href="http://www.xlattice.org">XLattice website</a>.</p>
+is available at the <a href="http://www.xlattice.org">2003-2006 Java XLattice website</a>.</p>
 
 <p>xlReg servers and clients communicate using the
 <a href="http://code.google.com/p/protobuf/">Gooble Protocol Buffers</a>-based
@@ -143,6 +143,8 @@ with the public keys shown in the registry credentials below.</p>
 }
 </code></pre>
 
+<p>The IP address in the reg credentials above is of course that of stockton.dixons.org.</p>
+
 <h2>Server Implementation</h2>
 
 <p>The xlReg server and its supporting libraries are written in
@@ -162,7 +164,7 @@ your own server.</p>
 <h2>Client Source Code</h2>
 
 <p>This is best obtained through
-<a href="https://github.com/jddixon/xlreg_{$smallLang}/">the client&rsquo;s Github page</a>.</p>
+<a href="https://github.com/jddixon/xlreg_py/">this client&rsquo;s Github page</a>.</p>
 
 <h2>Project Status</h2>
 
