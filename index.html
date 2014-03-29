@@ -23,7 +23,7 @@ will be a major advantage.</p>
 <p><img src="img/xl-registration.jpg" alt="xl-registration" style="float:left" title="members registering with xlReg"></p>
 
 <p><a href="http://jddixon.github.com/xlattice_go/xlReg.html">xlReg</a>
-is a service which provides clients with unique nodeIDs and allows them
+is a service which provides its clients with unique nodeIDs and allows them
 to register and join new clusters and collect configuration information
 about existing clusters.</p>
 
@@ -147,31 +147,36 @@ with the public keys shown in the registry credentials below.</p>
 
 <h2>Server Implementation</h2>
 
-<p>The xlReg server and its supporting libraries are written in
+<p>The xlReg server and its supporting libraries arehttps://www.google.com/ written in
 <a href="http://golang.org">the Go programming language</a>, a high-performance
 systems programming language incorporating certain features of
 <a href="http://en.wikipedia.org/wiki/Tony_Hoare">Tony Hoare</a>&rsquo;s
 revolutionary <strong>CSP</strong>,
 <a href="http://www.usingcsp.com">Communicating Sequential Processes</a>.</p>
 
+<p>Google&rsquo;s Go language is a stable product.  It has been available for
+several years and the compiler is widely acknowledged to be very fast
+and to generate fast, compact code.  The Go language itself &ndash;
+the compiler and its libraries &ndash; is free and open source.</p>
+
 <h2>Server Source Code</h2>
 
 <p>Software developers can currently obtain the xlReg server source code at
-<a href="https://github.com/jddixon/xlattice_go/">xlattice_go&rsquo;s Github page</a>
+<a href="https://github.com/jddixon/xlattice_go/">xlattice_go&rsquo;s Github project page</a>
 so that if you are impatient to begin using xlReg you can build and operate
 your own server.</p>
 
 <h2>Client Source Code</h2>
 
 <p>This is best obtained through
-<a href="https://github.com/jddixon/xlreg_py/">this client&rsquo;s Github page</a>.</p>
+<a href="https://github.com/jddixon/xlreg_py/">this client&rsquo;s Github project page</a>.</p>
 
 <h2>Project Status</h2>
 
 <p>The xlReg server is currently a good beta: it is reasonably reliable and
 there are no known serious bugs.</p>
 
-<p>This client is itself pre-alpha: some minimal code exists, but nothing
+<p><strong>This client is itself pre-alpha:</strong> some minimal code exists, but nothing
 beyond reading the registry credentials (<code>regCred.dat</code>) and going through
 the initial hello/reply session with the server, xlReg.</p>
   <div class="f">
