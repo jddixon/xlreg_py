@@ -1,13 +1,16 @@
 xlreg_py/TODO
 
+2014-03-10
+    * testTestData.py from template
+
 2014-03-01 (02-28, edited)
     * need RegCred object,                                              * DONE
         ParseRegCred(),								                    * DONE
         __str__(),								                        * DONE
         and round-trip test								                * DONE
-    * makeTestData uses this to split Stockton regCred into 
-        constituent parts
-        - write these to testData/regCred/*
+    * makeTestData uses this to split Stockton regCred into             * DONE
+        constituent parts                                               * DONE
+        - write these to testData/regCred/*                             * DONE
 
 2014-02-27
     * correct generation of PKCS7 padding                               * DONE
@@ -16,7 +19,7 @@ xlreg_py/TODO
     * https://www.netmeister.org/blog/ssh2pkcs8.html - logic to
         extract n and e from ssh-rsa and use them to generate 
         pkcs#8 
-    * modify makeTestData to clear the test directory if it exists
+    * modify makeTestData to clear the test directory if it exists      * DONE
 
 2014-02-13
     * install pycrypto (www.pycrypto.org) 2.6.1 or better               * DONE

@@ -11,8 +11,8 @@ will be a major advantage.
 
 <img src="img/xl-registration.jpg" alt="xl-registration" style="float:left" title="members registering with xlReg">
 
-[xlReg](http://jddixon.github.com/xlattice_go/xlReg.html)
-is a service which provides clients with unique nodeIDs and allows them
+[xlReg](http://jddixon.github.com/xlReg_go)
+is a service which provides its clients with unique nodeIDs and allows them
 to register and join new clusters and collect configuration information
 about existing clusters.
 
@@ -32,7 +32,7 @@ with cluster clients.
 
 The xlReg server itself, its clients, and so the cluster members all are
 or behave like
-[XLattice nodes](http://jddixon.github.io/xlattice_go/node.html).
+[XLattice nodes](http://jddixon.github.io/xlNode_go).
 That is, they are self-contained fault-tolerant entities with some
 persistent store.  These nodes may be located anywhere on the global
 Internet, or on private networks with access to the network in which
@@ -52,7 +52,7 @@ provides the server with configuration information including its RSA public
 keys.  (The client does **not** register its secret RSA **private** keys.)
 The configuration information is signed with the applicant's private
 *sig" key.  The server uses the
-client's public key, provided as part of the configuration information, to
+client's RSA public key, provided as part of the configuration information, to
 verify the client's digital signature on the configuration data.  This proves
 that the configuration information is intact and that the applicant has the
 private key corresponding to the public key.  In other words, the server has
@@ -82,8 +82,8 @@ It also includes for each current cluster member the member's
 
 * nodeID,
 * IP address(es),
-* **sig** public key, and
-* **comms** public key
+* **sig** RSA public key, and
+* **comms** RSA public key
 
 <img src="img/cluster-with-clients.jpg" alt="cluster-with-clients" style="float:left" title="cluster with clients">
 
@@ -95,17 +95,17 @@ Cluster members will communicate with one another and clients
 using protocols agreed-upon among themselves, but the xlReg registry
 has no knowledge of such protocols.
 
-**xlreg_py** is currently in development.  This is not 
+**xlreg_py** is currently in development.  This is not
 necessarily a description of running code; it is where we are going.
 
 xlReg is an [XLattice](http://jddixon.github.io/xlattice_go/) project.  More
 detailed (but somewhat dated) conceptual information on XLattice
-is available at the [XLattice website](http://www.xlattice.org).
+is available at the [2003-2006 Java XLattice website](http://www.xlattice.org).
 
 xlReg servers and clients communicate using the
 [Gooble Protocol Buffers](http://code.google.com/p/protobuf/)-based
-[xlReg protocol](http://jddixon.github.io/xlattice_go/xlReg_protocol.html).
-An xlReg server has been in test for several months.  
+[xlReg protocol](http://jddixon.github.io/xlReg_go/xlReg_protocol.html).
+An xlReg server has been in test for several months.
 
 ## Public Development Server
 
@@ -125,32 +125,39 @@ with the public keys shown in the registry credentials below.
 	    Version: 0.4.3
 	}
 
+The IP address in the reg credentials above is of course that of stockton.dixons.org.
+
 ## Server Implementation
 
-The xlReg server and its supporting libraries are written in
+The xlReg server and its supporting libraries arehttps://www.google.com/ written in
 [the Go programming language](http://golang.org), a high-performance
 systems programming language incorporating certain features of
 [Tony Hoare](http://en.wikipedia.org/wiki/Tony_Hoare)'s
 revolutionary **CSP**,
 [Communicating Sequential Processes](http://www.usingcsp.com).
 
+Google's Go language is a stable product.  It has been available for 
+several years and the compiler is widely acknowledged to be very fast
+and to generate fast, compact code.  The Go language itself --
+the compiler and its libraries -- is free and open source.
+
 ## Server Source Code
 
 Software developers can currently obtain the xlReg server source code at
-[xlattice_go's Github page](https://github.com/jddixon/xlattice_go/) 
+[xlReg_go's Github project page](https://github.com/jddixon/xlReg_go/)
 so that if you are impatient to begin using xlReg you can build and operate
 your own server.
 
 ## Client Source Code
 
-This is best obtained through 
-[the client's Github page](https://github.com/jddixon/xlreg_{$smallLang}/).
+This is best obtained through
+[this client's Github project page](https://github.com/jddixon/xlreg_py/).
 
 ## Project Status
 
-The xlReg server is currently a good beta: it is reasonably reliable and 
+The xlReg server is currently a good beta: it is reasonably reliable and
 there are no known serious bugs.
 
-This client is itself pre-alpha: some minimal code exists, but nothing 
+**This client is itself pre-alpha:** some minimal code exists, but nothing
 beyond reading the registry credentials (`regCred.dat`) and going through
 the initial hello/reply session with the server, xlReg.
