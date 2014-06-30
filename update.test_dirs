@@ -1,0 +1,16 @@
+echo "removing old testData/* from destination directories"
+rm -rf /home/jdd/dev/c/xlreg_c/testData/
+rm -rf /home/jdd/dev/c/xlreg_cpp/testData/
+rm -rf /home/jdd/dev/java/xlreg_j/testData/
+rm -rf /home/jdd/dev/ocaml/github.com/jddixon/xlreg_o/testData/
+rm -rf /home/jdd/dev/ruby/xlreg_r/testData/
+rm -rf /home/jdd/dev/go/src/github.com/jddixon/xlattice_go/reg/testData/
+
+echo "copying over new test data"
+cp -pR testData /home/jdd/dev/c/xlreg_c/
+cp -pR testData /home/jdd/dev/cpp/xlreg_cpp/
+cp -pR testData /home/jdd/dev/java/xlreg_j/
+cp -pR testData /home/jdd/dev/ocaml/github.com/jddixon/xlreg_o
+cp -pR testData /home/jdd/dev/ruby/xlreg_r/
+cp -pR testData /home/jdd/dev/go/src/github.com/jddixon/xlattice_go/reg/
+
