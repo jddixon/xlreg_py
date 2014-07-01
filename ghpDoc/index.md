@@ -11,7 +11,7 @@ will be a major advantage.
 
 <img src="img/xl-registration.jpg" alt="xl-registration" style="float:left" title="members registering with xlReg">
 
-[xlReg](http://jddixon.github.com/xlReg_go)
+[xlReg](http://jddixon.github.io/xlReg_go)
 is a service which provides its clients with unique nodeIDs and allows them
 to register and join new clusters and collect configuration information
 about existing clusters.
