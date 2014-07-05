@@ -67,3 +67,7 @@ xlReg servers and clients communicate using the
 [xlReg protocol](http://jddixon.github.io/xlattice_go/xlReg_protocol.html).
 An xlReg server has been in test for several months and will shortly be
 available for public use.
+
+## On-line Documentation
+
+More information on the **xlreg_py** project can be found [here](https://jddixon.github.io/xlreg_py)
