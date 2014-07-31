@@ -109,23 +109,23 @@ An xlReg server has been in test for several months.
 
 ## Public Development Server
 
-There is currently an xlReg server running on stockton.dixons.org:55555,
+There is currently an xlReg server running on portland.xlattice.org:55555,
 with the public keys shown in the registry credentials below.
 
 	regCred {
 	    Name: xlReg
-	    ID: 1a6d61d4358a3573d00af2c4cbdcaa28a5115bfc86d0810e48d3f19e79fafc94
-	    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdgsWeYYR9qesY4fwLNKu/Ttn7Upce6pNWWRNOeZo3KBO0PMyxUAL5m2eNcCty8YzCuPRYpRBPzRlA8+6Hfd3xCUXxKso7ZvBJTJAXlBS+3YAhZamyN2/0BtXSj52NNA3Xi2qN1nmX98dV8v/q7uRdUzsImcfKrfmxxtUyyKRXCmgk5gUF0r2gdIf1mKIvRpb68RDy6kByMOmwySPQ27bU1L+f7GOtzX3LYD5z6b5pzei1OOO6AiWJ+xqcFFdnXWrTtrqgr0lFgAmXtoriegI3u/8Tc5SUpQrwZsp1gKwmHlNK+6T05NicC1O4WQ+7sONeFASMr/6dvsvrYsSiaI4/
+	    ID: a8431273f8085ed8665c9084a71f0e67e26adfac0abc987d32c98a7b17868343
+	    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5FsdkTHgcBog+bxu7JzlHa8F52ia7EB6rKbYo4VFLFpNgaEMNQwXWk+mVcwDREOZWGqWPWO1NOfrEv9piZ0AYkruMgUdo+3770u4FGzUQ9Wj4pCCAVHtfdfhpJ0pKZp0APdgdEDmSXb3WXVhAzIbjqeieJez9VSrl5ONa4JqLGZ/jzqGQKrsD20pUPMiR+v9WyqH6op2GsfumGJv8gnMqyXCaooJmEpErczMMNjoI8XUkVgQBXDIuer0MvrO+V/BPlmYEnrWJXDrwkrZjduovB+sMQFfhlI2TBNe87CiVVC4M15zU8YlSLhqOLheRVIxaD6y4TLFEJ6jQCxWFG0nZ
 	
-	    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/hU1g8KyCJJ+DQZbhUeaQpDU1hBuCsS0D+jTphTGgHHC8YzyAZQ8zAIpRZoPu2xueP8I3gLZ3h+MIAujRAAjmWIGdmd6JiKhd4GPBYTHnXszlxABzA0Io269bNw3q4ggrhDxp9hyDSahST6Vs1+8lb0DCiTS7sIS44GqsPwXk3Jake1KEKykp+5sqDzO6fFMCAqwxCBmqHyAE5KwC2s+UCLD7Ivou+Wsmc0vM+XEGOPrYoU56rJESGgmtTOhCeurMhuiiG7E6gV+UhKaCVSvZOghuLDflqZLPGRD/kZ9lJsS9bIbVCPNHfmEzGD7vIVVxQi5ShP0ne7CS2/qNtrQf
+	    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgQW2kNY27HGKEOkXPVCCcfZHxuo8Pty+JR2EpFcVPaV6PWZhQt5B0WKjzLddDxCaQYYsU3yvd8G3cNwRYRe69sBfU6yU8YxdtXjvZwGZwkjjPDxS0xfFAfJJz0/WHUJnkBaV/QuT5M7YOqD2I1T0VaVUw3Vu8mocvo5i12x2YAybMv/zD1ahbhBnUUE0Q1URWeTlbrJxIQm7oIyWD+2hUI1dgB7fwXQgqZxea1TzOzRUtBxKtdFbx9/TM9UUSxynf79EKrfksmQglblCtOLOnN/5ZrqbI0Ap8QjsxF5lKJM6T+IU9hMdjsQ/uzATd7kpi9EzhLUD2t3wLmzsltcoN
 	
 	    EndPoints {
-	         TcpEndPoint: 50.18.104.7:55555
+	         TcpEndPoint: 54.187.133.62:55555
 	    }
 	    Version: 0.5
 	}
 
-The IP address in the reg credentials above is of course that of stockton.dixons.org.
+The IP address in the reg credentials above is of course that of portland.xlattice.org.
 
 ## Server Implementation
 
