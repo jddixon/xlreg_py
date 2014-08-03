@@ -109,7 +109,7 @@ An xlReg server has been in test for several months.
 
 ## Public Development Server
 
-There is currently an xlReg server running on portland.xlattice.org:55555,
+There is currently an xlReg server running on xlreg.xlattice.org:55555,
 with the public keys shown in the registry credentials below.
 
 	regCred {
@@ -125,7 +125,7 @@ with the public keys shown in the registry credentials below.
 	    Version: 0.5
 	}
 
-The IP address in the reg credentials above is of course that of portland.xlattice.org.
+The IP address in the reg credentials above is of course that of xlreg.xlattice.org.
 
 ## Server Implementation
 
