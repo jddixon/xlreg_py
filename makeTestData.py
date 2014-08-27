@@ -62,9 +62,9 @@ def makeOrClearTestDir(pathToDir):
 def makeRegCredData():
     makeOrClearTestDir(REG_CRED_DATA_DIR)
 
-    # A: copy stockton.regCred.dat to test_dir ----------------------
+    # A: copy portland.regCred.dat to test_dir ----------------------
     regCredData = ''
-    with open('stockton.regCred.dat', 'r') as f:
+    with open('portland.regCred.dat', 'r') as f:
         regCredData = f.read()
     with open(os.path.join(REG_CRED_DATA_DIR, 'regCred.dat'), 'w') as g:
         g.write(regCredData)

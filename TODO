@@ -1,8 +1,12 @@
 xlreg_py/TODO
 
+2014-08-26
+    * replace stockton.regCred.dat with portland.regCred.cat            * DONE
+        - makeTestData generates test data                              * DONE
+        - update.test_dirs updates the test data in the various         * DONE
+            client directories                                          * DONE
 2014-03-10
     * testTestData.py from template
-
 2014-03-01 (02-28, edited)
     * need RegCred object,                                              * DONE
         ParseRegCred(),								                    * DONE

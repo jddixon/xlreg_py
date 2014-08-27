@@ -1,7 +1,7 @@
 # see http://docs.python.org/distutils/sourcedist.html
 
 include netDistrib.conf
-include CHANGES README TODO
+include CHANGES README TODO *regCred.dat
 include countem *.py
 recursive-include xlReg *.py
 global-exclude junk* .*swp 
