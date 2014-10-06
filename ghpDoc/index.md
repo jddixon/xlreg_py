@@ -129,7 +129,7 @@ The IP address in the reg credentials above is of course that of xlreg.xlattice.
 
 ## Server Implementation
 
-The xlReg server and its supporting libraries arehttps://www.google.com/ written in
+The xlReg server and its supporting libraries are written in
 [the Go programming language](http://golang.org), a high-performance
 systems programming language incorporating certain features of
 [Tony Hoare](http://en.wikipedia.org/wiki/Tony_Hoare)'s

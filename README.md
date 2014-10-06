@@ -9,7 +9,7 @@ will be a major advantage.
 
 ## The xlReg Service
 
-<img src="img/xl-registration.jpg" alt="xl-registration" style="float:left" title="members registering with xlReg">
+![xl-registration](img/xl-registration.jpg?raw=true "members registering with xlReg")
 
 [xlReg](http://jddixon.github.io/xlReg_go)
 is a service which provides its clients with unique nodeIDs and allows them
@@ -129,7 +129,7 @@ The IP address in the reg credentials above is of course that of xlreg.xlattice.
 
 ## Server Implementation
 
-The xlReg server and its supporting libraries arehttps://www.google.com/ written in
+The xlReg server and its supporting libraries are written in
 [the Go programming language](http://golang.org), a high-performance
 systems programming language incorporating certain features of
 [Tony Hoare](http://en.wikipedia.org/wiki/Tony_Hoare)'s
