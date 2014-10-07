@@ -1,5 +1,11 @@
 xlreg_py/TODO
 
+2014-10-06
+    * github is trashing links to images in README.md by inserting
+        'blob/master/' between xlreg_py/ and img/.  Same problem 
+        occurs on all README images, at least those in the xlreg_*
+        group.
+
 2014-08-26
     * replace stockton.regCred.dat with portland.regCred.cat            * DONE
         - makeTestData generates test data                              * DONE

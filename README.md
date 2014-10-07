@@ -9,7 +9,7 @@ will be a major advantage.
 
 ## The xlReg Service
 
-![xl-registration](img/xl-registration.jpg?raw=true "members registering with xlReg")
+<img src="img/xl-registration.jpg" alt="xl-registration" style="float:left" title="members registering with xlReg">
 
 [xlReg](http://jddixon.github.io/xlReg_go)
 is a service which provides its clients with unique nodeIDs and allows them
