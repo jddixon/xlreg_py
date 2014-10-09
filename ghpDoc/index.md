@@ -112,18 +112,18 @@ An xlReg server has been in test for several months.
 There is currently an xlReg server running on xlreg.xlattice.org:56789,
 with the public keys shown in the registry credentials below.
 
-regCred {
-    Name: xlReg
-    ID: a8431273f8085ed8665c9084a71f0e67e26adfac0abc987d32c98a7b17868343
-    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5FsdkTHgcBog+bxu7JzlHa8F52ia7EB6rKbYo4VFLFpNgaEMNQwXWk+mVcwDREOZWGqWPWO1NOfrEv9piZ0AYkruMgUdo+3770u4FGzUQ9Wj4pCCAVHtfdfhpJ0pKZp0APdgdEDmSXb3WXVhAzIbjqeieJez9VSrl5ONa4JqLGZ/jzqGQKrsD20pUPMiR+v9WyqH6op2GsfumGJv8gnMqyXCaooJmEpErczMMNjoI8XUkVgQBXDIuer0MvrO+V/BPlmYEnrWJXDrwkrZjduovB+sMQFfhlI2TBNe87CiVVC4M15zU8YlSLhqOLheRVIxaD6y4TLFEJ6jQCxWFG0nZ
-
-    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgQW2kNY27HGKEOkXPVCCcfZHxuo8Pty+JR2EpFcVPaV6PWZhQt5B0WKjzLddDxCaQYYsU3yvd8G3cNwRYRe69sBfU6yU8YxdtXjvZwGZwkjjPDxS0xfFAfJJz0/WHUJnkBaV/QuT5M7YOqD2I1T0VaVUw3Vu8mocvo5i12x2YAybMv/zD1ahbhBnUUE0Q1URWeTlbrJxIQm7oIyWD+2hUI1dgB7fwXQgqZxea1TzOzRUtBxKtdFbx9/TM9UUSxynf79EKrfksmQglblCtOLOnN/5ZrqbI0Ap8QjsxF5lKJM6T+IU9hMdjsQ/uzATd7kpi9EzhLUD2t3wLmzsltcoN
-
-    EndPoints {
-         TcpEndPoint: 54.186.197.123:56789
-    }
-    Version: 1.1.5
-}
+	regCred {
+	    Name: xlReg
+	    ID: a8431273f8085ed8665c9084a71f0e67e26adfac0abc987d32c98a7b17868343
+	    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5FsdkTHgcBog+bxu7JzlHa8F52ia7EB6rKbYo4VFLFpNgaEMNQwXWk+mVcwDREOZWGqWPWO1NOfrEv9piZ0AYkruMgUdo+3770u4FGzUQ9Wj4pCCAVHtfdfhpJ0pKZp0APdgdEDmSXb3WXVhAzIbjqeieJez9VSrl5ONa4JqLGZ/jzqGQKrsD20pUPMiR+v9WyqH6op2GsfumGJv8gnMqyXCaooJmEpErczMMNjoI8XUkVgQBXDIuer0MvrO+V/BPlmYEnrWJXDrwkrZjduovB+sMQFfhlI2TBNe87CiVVC4M15zU8YlSLhqOLheRVIxaD6y4TLFEJ6jQCxWFG0nZ
+	
+	    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgQW2kNY27HGKEOkXPVCCcfZHxuo8Pty+JR2EpFcVPaV6PWZhQt5B0WKjzLddDxCaQYYsU3yvd8G3cNwRYRe69sBfU6yU8YxdtXjvZwGZwkjjPDxS0xfFAfJJz0/WHUJnkBaV/QuT5M7YOqD2I1T0VaVUw3Vu8mocvo5i12x2YAybMv/zD1ahbhBnUUE0Q1URWeTlbrJxIQm7oIyWD+2hUI1dgB7fwXQgqZxea1TzOzRUtBxKtdFbx9/TM9UUSxynf79EKrfksmQglblCtOLOnN/5ZrqbI0Ap8QjsxF5lKJM6T+IU9hMdjsQ/uzATd7kpi9EzhLUD2t3wLmzsltcoN
+	
+	    EndPoints {
+	         TcpEndPoint: 54.187.133.62:56789
+	    }
+	    Version: 1.2
+	}
 
 The IP address in the reg credentials above is of course that of xlreg.xlattice.org.
 
