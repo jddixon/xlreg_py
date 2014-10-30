@@ -18,6 +18,11 @@ for testing, where
 the ability to create and launch new, unique, distinct clusters in seconds
 will be a major advantage.</p>
 
+<p>In such a cluster, members use the <strong>xlReg</strong> public server to register and
+exchange member IP addresses.  When a member finishes booting, it has
+learned the IP addresses of its peers and the RSA keys used to encrypt
+traffic between members and traffic between cluster members and clients.</p>
+
 <h2>The xlReg Service</h2>
 
 <p><img src="img/xl-registration.jpg" alt="xl-registration" style="float:left" title="members registering with xlReg"></p>
@@ -27,7 +32,7 @@ is a service which provides its clients with unique nodeIDs and allows them
 to register and join new clusters and collect configuration information
 about existing clusters.</p>
 
-<p>An xlReg cluster is a number of machines
+<p>An <strong>xlReg cluster</strong> is a number of machines
 which cooperate as a set of intercommunicating servers.  Each
 such server has two RSA keys.  One, the <strong>sig</strong> key, is used for creating
 digital signatures.  The other, the <strong>comms</strong> key, is used for encrypting
@@ -36,10 +41,10 @@ block ciphers. That is, the comms key is used only for agreeing on the
 much faster block cipher key used during the rest of the communications
 session.</p>
 
-<p>Each xlReg cluster member also has at least one IP address used for
+<p>Each xlReg cluster member has at least one IP address used for
 intra-cluster communications, for communications between members.  In some
-clusters each member will also have a second IP address used for communications
-with cluster clients.</p>
+clusters each member will also have a second IP address used for
+communications with cluster clients.</p>
 
 <p>The xlReg server itself, its clients, and so the cluster members all are
 or behave like
@@ -68,10 +73,10 @@ verify the client&rsquo;s digital signature on the configuration data.  This pro
 that the configuration information is intact and that the applicant has the
 private key corresponding to the public key.  In other words, the server has
 in a certain sense confirmed the applicant&rsquo;s identity.  Having done this,
-the xlReg server issues the client with a unique node ID, a 32-byte value,
+the xlReg server issues the client with a unique node ID, a 20-byte value,
 completing client registration.</p>
 
-<p>Once an xlReg client has identified itself to the registry it can</p>
+<p>Once an xlReg registry client has identified itself to the registry it can</p>
 
 <ol>
 <li>register new clusters or</li>
@@ -131,15 +136,15 @@ with the public keys shown in the registry credentials below.</p>
 
 <pre><code>regCred {
     Name: xlReg
-    ID: a8431273f8085ed8665c9084a71f0e67e26adfac0abc987d32c98a7b17868343
-    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5FsdkTHgcBog+bxu7JzlHa8F52ia7EB6rKbYo4VFLFpNgaEMNQwXWk+mVcwDREOZWGqWPWO1NOfrEv9piZ0AYkruMgUdo+3770u4FGzUQ9Wj4pCCAVHtfdfhpJ0pKZp0APdgdEDmSXb3WXVhAzIbjqeieJez9VSrl5ONa4JqLGZ/jzqGQKrsD20pUPMiR+v9WyqH6op2GsfumGJv8gnMqyXCaooJmEpErczMMNjoI8XUkVgQBXDIuer0MvrO+V/BPlmYEnrWJXDrwkrZjduovB+sMQFfhlI2TBNe87CiVVC4M15zU8YlSLhqOLheRVIxaD6y4TLFEJ6jQCxWFG0nZ
+    ID: 1866a39a9f4014e3653f7979de321331273c1dd7
+    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHXC3fdgYLVJZdyTHRyA5/9y/Zm6TI0nAnREq/9X+QQsOkpFukNclWPf0fcKv9MMzvJ70t88BmyiVjtrr1/ctTVlAddLJzt2VXF3ELZ3tSHjaYYZyhPml0X/erN43DuM2eU2dPHNkg70HjpY4Q52P4s6vNljJT30on9/Bd9HN7E0kdrI2wfivGH2gnxxfT1bty34GI/j/4vzLWKGg60HOnm5mmYNY6tJwExF4PpP0ia7dQYCCJlBdNt5E22nAdUr706yM6zaz11v5D38mZPz3lIl6oZROyM57AuegPSjU43dAETo77rwr1Cj6pSLPpQ8pANRMtrJ7RB/QVSn8EC6PJ
 
-    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgQW2kNY27HGKEOkXPVCCcfZHxuo8Pty+JR2EpFcVPaV6PWZhQt5B0WKjzLddDxCaQYYsU3yvd8G3cNwRYRe69sBfU6yU8YxdtXjvZwGZwkjjPDxS0xfFAfJJz0/WHUJnkBaV/QuT5M7YOqD2I1T0VaVUw3Vu8mocvo5i12x2YAybMv/zD1ahbhBnUUE0Q1URWeTlbrJxIQm7oIyWD+2hUI1dgB7fwXQgqZxea1TzOzRUtBxKtdFbx9/TM9UUSxynf79EKrfksmQglblCtOLOnN/5ZrqbI0Ap8QjsxF5lKJM6T+IU9hMdjsQ/uzATd7kpi9EzhLUD2t3wLmzsltcoN
+    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3VTfWotp/Cmkqo8+98iX8PLW7tW2FxkavqPURmhXxgvmY9Vf35ysE7co0uFI1MoPjdGoklf7HRxWjACzIllykTIirmpakFHGGia5biOKefK9lxKI7iP3Ju2wzAD062NeqHALX17jTyTo4Q2p5RMgTlydU6r51yAJGMlnR+82OhrhK3UUynP+DXd2cuc1LgKpEoPln6ayJQINiEiiulZ0RUpqEMY1EybgVd2xixuGXfkLQo3zKLwHi8A1O3YU/Rjxj/bOCtB96+JIe6babti/gKILeL0WwHBUa2f/8dWjq31f3WZ1sTF3HM00uYK9fzBDfspk8zNs7BW0PlDqkMDv/
 
     EndPoints {
-         TcpEndPoint: 54.187.133.62:56789
+         TcpEndPoint: 54.186.197.123:56789
     }
-    Version: 1.2
+    Version: 1.6
 }
 </code></pre>
 
