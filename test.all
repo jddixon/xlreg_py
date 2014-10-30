@@ -1,0 +1,3 @@
+./testDecimalVersion.py
+./testRegCred.py
+./testRSA_OAEP.py
