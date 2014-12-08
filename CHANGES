@@ -1,6 +1,8 @@
 xlreg_py/CHANGES
 
 v0.1.1
+    2014-12-07
+        * updated SLOC, .gitignore                                  * SLOC 1554
     2014-08-26
         * replaced stockton.xlReg.cat with portland.xlReg.dat       * SLOC  965
 v0.1.0
