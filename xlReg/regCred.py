@@ -80,9 +80,13 @@ class RegCred(object):
         ss = []
         ss.append('regCred {')
         ss.append('    Name: %s' % self._name)
-        ss.append('    ID: %s' % binascii.hexlify(self._id))
-        ss.append('    CommsPubKey: ' + self._commsPubKey)
-        ss.append('    SigPubKey: ' + self._sigPubKey)
+
+        # uncommenting this yields 'odd length string' error
+        #ss.append("    ID: %s" % binascii.b2a_hex(self._id))
+        ss.append("    ID: %s" % dumpByteArray(self._id))
+       
+        ss.append('    CommsPubKey: ' + dumpByteArray(self._commsPubKey))
+        ss.append('    SigPubKey: ' + dumpByteArray(self._sigPubKey))
         ss.append('    EndPoints {')
         for ep in self._endPoints :
             ss.append('        ' + ep)
@@ -90,14 +94,22 @@ class RegCred(object):
         ss.append('    Version: ' + self._version.__str__())
         ss.append('}')
 
-        return "\r\n".join(ss) + "\r\n"
+        s = "\r\n".join(ss) + "\r\n"
+        
+        return s
+
+def dumpByteArray(a):
+    out = ''
+    for b in a:
+        pair = "%02x" % b
+        out += pair
+    return out
 
 def parseRegCred(s):
     """ 
     Expect rather loosely formatted registry credentials but require 
     a space after colon (:) or left brace ({) delimiters. 
     """
-
 
     if s == None or s == "" :
         raise RuntimeError("nil or empty regCred string")
@@ -106,6 +118,8 @@ def parseRegCred(s):
     lineCount = len(ss)
     global i
     i = 0
+    
+    
     def skipSAndTrim() :
         """Return the first string containing something other than whitespace"""
         global i
@@ -135,7 +149,7 @@ def parseRegCred(s):
     if len(parts) != 2 or parts[0] != 'ID':
         raise RuntimeError('not a well-formed regCred')
     hex = parts[1].strip()
-    id = bytearray.fromhex(hex)
+    id = binascii.a2b_hex(hex)
     
     # XXX could require length of 20 or 32    
         
@@ -143,13 +157,13 @@ def parseRegCred(s):
     parts = s.split(': ')
     if len(parts) != 2 or parts[0] != 'CommsPubKey':
         raise RuntimeError('not a well-formed regCred')
-    ck = parts[1]
+    ck = binascii.a2b_hex(parts[1])
 
     s = skipSAndTrim()
     parts = s.split(': ')
     if len(parts) != 2 or parts[0] != 'SigPubKey':
         raise RuntimeError('not a well-formed regCred')
-    sk = parts[1]
+    sk = binascii.a2b_hex(parts[1])
 
     s = skipSAndTrim()
     if s != 'EndPoints {':

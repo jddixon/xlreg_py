@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # ~/dev/py/xlReg/setup.py
 

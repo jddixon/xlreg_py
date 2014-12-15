@@ -1,5 +1,9 @@
 xlreg_py/TODO
 
+2014-12-14
+    * converted to Python 3, but problems using binascii.b2ab_hex(),
+        so using dumpByteArray() instead: FIX ME
+
 2014-10-06
     * github is trashing links to images in README.md by inserting
         'blob/master/' between xlreg_py/ and img/.  Same problem 

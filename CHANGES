@@ -1,5 +1,8 @@
 xlreg_py/CHANGES
 
+v0.1.2
+    2014-12-14
+        * converted to Python 3                                     * SLOC  974
 v0.1.1
     2014-12-07
         * updated SLOC, .gitignore                                  * SLOC 1554

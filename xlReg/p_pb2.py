@@ -91,7 +91,7 @@ _XLREGMSG_TOKEN = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='Name', full_name='reg.XLRegMsg.Token.Name', index=0,
       number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=str("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -202,7 +202,7 @@ _XLREGMSG = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='ClientName', full_name='reg.XLRegMsg.ClientName', index=6,
       number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=str("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -237,7 +237,7 @@ _XLREGMSG = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='ClusterName', full_name='reg.XLRegMsg.ClusterName', index=11,
       number=14, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=str("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -286,7 +286,7 @@ _XLREGMSG = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='ErrDesc', full_name='reg.XLRegMsg.ErrDesc', index=18,
       number=23, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=str("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -311,11 +311,8 @@ _XLREGMSG.fields_by_name['Tokens'].message_type = _XLREGMSG_TOKEN
 _XLREGMSG_TAG.containing_type = _XLREGMSG;
 DESCRIPTOR.message_types_by_name['XLRegMsg'] = _XLREGMSG
 
-class XLRegMsg(message.Message):
-  __metaclass__ = reflection.GeneratedProtocolMessageType
-  
-  class Token(message.Message):
-    __metaclass__ = reflection.GeneratedProtocolMessageType
+class XLRegMsg(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
+  class Token(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
     DESCRIPTOR = _XLREGMSG_TOKEN
     
     # @@protoc_insertion_point(class_scope:reg.XLRegMsg.Token)

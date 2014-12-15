@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # testRegCred.py
 
@@ -71,7 +71,7 @@ class TestRegCred (unittest.TestCase):
                 '-f', pathToKey]
         result = subprocess.check_call(cmd)
         if result != 0:
-            print "ssh-keygen call failed (result: %d); aborting" % result
+            print("ssh-keygen call failed (result: %d); aborting" % result)
             system.exit()
 
         # from id_rsa.pub generate the pem version of the public key
@@ -82,7 +82,7 @@ class TestRegCred (unittest.TestCase):
         cmd = [SSH_KEYGEN, '-e', '-m', 'PKCS8', '-f', pathToPub ]
         result = subprocess.check_call(cmd, stdout=f)
         if result != 0:
-            print "write to PEM file failed (result: %d); aborting" % result
+            print("write to PEM file failed (result: %d); aborting" % result)
             f.close()
             system.exit()
         f.close()
@@ -98,7 +98,7 @@ class TestRegCred (unittest.TestCase):
         ckPriv  = RSA.generate(1024, os.urandom)
         ckPub   = ckPriv.publickey()
         ck      = ckPub.exportKey(format='OpenSSH')
-        
+
         skPriv = RSA.generate(1024, os.urandom)
         skPub = skPriv.publickey()
         sk      = skPub.exportKey(format='OpenSSH')
@@ -116,20 +116,20 @@ class TestRegCred (unittest.TestCase):
         #                name, id,  ck, sk, endPoints, version
         rc1 = rc.RegCred(name, id, ck, sk, endPoints, dv1)
 
-        self.assertEquals(rc1.getName(),        name)
-        self.assertEquals(rc1.getID(),          id)
-        self.assertEquals(rc1.getCommsPubKey(), ck)
-        self.assertEquals(rc1.getSigPubKey(),   sk)
+        self.assertEqual(rc1.getName(),        name)
+        self.assertEqual(rc1.getID(),          id)
+        self.assertEqual(rc1.getCommsPubKey(), ck)
+        self.assertEqual(rc1.getSigPubKey(),   sk)
         eps1 = rc1.getEndPoints()
-        self.assertEquals(len(endPoints), len(eps1))
+        self.assertEqual(len(endPoints), len(eps1))
         for i in range(len(eps1)) :
-            self.assertEquals(endPoints[i], eps1[i])
+            self.assertEqual(endPoints[i], eps1[i])
 
         # ye olde round-trip
         s1 = rc1.__str__()
         rc2 = rc.parseRegCred(s1)
         s2 = rc2.__str__()
-        self.assertEquals(s2, s1)
+        self.assertEqual(s2, s1)
 
 if __name__ == '__main__':
     unittest.main()

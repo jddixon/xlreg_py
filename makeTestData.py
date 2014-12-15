@@ -118,7 +118,7 @@ def makeHelloReplyData(rng):
             '-f', PATH_TO_HR_KEY]
     result = subprocess.check_call(cmd)
     if result != 0:
-        print "ssh-keygen call failed (result: %d); aborting" % result
+        print("ssh-keygen call failed (result: %d); aborting" % result)
         system.exit()
 
     # from id_rsa.pub generate the pem version of the public key
@@ -129,7 +129,7 @@ def makeHelloReplyData(rng):
     cmd = [SSH_KEYGEN, '-e', '-m', 'PKCS8', '-f', PATH_TO_HR_PUBKEY, ]
     result = subprocess.check_call(cmd, stdout=f)
     if result != 0:
-        print "write to PEM file failed (result: %d); aborting" % result
+        print("write to PEM file failed (result: %d); aborting" % result)
         f.close()
         system.exit()
     f.close()       # GEEP
@@ -183,7 +183,7 @@ def makeHelloReplyData(rng):
             '-oaep', '-out', os.path.join(HR_TEST_DIR, 'hello-encrypted')]
     result = subprocess.check_call(cmd)
     if result != 0:
-        print "OAEP encryption call failed (result: %d); aborting" % result
+        print("OAEP encryption call failed (result: %d); aborting" % result)
         system.exit()
 
     # generate more low-quality random data =========================
