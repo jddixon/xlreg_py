@@ -2,8 +2,8 @@
 
 A Python client for the xlReg cluster registry.  **xlreg_py**
 makes it easy to create new small clusters some or all of whose members are
-written in Python.  xlreg_py is expected to be used primarily
-for testing, where
+written in the programming language Python.  
+xlreg_py is expected to be used primarily for testing, where
 the ability to create and launch new, unique, distinct clusters in seconds
 will be a major advantage.
 
@@ -25,7 +25,7 @@ An **xlReg cluster** is a number of machines
 which cooperate as a set of intercommunicating servers.  Each
 such server has two RSA keys.  One, the **sig** key, is used for creating
 digital signatures.  The other, the **comms** key, is used for encrypting
-communications; most often the comms key is used for creating keys for
+communications.  Most often the comms key is used for creating keys for
 block ciphers. That is, the comms key is used only for agreeing on the
 much faster block cipher key used during the rest of the communications
 session.
@@ -44,15 +44,16 @@ Internet, or on private networks with access to the network in which
 an xlReg server resides.`
 
 Like any XLattice node, the xlReg client can either be configured with some
-specific keys at start-up or it will generate a new pair of  keys and save
+specific keys at start-up or it will generate a new pair of keys and save
 them to persistent store.
 
 ## Registration
 
 <img src="img/simple-cluster.jpg" alt="simple-cluster" style="float:right" title="small cluster, no clients">
 
-A booting xlReg client establishes an encrypted connection to the xlReg server.
-If this is its first conversation with the xlReg server, the client then
+A booting xlReg client establishes an encrypted connection to an xlReg server 
+(by default this is xlreg.xlattice.net).
+If this is the client's first conversation with the xlReg server, the client 
 provides the server with configuration information including its RSA public
 keys.  (The client does **not** register its secret RSA **private** keys.)
 The configuration information is signed with the applicant's private
@@ -119,15 +120,15 @@ with the public keys shown in the registry credentials below.
 
 	regCred {
 	    Name: xlReg
-	    ID: 1866a39a9f4014e3653f7979de321331273c1dd7
-	    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHXC3fdgYLVJZdyTHRyA5/9y/Zm6TI0nAnREq/9X+QQsOkpFukNclWPf0fcKv9MMzvJ70t88BmyiVjtrr1/ctTVlAddLJzt2VXF3ELZ3tSHjaYYZyhPml0X/erN43DuM2eU2dPHNkg70HjpY4Q52P4s6vNljJT30on9/Bd9HN7E0kdrI2wfivGH2gnxxfT1bty34GI/j/4vzLWKGg60HOnm5mmYNY6tJwExF4PpP0ia7dQYCCJlBdNt5E22nAdUr706yM6zaz11v5D38mZPz3lIl6oZROyM57AuegPSjU43dAETo77rwr1Cj6pSLPpQ8pANRMtrJ7RB/QVSn8EC6PJ
+	    ID: 9cf517be9bcaaeb794a7530dd34ae873651c41b4
+	    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDfxYMpgUX1/QH5nLN5I8gW9xewU4NFOGEOlsiFKU2R/NbmiyVOl2UyfuSFmZLauT3hJh9PsVyrHkfyiSJrd9k4Wjy3UKi3hZY7AIuHBLdbIrdOQiDTkkrfIv80ogjpMFsSivY4NTYrsPtXihi+E2iZlabv3m3PqKycjXDU/PZEAw+W6fsg1GCJTbGWtDoNQk6hbMS3UhOxL1G/WWB1V9lYXflLsv+Oym5/y1mUR4B7N2Uey1J5XQuIfXpJaM/+qNy2X1fB6575iJzvES791OszI3cvBFNReySbR/SUJqcFIZAbtj4swnoAFkyQ0zlN1Ok6Iacp5bTq8upYi3TyZcPr
 	
-	    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3VTfWotp/Cmkqo8+98iX8PLW7tW2FxkavqPURmhXxgvmY9Vf35ysE7co0uFI1MoPjdGoklf7HRxWjACzIllykTIirmpakFHGGia5biOKefK9lxKI7iP3Ju2wzAD062NeqHALX17jTyTo4Q2p5RMgTlydU6r51yAJGMlnR+82OhrhK3UUynP+DXd2cuc1LgKpEoPln6ayJQINiEiiulZ0RUpqEMY1EybgVd2xixuGXfkLQo3zKLwHi8A1O3YU/Rjxj/bOCtB96+JIe6babti/gKILeL0WwHBUa2f/8dWjq31f3WZ1sTF3HM00uYK9fzBDfspk8zNs7BW0PlDqkMDv/
+	    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzouB3y/p7VdnJ66p4NLZa5Z4IyPtMryEp3URPlUC25LuzT2b/utrMvTX4fAXnuPF/v/qhQKm0LOOW+YnEk1vwN0HsEvD/9D8qYkBBIv636w4k2k+O4Lt1rQ32t22AbEHOjIZtVdfoZm9/ypd8ogchkr7yH/Na6FE0UySh0dJDf9HlYcfjYy1IkkAgGlWmCX61LJ4Wgw00QkkuztlVUnRjEW9MIohgVcFx/+gF/shtmy0rCGYpLszdMlGGaGCzXO1PK3BVLaZPKfcafUzfksif+vWqEQ0KnmjtV5it0wEa89IebAEW7cS1rvyRH2Y8/gie5CkgwHve/hgThY3KSUih
 	
 	    EndPoints {
 	         TcpEndPoint: 54.186.197.123:56789
 	    }
-	    Version: 1.6
+	    Version: 1.8.2
 	}
 
 The IP address in the reg credentials above is of course that of xlreg.xlattice.org.
