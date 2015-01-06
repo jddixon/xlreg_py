@@ -1,4 +1,5 @@
-# xlreg_py
+xlreg_py
+########
 
 A Python client for the xlReg cluster registry.  **xlreg_py**
 makes it easy to create new small clusters some or all of whose members are
@@ -167,3 +168,7 @@ there are no known serious bugs.
 **This client is itself pre-alpha:** some minimal code exists, but nothing
 beyond reading the registry credentials (`regCred.dat`) and going through
 the initial hello/reply session with the server, xlReg.
+
+## On-line Documentation
+More information on the **xlreg_py** project can be found 
+[here](https://jddixon.github.io/xlreg_py)

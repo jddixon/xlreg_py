@@ -1,4 +1,4 @@
-# xlreg_py
+<h1 class="libTop">xlreg_py</h1>
 
 A Python client for the xlReg cluster registry.  **xlreg_py**
 makes it easy to create new small clusters some or all of whose members are
