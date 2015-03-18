@@ -1,5 +1,5 @@
 xlreg_py
-########
+========
 
 A Python client for the xlReg cluster registry.  **xlreg_py**
 makes it easy to create new small clusters some or all of whose members are

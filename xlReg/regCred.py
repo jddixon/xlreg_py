@@ -6,7 +6,7 @@ from Crypto.PublicKey import RSA
 from xlReg import decimalVersion as dv
 
 SHA1_BYTES = 20
-SHA3_BYTES = 32
+SHA2_BYTES = 32
 
 class RegCred(object):
 
@@ -30,7 +30,7 @@ class RegCred(object):
         if id == None or id == '':
             raise RuntimeError('nil or empty xlReg id')
         idLen = len(id)
-        if idLen != SHA1_BYTES and idLen != SHA3_BYTES:
+        if idLen != SHA1_BYTES and idLen != SHA2_BYTES:
             raise RuntimeError('id length not 20 and not 32')
         self._id = id
 

@@ -3,8 +3,6 @@
 # ~/dev/py/xlreg_py/makeTestData
 
 import  os, subprocess, sys, time
-if sys.version_info < (3,4):
-    import sha3
 from Crypto.Cipher import AES
 from xlReg import decimalVersion as dv
 from xlReg import regCred 

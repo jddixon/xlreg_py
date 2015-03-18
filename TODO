@@ -1,5 +1,8 @@
 xlreg_py/TODO
 
+2015-03-18
+    * drop all references to sha3                                       * DONE
+
 2014-12-14
     * converted to Python 3, but problems using binascii.b2ab_hex(),
         so using dumpByteArray() instead: FIX ME

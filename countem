@@ -1,1 +1,2 @@
-pySloc countem
+cd ~/dev/py/xlreg_py && rm -rf build
+pySloc countem Makefile p.proto *regCred.dat test.all update.test_dirs

@@ -3,8 +3,6 @@
 # testDecimalVersion.py
 
 import  sys, unittest
-if sys.version_info < (3,4):
-    import sha3
 from xlReg import decimalVersion as dv
 
 class TestDecimalVErsion (unittest.TestCase):

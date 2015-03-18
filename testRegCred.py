@@ -13,7 +13,7 @@ import rnglib as xr
 
 KEY_BITS   = 1024
 SHA1_BYTES = 20
-SHA3_BYTES = 32
+SHA2_BYTES = 32
 
 SSH_KEYGEN = '/usr/bin/ssh-keygen'
 
