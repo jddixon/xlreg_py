@@ -2,7 +2,7 @@
 
 class DecimalVersion(object):
 
-    # __slots__ = ['value',]
+    # __slots__ = ['_value',]
 
     def __init__(self, aIn, bIn=None, cIn=None, dIn=None):
         if aIn == None:
@@ -29,24 +29,29 @@ class DecimalVersion(object):
             if d < 0 or 255 < d:
                 raise RuntimeError("version part d '%d' out of range" % d)
 
-        self.value = (0xff & a)         | ((0xff & b) << 8)  |  \
+        self._value = (0xff & a)         | ((0xff & b) << 8)  |  \
                      ((0xff & c) << 16) | ((0xff & d) << 24)
 
 
     def getA(self):
-        return self.value & 0xff
+        return self._value & 0xff
     def getB(self):
-        return (self.value >> 8) & 0xff
+        return (self._value >> 8) & 0xff
     def getC(self):
-        return (self.value >> 16) & 0xff
+        return (self._value >> 16) & 0xff
     def getD(self):
-        return (self.value >> 24) & 0xff
+        return (self._value >> 24) & 0xff
+
+   
+    @property
+    def value(self):
+        return self._value
 
     def __eq__ (self, other):
 
         if type(other) != DecimalVersion:
             return False
-        return self.value == other.value
+        return self._value == other._value
 
     def __str__(self):
         a = self.getA()
@@ -62,7 +67,10 @@ class DecimalVersion(object):
         return s
 
 def parseDecimalVersion(s):
-    """expect the parameter s to look like a.b.c.d or a shorter version"""
+    """
+    Expect the parameter s to be a string looking like a.b.c.d or a 
+    shorter version.  Returns a DecimalVersion object.
+    """
 
     if s == None or s=="":
         raise RuntimeError("nil or empty version string")

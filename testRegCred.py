@@ -3,8 +3,6 @@
 # testRegCred.py
 
 import  os, subprocess, sys, time, unittest
-if sys.version_info < (3,4):
-    import sha3
 from Crypto.PublicKey import RSA
 
 from xlReg import decimalVersion as dv

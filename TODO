@@ -10,6 +10,11 @@ xlreg_py/TODO
     * test the clientEncryptHello / serverDecryptHello as a pair, 
         making sure that the server sees what the client sent
     * similary test serverEncryptReply / clientDecryptReply
+    * XXX OAEP salt?padding? is almost certainly in the wrong place
+        in the message in clientEncryptHello
+    * AES_BLOCK_SIZE should be removed from helloAndReply.py
+    * testing of pkcs7 needs to be fleshed out
+    * Go-style capitalization should be corrected
 
 2015-03-18
     * drop all references to sha3                                       * DONE
