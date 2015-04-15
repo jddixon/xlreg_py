@@ -7,6 +7,8 @@ from Crypto.Cipher    import PKCS1_OAEP
 from Crypto.PublicKey import RSA
 import  rnglib
 
+import xlReg, xlReg.helloAndReply as hr, xlReg.decimalVersion as dv
+
 KEY_BITS = 2048
 KEY_BYTES = KEY_BITS / 8
 SHA1_BYTES = 20
@@ -44,16 +46,7 @@ class TestRSA_OAEP (unittest.TestCase):
         pass
 
     def testEncryptDecrypt(self):
-
-        # message
-        msgLen = 30 + self.rng.nextInt16(MAX_MSG - 30) 
-        msg   = bytearray(msgLen)
-        self.rng.nextBytes(msg)
-
-        # key
-        key = RSA.generate(KEY_BITS)
-        pubKey = key.publickey()
-        pass
+        func = hr.clientEncryptHello
 
 
 if __name__ == '__main__':

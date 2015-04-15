@@ -1,5 +1,16 @@
 xlreg_py/TODO
 
+2015-04-15
+    * make sure that a plain int can be construed as a DecimalVersion
+        - that is, an int parameter to a function gets handled as 
+            such, so that we can create a random 32-bit value, pass
+            it to clientEncryptHello, and successfully test it, without
+            having to cast it
+    * test clientEncryptHello() by itself
+    * test the clientEncryptHello / serverDecryptHello as a pair, 
+        making sure that the server sees what the client sent
+    * similary test serverEncryptReply / clientDecryptReply
+
 2015-03-18
     * drop all references to sha3                                       * DONE
 
