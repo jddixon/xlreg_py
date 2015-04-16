@@ -1,18 +1,27 @@
 xlreg_py/TODO
 
+2015-04-16
+    * the client should not send the server iv1; it doesn't really
+        matter what that value is; likewise for iv2.  This affects
+        all implementations (Go, C, etc)
+        
+2015-04-16 (edited from -15)
+    * OAEP salt is confusion from Go, where apparently either a         * YEP
+        function (rand) or a byte slice can be passed through the       * YEP
+        same named parameter                                            * YEP
+        - drop OAEP salt from the implementation                        * DONE
+
 2015-04-15
-    * make sure that a plain int can be construed as a DecimalVersion
-        - that is, an int parameter to a function gets handled as 
-            such, so that we can create a random 32-bit value, pass
-            it to clientEncryptHello, and successfully test it, without
-            having to cast it
-    * test clientEncryptHello() by itself
-    * test the clientEncryptHello / serverDecryptHello as a pair, 
-        making sure that the server sees what the client sent
-    * similary test serverEncryptReply / clientDecryptReply
-    * XXX OAEP salt?padding? is almost certainly in the wrong place
-        in the message in clientEncryptHello
-    * AES_BLOCK_SIZE should be removed from helloAndReply.py
+    * make sure that a plain int can be construed as a DecimalVersion   * DONE
+        - that is, an int parameter to a function gets handled as       * DONE
+            such, so that we can create a random 32-bit value, pass     * DONE
+            it to clientEncryptHello, and successfully test it, without * DONE
+            having to cast it                                           * DONE
+    * test clientEncryptHello() by itself                               * DONE
+    * test the clientEncryptHello / serverDecryptHello as a pair,       * DONE
+        making sure that the server sees what the client sent           * DONE
+    * similary test serverEncryptReply / clientDecryptReply             * DONE
+    * AES_BLOCK_SIZE should be removed from helloAndReply.py            * DONE
     * testing of pkcs7 needs to be fleshed out
     * Go-style capitalization should be corrected
 

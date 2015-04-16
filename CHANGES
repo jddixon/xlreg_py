@@ -1,5 +1,9 @@
 xlreg_py/CHANGES
 
+v0.1.6
+    2015-04-16
+        * dropped OAEP salt (pycrypto handles)
+        * complete helloAndReply and test                           * SLOC 1292
 v0.1.5
     2015-04-15
         * added software for pkcs7 padding and testPKCS7
