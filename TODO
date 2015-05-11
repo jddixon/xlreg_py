@@ -1,8 +1,8 @@
 xlreg_py/TODO
 
 2015-04-16
-    * the client should not send the server iv1; it doesn't really
-        matter what that value is; likewise for iv2.  This affects
+    * The client should not send the server iv1; the server should 
+        decide on its own.  Likewise for iv2.  This affects
         all implementations (Go, C, etc)
         
 2015-04-16 (edited from -15)
