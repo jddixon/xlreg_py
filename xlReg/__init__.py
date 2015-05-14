@@ -1,7 +1,7 @@
 # xlReg/__init__.py
 
-__version__      = '0.1.6'
-__version_date__ = '2015-04-16'
+__version__      = '0.1.7'
+__version_date__ = '2015-05-14'
 
 __all__ = ['AES_BLOCK_SIZE',]
 

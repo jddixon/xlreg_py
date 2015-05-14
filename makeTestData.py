@@ -4,7 +4,7 @@
 
 import  os, subprocess, sys, time
 from Crypto.Cipher import AES
-from xlReg import decimalVersion as dv
+from xlattice.util import decimalVersion as dv
 from xlReg import regCred 
 import rnglib
 

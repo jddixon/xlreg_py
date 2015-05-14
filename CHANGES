@@ -1,5 +1,10 @@
 xlreg_py/CHANGES
 
+v0.1.7
+    2015-04-14
+        * moved DecimalVersion stuff to xlattice.util               * SLOC 1148
+        * moved helloAndReply to xlattice.helloAndReply             * SLOC  967
+        * replaced pkcs7 stuff with that from xlattice.crypto       * SLOC  930
 v0.1.6
     2015-04-16
         * dropped OAEP salt (pycrypto handles)

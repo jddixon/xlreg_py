@@ -3,7 +3,7 @@
 
 import binascii
 from Crypto.PublicKey import RSA
-from xlReg import decimalVersion as dv
+from xlattice.util import DecimalVersion, parseDecimalVersion
 
 SHA1_BYTES = 20
 SHA2_BYTES = 32
@@ -188,6 +188,6 @@ def parseRegCred(s):
     if len(parts) != 2 or parts[0] != 'Version':
         raise RuntimeError('not a well-formed regCred')
     v = parts[1].strip()
-    version = dv.parseDecimalVersion(v)
+    version = parseDecimalVersion(v)
     return  RegCred(name, id, ck, sk, endPoints, version)
 

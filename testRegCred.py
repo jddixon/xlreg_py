@@ -5,7 +5,7 @@
 import  os, subprocess, sys, time, unittest
 from Crypto.PublicKey import RSA
 
-from xlReg import decimalVersion as dv
+from xlattice.util import DecimalVersion 
 from xlReg import regCred as rc
 import rnglib as xr
 
@@ -108,7 +108,7 @@ class TestRegCred (unittest.TestCase):
             ep = "TcpEndPoint: 127.0.0.1:%d" % port
             endPoints.append(ep)
 
-        dv1 = dv.DecimalVersion( rng.nextByte(), rng.nextByte(),
+        dv1 = DecimalVersion( rng.nextByte(), rng.nextByte(),
                                  rng.nextByte(), rng.nextByte())
 
         #                name, id,  ck, sk, endPoints, version
