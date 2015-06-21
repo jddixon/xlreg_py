@@ -1,6 +1,8 @@
 # xlreg_py
 
-A Python client for the xlReg cluster registry.  **xlreg_py**
+The Python client for the xlReg cluster registry.  
+
+**xlreg_py**
 makes it easy to create new small clusters some or all of whose members are
 written in the programming language Python.  
 xlreg_py is expected to be used primarily for testing, where
@@ -9,8 +11,9 @@ will be a major advantage.
 
 In such a cluster, members use the **xlReg** public server to register and
 exchange member IP addresses.  When a member finishes booting, it has 
-learned the IP addresses of its peers and the RSA keys used to encrypt 
-traffic between members and traffic between cluster members and clients.
+learned the IP addresses of its peers and the RSA keys used to set up 
+encrypted communications 
+between members of the cluster and between cluster members and clients.
 
 ## The xlReg Service
 
@@ -25,7 +28,7 @@ An **xlReg cluster** is a number of machines
 which cooperate as a set of intercommunicating servers.  Each
 such server has two RSA keys.  One, the **sig** key, is used for creating
 digital signatures.  The other, the **comms** key, is used for encrypting
-communications.  Most often the comms key is used for creating keys for
+communications.  Most often the comms key is used for exchanging keys for
 block ciphers. That is, the comms key is used only for agreeing on the
 much faster block cipher key used during the rest of the communications
 session.
@@ -120,15 +123,15 @@ with the public keys shown in the registry credentials below.
 
 	regCred {
 	    Name: xlReg
-	    ID: 839f8276268749b3df25e9a6e338f7f10e19bec7
-	    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7DpX/ALZerk8lKVD44dMjTHUA2Zx9B903HLzR9+Ts3juG8SlWlymortpVzIks++MmY8TTGTF1VKdtb7DcuwwZWcGMaKVjiKTf9/isxxrrFmmavwubm966KKy8/EuS4rYjdiV97B51WT753kLU2sm1JDhiPlBTMb3CpIA+APmqoflsAcGHplSGYy+9QTYNcv5/Oz6QNZ3fa3Gm6PwElKIuYiVSzrwZOf4fFyBRNHenp6n3HUnyVdfLXUj9P0k/DDr5hgyDBWcL+J8LKT0EXrDUvwersoF1kpGrtJ4Q/00AQ9xauNPayFLAFLg0HEBXRn4no/iLpIyAuTvOZJVT+5xb
+	    ID: 1f8593d4caec60de9c6e4e8c9476f5b7aab0068f
+	    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDItWSHgyzIyOkamLj/VcoEM3M9vlNz9XE1EsghjSbk0eYaZz2WxFfLS9kdH/SC5fuWXHYTZS9sWOqoWVbdZyV4FAVxsg60Q22Y1QWuzbCZ86qjlCkD03Ya2/Jj9MgqvF7VQauBKVKY3lgatq9NiD+FnSV1E7sXy20OFipVs7nf1PyUSqU+F96VFROvUszEQdNop6rUEqjTfWskjx9mkVm66hhJXWARNE4bDVCkl/ixy24dRhqnot78lOmQPnyash9pIZvZJcJnCHjXhi07oQrcXWd5etN2M3kxPSJBrrOJ6ar/CkKbgdeCNKNZXMbUWnC65WRNsElmNfSUIPmyT1RN
 	
-	    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCh9rgto+6FZGemZpYk8S0k4nbsMVY1HpyPFYTKi3VtOgSd8qW36q89ZBjBCqM8fCL44nt6Gz2omquG82DvVj75/oGKnX6E0+Gk1A3ujYzMYppQ4kfYy+NnGIJoUoe/Be0Ud0TPwc89nVSrNaQnESaw2nJ2tkMwHxp1Yrfjqa5y961+NCAmK2gVeWkx0MF6H0oWUcKb19lkaCoij97MhoesyMAn01YKsuuyKLK+ktTpxsKjS24kXU1M/pVP+JQI/qSi0CZuEee4rW1EnibPBwR37y91qQI5z8GFch7ELPwfBSMLBDDG8NmJDvM1Qn88wlzUA/7Atp/gvmjYZ5obcHV5
+	    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJZ0mNmg/JAhSBaIBh5SpB/GnCksyzDpTnE0x9+k+HtOgIyKpr4L4Ev8mnKzCFBuOoXiyVSA7IMS4R67NbXF+fZQQyqyKjuKpvMSOYd1f8YVj6BLs2Ydi4zOe1xaqj3ttdL6riyGjkqI4+EMJGsfz87WXcCHkL9wQbFNi2lU+gdkrTPpM9uULFQZ/CiZsltSs0Hvbvr3mQnFwHtjhqX8Y4RqZ4BJ6dgK9x6+KY9jQjBvN8JQi/GPQoLsC7JuK9MUve5ICBImHTbeGFun5DH6mjAKZa32Z7awTBNaTrO3kqb5ABPL553wumclWkGnRSgqiAh/UGYMyc3tzh/y4ed1ST
 	
 	    EndPoints {
 	         TcpEndPoint: 54.186.197.123:56789
 	    }
-	    Version: 1.8.4
+	    Version: 1.9.6
 	}
 
 The IP address in the reg credentials above is of course that of xlreg.xlattice.org.
