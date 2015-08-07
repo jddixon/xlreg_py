@@ -123,15 +123,15 @@ with the public keys shown in the registry credentials below.
 
 	regCred {
 	    Name: xlReg
-	    ID: 1f8593d4caec60de9c6e4e8c9476f5b7aab0068f
-	    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDItWSHgyzIyOkamLj/VcoEM3M9vlNz9XE1EsghjSbk0eYaZz2WxFfLS9kdH/SC5fuWXHYTZS9sWOqoWVbdZyV4FAVxsg60Q22Y1QWuzbCZ86qjlCkD03Ya2/Jj9MgqvF7VQauBKVKY3lgatq9NiD+FnSV1E7sXy20OFipVs7nf1PyUSqU+F96VFROvUszEQdNop6rUEqjTfWskjx9mkVm66hhJXWARNE4bDVCkl/ixy24dRhqnot78lOmQPnyash9pIZvZJcJnCHjXhi07oQrcXWd5etN2M3kxPSJBrrOJ6ar/CkKbgdeCNKNZXMbUWnC65WRNsElmNfSUIPmyT1RN
+	    ID: f3013fae154097f89693999d255cc3d26c7453fa
+	    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9TMVg0Lvf4ZHe4TOQJ2d5qhg+bEL2m+2VlVv6vECnTTOJmcooPjZCKBphVFOPjaIzHoafun5RMbSYAjyoIbXEOL5kl35pWUC7wFBYTgrsoJO+it7WGbmF/JEThU2KwTErPY2gdJ/NWwXM8v+JrQUqC5NARJ/nF/y055yZF6ijR5iprWYPM2aRH3aVnjxTD4klp8lVtnIxeQXkNK3JEUGFQGiDRq4/U2meLMi2ekvLArJDflzflNmM71XRSB6mwgE4pFHLMMztPa7U4TweNr13BZQYbKgc6jqQFTMQ8Qf5st8Hu6oa04xllJlN/uOegjdKvw3+QhMotA8kpTgySuyP
 	
-	    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJZ0mNmg/JAhSBaIBh5SpB/GnCksyzDpTnE0x9+k+HtOgIyKpr4L4Ev8mnKzCFBuOoXiyVSA7IMS4R67NbXF+fZQQyqyKjuKpvMSOYd1f8YVj6BLs2Ydi4zOe1xaqj3ttdL6riyGjkqI4+EMJGsfz87WXcCHkL9wQbFNi2lU+gdkrTPpM9uULFQZ/CiZsltSs0Hvbvr3mQnFwHtjhqX8Y4RqZ4BJ6dgK9x6+KY9jQjBvN8JQi/GPQoLsC7JuK9MUve5ICBImHTbeGFun5DH6mjAKZa32Z7awTBNaTrO3kqb5ABPL553wumclWkGnRSgqiAh/UGYMyc3tzh/y4ed1ST
+	    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1NnmySXlKjrn6hrLVXYkkJlvCpADkHe0i0pfFgU9pTJxt2QRpDlqpUsjfTCtDL4oG4ZGCkyEIUFVl/fykISbeeFbb6U4z8TBoCIGMzcEue9HAfzval7LUDbrR1QquylXe0vCkBAgfZk1c15QIyPhL2WX3AdOcaaOvDncqqSQxWcSst83ND9OWWCskxS7+yYhFoiZp4n4pKlgl4bppU1UHHGHtjRPX8fUx/QhOMMZalL34CFow9aA9A+Mu4KmT5w/qc+3oaKwc7+JleAinjGte8HrDZz8irC2df1YFK62/zi3V8Dpt8FlAi0vbDvzDUzmDXGaPI8Y3tab3s842mWYJ
 	
 	    EndPoints {
 	         TcpEndPoint: 54.186.197.123:56789
 	    }
-	    Version: 1.9.6
+	    Version: 1.9.9
 	}
 
 The IP address in the reg credentials above is of course that of xlreg.xlattice.org.
