@@ -1,4 +1,4 @@
-# xlreg_py
+<h1 class="libTop">xlreg_py</h1>
 
 The Python client for the xlReg cluster registry.  
 
@@ -10,8 +10,11 @@ the ability to create and launch new, unique, distinct clusters in seconds
 will be a major advantage.
 
 In such a cluster, members use the **xlReg** public server to register and
-exchange member IP addresses.  When a member finishes booting, it has 
-learned the IP addresses of its peers and the RSA keys used to set up 
+exchange member IP addresses and other related information.  
+When a member finishes booting, it has 
+learned the cluster ID and the
+IP addresses of its peers, their NodeIDs, and the public 
+RSA keys used to set up 
 encrypted communications 
 between members of the cluster and between cluster members and clients.
 
@@ -50,7 +53,7 @@ Like any XLattice node, the xlReg client can either be configured with some
 specific keys at start-up or it will generate a new pair of keys and save
 them to persistent store.
 
-## Registration
+`## Registration
 
 <img src="img/simple-cluster.jpg" alt="simple-cluster" style="float:right" title="small cluster, no clients">
 
@@ -123,15 +126,15 @@ with the public keys shown in the registry credentials below.
 
 	regCred {
 	    Name: xlReg
-	    ID: f3013fae154097f89693999d255cc3d26c7453fa
-	    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9TMVg0Lvf4ZHe4TOQJ2d5qhg+bEL2m+2VlVv6vECnTTOJmcooPjZCKBphVFOPjaIzHoafun5RMbSYAjyoIbXEOL5kl35pWUC7wFBYTgrsoJO+it7WGbmF/JEThU2KwTErPY2gdJ/NWwXM8v+JrQUqC5NARJ/nF/y055yZF6ijR5iprWYPM2aRH3aVnjxTD4klp8lVtnIxeQXkNK3JEUGFQGiDRq4/U2meLMi2ekvLArJDflzflNmM71XRSB6mwgE4pFHLMMztPa7U4TweNr13BZQYbKgc6jqQFTMQ8Qf5st8Hu6oa04xllJlN/uOegjdKvw3+QhMotA8kpTgySuyP
+	    ID: 355b60727489f2a72300a7184cb3c4b4d86e505e
+	    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoYlUZbWxnuFdNzAxORmiKg0Zjp2X5FYXR/Y/Uu2rfIoXg5KG4VCFVMMidzGh4hK7kM/6QR2pNl3Ab76zzWKBx/aWs7l4NdKVH63vmtOF5mTw4HA0qpO4iBQdsPoBwRZFmsQit1vGN7OLFSgutY0xfyneuJePWtxhjOHlfPDOGwZrkdGY5UdV65q+Ie56B7lShIuvE/xzGVtFIt9dNQTbOhQdJZrhRIiM5MXzzGMdgl65/LhsVuAL654MDxHkYaYRcaVXDbKQ44iXM8657VJSsdELpaqZuSedpc8BRocbHHiT/61mUKaXMULRonFBi7UHwckAtQiap93VfGmSR319b
 	
-	    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1NnmySXlKjrn6hrLVXYkkJlvCpADkHe0i0pfFgU9pTJxt2QRpDlqpUsjfTCtDL4oG4ZGCkyEIUFVl/fykISbeeFbb6U4z8TBoCIGMzcEue9HAfzval7LUDbrR1QquylXe0vCkBAgfZk1c15QIyPhL2WX3AdOcaaOvDncqqSQxWcSst83ND9OWWCskxS7+yYhFoiZp4n4pKlgl4bppU1UHHGHtjRPX8fUx/QhOMMZalL34CFow9aA9A+Mu4KmT5w/qc+3oaKwc7+JleAinjGte8HrDZz8irC2df1YFK62/zi3V8Dpt8FlAi0vbDvzDUzmDXGaPI8Y3tab3s842mWYJ
+	    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3KHOjgx+UsfJFc7P5tzuG7Wi5fQfckAEKP3Z3krfMTQze88LT6hqqx4ykgqZtA2URnn06Pjnvk6Y+MKgF/J2KaiWZx3B7/zWtSsPGgnPFWYiSq/qpHuUdWQdmNJ+BvNAWVCIDS4jH4vEbZqV6XIrDmm6SeB/Xas4QTxYPXjakJ7rHwINAP9mBBBWFAjx0AVDgveDyhFSfAClwgwbLP5RRHeZMNHWw/RqVl1tqcj2AJkSXkyy4a8vNrFwsIHH8EfTmn7T+/RFgQxYlJkkvZRvXZWEwBqzum5TqsPPmytmrHmP2V7WUfHJOv04MSc54Qu+CJXEYUmDTtdTYdBH+rKdt
 	
 	    EndPoints {
 	         TcpEndPoint: 54.186.197.123:56789
 	    }
-	    Version: 1.9.9
+	    Version: 1.9.10
 	}
 
 The IP address in the reg credentials above is of course that of xlreg.xlattice.org.

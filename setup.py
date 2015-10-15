@@ -9,7 +9,7 @@ __version__ = re.search("__version__\s*=\s*'(.*)'",
  
 # see http://docs.python.org/distutils/setupscript.html
 
-setup ( name         = 'xlReg_py', 
+setup ( name         = 'xlreg_py', 
         version      = __version__,
         author       = 'Jim Dixon',
         author_email = 'jddixon@gmail.com',
