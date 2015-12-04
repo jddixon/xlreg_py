@@ -1,5 +1,8 @@
 xlreg_py/CHANGES
 
+v0.1.11
+    2015-12-04
+        * minor edits to *.md                                       SLOC  935
 v0.1.10
     2015-10-14
         * {README,index}.md revised for xlReg 1.9.10                SLOC  935
@@ -40,3 +43,4 @@ v0.1.1
 v0.1.0
     2014-01-26
         * DecimalVersion and test                                   SLOC  461
+
