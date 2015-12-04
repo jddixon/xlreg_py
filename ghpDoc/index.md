@@ -1,21 +1,21 @@
 <h1 class="libTop">xlreg_py</h1>
 
-The Python client for the xlReg cluster registry.  
+The Python client for the xlReg cluster registry.
 
 **xlreg_py**
 makes it easy to create new small clusters some or all of whose members are
-written in the programming language Python.  
+written in the programming language Python.
 xlreg_py is expected to be used primarily for testing, where
 the ability to create and launch new, unique, distinct clusters in seconds
 will be a major advantage.
 
 In such a cluster, members use the **xlReg** public server to register and
-exchange member IP addresses and other related information.  
-When a member finishes booting, it has 
+exchange member IP addresses and other related information.
+When a member finishes booting, it has
 learned the cluster ID and the
-IP addresses of its peers, their NodeIDs, and the public 
-RSA keys used to set up 
-encrypted communications 
+IP addresses of its peers, their NodeIDs, and the public
+RSA keys used to set up
+encrypted communications
 between members of the cluster and between cluster members and clients.
 
 ## The xlReg Service
@@ -38,7 +38,7 @@ session.
 
 Each xlReg cluster member has at least one IP address used for
 intra-cluster communications, for communications between members.  In some
-clusters each member will also have a second IP address used for 
+clusters each member will also have a second IP address used for
 communications with cluster clients.
 
 The xlReg server itself, its clients, and so the cluster members all are
@@ -57,9 +57,9 @@ them to persistent store.
 
 <img src="img/simple-cluster.jpg" alt="simple-cluster" style="float:right" title="small cluster, no clients">
 
-A booting xlReg client establishes an encrypted connection to an xlReg server 
+A booting xlReg client establishes an encrypted connection to an xlReg server
 (by default this is xlreg.xlattice.net).
-If this is the client's first conversation with the xlReg server, the client 
+If this is the client's first conversation with the xlReg server, the client
 provides the server with configuration information including its RSA public
 keys.  (The client does **not** register its secret RSA **private** keys.)
 The configuration information is signed with the applicant's private
@@ -148,7 +148,7 @@ systems programming language incorporating certain features of
 revolutionary **CSP**,
 [Communicating Sequential Processes](http://www.usingcsp.com).
 
-Google's Go language is a stable product.  It has been available for 
+Google's Go language is a stable product.  It has been available for
 several years and the compiler is widely acknowledged to be very fast
 and to generate fast, compact code.  The Go language itself --
 the compiler and its libraries -- is free and open source.
@@ -173,3 +173,4 @@ there are no known serious bugs.
 **This client is itself pre-alpha:** some minimal code exists, but nothing
 beyond reading the registry credentials (`regCred.dat`) and going through
 the initial hello/reply session with the server, xlReg.
+
