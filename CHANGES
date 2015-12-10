@@ -1,5 +1,8 @@
 xlreg_py/CHANGES
 
+v0.1.12
+    2015-12-10
+        * add -V/--showVersion option                               SLOC  975
 v0.1.11
     2015-12-04
         * minor edits to *.md                                       SLOC  935
@@ -43,4 +46,5 @@ v0.1.1
 v0.1.0
     2014-01-26
         * DecimalVersion and test                                   SLOC  461
+
 
