@@ -1,5 +1,8 @@
 xlreg_py/TODO
 
+2015-12-10                                                              * DONE
+    * add xlRegClient.py with -V/--showVersion option                   * DONE
+
 2015-04-16
     * The client should not send the server iv1; the server should 
         decide on its own.  Likewise for iv2.  This affects

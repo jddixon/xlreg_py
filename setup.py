@@ -23,6 +23,6 @@ setup ( name         = 'xlreg_py',
         packages     = ['xlReg',], 
         #
         # following could be in scripts/ subdir; SQuote
-        scripts      = [],
+        scripts      = ['xlRegClient.py'],
         # MISSING url
         )
