@@ -177,4 +177,4 @@ the initial hello/reply session with the server, xlReg.
 ## On-line Documentation
 
 More information on the **xlreg_py** project can be found
-[here](://jddixon.github.io/xlreg_py)
+[here](https://jddixon.github.io/xlreg_py)
