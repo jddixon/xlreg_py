@@ -3,6 +3,8 @@ xlreg_py/CHANGES
 v0.1.13
     2015-12-22
         * fix dead link
+    2016-02-15
+        * minor edits to license                                    SLOC  673
 v0.1.12
     2015-12-10
         * add -V/--showVersion option                               SLOC  975
