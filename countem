@@ -1,6 +1,11 @@
 cd ~/dev/py/xlreg_py && rm -rf build
-pySloc $@ -v -C bash:gen:py:txt \
+
+rm -f build/* tmp/*
+
+pySloc -v $@ -C bash:gen:py:txt \
     bash:countem bash:installit bash:test.all bash:update.test_dirs \
     txt:Makefile txt:p.proto \
     txt:portland.regCred.dat \
-    txt:stockton.regCred.dat
+    txt:stockton.regCred.dat    \
+
+
