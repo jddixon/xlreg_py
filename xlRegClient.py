@@ -2,42 +2,48 @@
 
 # ~/dev/py/xlreg_py/xlRegClient.py
 
-import os, re, sys, time
+import os
+import re
+import sys
+import time
 from argparse import ArgumentParser
 
-from xlattice.util  import DecimalVersion, parseDecimalVersion
-from xlReg          import *    # REPLACE WITH SPECIFICS
+from xlattice.util import DecimalVersion, parseDecimalVersion
+from xlReg import *    # REPLACE WITH SPECIFICS
 
 # -- implementation -------------------------------------------------
+
+
 def doClientSTuff(options):
-    dontDoIt    = options.dontDoIt
-    verbose     = options.verbose
+    dontDoIt = options.dontDoIt
+    verbose = options.verbose
+
 
 def main():
 
     # program defaults ----------------------------------------------
-    today       = time.localtime(time.time())    # struct time
-    newDate     = '%4d-%02d-%02d' % (today.tm_year,
-                                     today.tm_mon,
-                                     today.tm_mday)
+    today = time.localtime(time.time())    # struct time
+    newDate = '%4d-%02d-%02d' % (today.tm_year,
+                                 today.tm_mon,
+                                 today.tm_mday)
 
     # parse the command line ----------------------------------------
-    parser = ArgumentParser(description = 'example xlReg client')
+    parser = ArgumentParser(description='example xlReg client')
 
     parser.add_argument('-j', '--justShow', action='store_true',
-        help='show options and exit')
+                        help='show options and exit')
 
     parser.add_argument('-T', '--testing', action='store_true',
-        help='this is a test run')
+                        help='this is a test run')
 
-    parser.add_argument('-V', '--showVersion',  action='store_true',
-        help = 'specify actual new version number')
+    parser.add_argument('-V', '--showVersion', action='store_true',
+                        help='specify actual new version number')
 
     parser.add_argument('-v', '--verbose', action='store_true',
-        help='be chatty')
+                        help='be chatty')
 
     parser.add_argument('-z', '--dontDoIt', action='store_true',
-        help='just say what you would do')
+                        help='just say what you would do')
 
     args = parser.parse_args()
 
@@ -71,4 +77,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

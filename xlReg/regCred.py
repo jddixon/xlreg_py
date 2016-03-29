@@ -8,56 +8,57 @@ from xlattice.util import DecimalVersion, parseDecimalVersion
 SHA1_BYTES = 20
 SHA2_BYTES = 32
 
+
 class RegCred(object):
 
-	#type RegCred struct {
-	#	Name        string
-	#	ID          *xi.NodeID
-	#	CommsPubKey *rsa.PublicKey    // CommsKey in token
-	#	SigPubKey   *rsa.PublicKey    // SigKey in token
-	#	EndPoints   []xt.EndPointI    // MyEnds in token
-	#	Version     xu.DecimalVersion // not in token at all
+        # type RegCred struct {
+        #	Name        string
+        #	ID          *xi.NodeID
+        #	CommsPubKey *rsa.PublicKey    // CommsKey in token
+        #	SigPubKey   *rsa.PublicKey    // SigKey in token
+        #	EndPoints   []xt.EndPointI    // MyEnds in token
+        #	Version     xu.DecimalVersion // not in token at all
 
-    __slots__ = [ '_name', '_id', '_commsPubKey', '_sigPubKey',
-        '_endPoints', '_version',
-        ]
+    __slots__ = ['_name', '_id', '_commsPubKey', '_sigPubKey',
+                 '_endPoints', '_version',
+                 ]
 
     def __init__(self, name, id, ck, sk, endPoints, version):
-        if name == None or name == '':
+        if name is None or name == '':
             raise RuntimeError('nil or empty xlReg name')
         self._name = name
-        
-        if id == None or id == '':
+
+        if id is None or id == '':
             raise RuntimeError('nil or empty xlReg id')
         idLen = len(id)
         if idLen != SHA1_BYTES and idLen != SHA2_BYTES:
             raise RuntimeError('id length not 20 and not 32')
         self._id = id
 
-        if ck == None or ck == '':
+        if ck is None or ck == '':
             raise RuntimeError('nil or empty xlReg commsPubKkey')
         # XXX need better check(s)
         self._commsPubKey = ck
 
-        if sk == None or sk == '':
+        if sk is None or sk == '':
             raise RuntimeError('nil or empty xlReg sigPubKkey')
         # XXX need better chesk(s)
         self._sigPubKey = sk
 
-        if endPoints == None or len(endPoints) == 0 :
+        if endPoints is None or len(endPoints) == 0:
             raise RuntimeError('nil or empty endPoints list')
-        
+
         self._endPoints = []
         for ep in endPoints:
             # XXX currently should begin with 'TcpEndPoint: '
             self._endPoints.append(ep)
 
-        if version == None:
+        if version is None:
             raise RuntimeError('nil regCred version')
         # XXX should check it's a 32-bit value
         self._version = version
 
-    # properties 
+    # properties
     def getName(self):
         return self._name
 
@@ -84,19 +85,20 @@ class RegCred(object):
         # uncommenting this yields 'odd length string' error
         #ss.append("    ID: %s" % binascii.b2a_hex(self._id))
         ss.append("    ID: %s" % dumpByteArray(self._id))
-       
+
         ss.append('    CommsPubKey: ' + dumpByteArray(self._commsPubKey))
         ss.append('    SigPubKey: ' + dumpByteArray(self._sigPubKey))
         ss.append('    EndPoints {')
-        for ep in self._endPoints :
+        for ep in self._endPoints:
             ss.append('        ' + ep)
         ss.append('    }')
         ss.append('    Version: ' + self._version.__str__())
         ss.append('}')
 
         s = "\r\n".join(ss) + "\r\n"
-        
+
         return s
+
 
 def dumpByteArray(a):
     out = ''
@@ -105,22 +107,22 @@ def dumpByteArray(a):
         out += pair
     return out
 
+
 def parseRegCred(s):
-    """ 
-    Expect rather loosely formatted registry credentials but require 
-    a space after colon (:) or left brace ({) delimiters. 
+    """
+    Expect rather loosely formatted registry credentials but require
+    a space after colon (:) or left brace ({) delimiters.
     """
 
-    if s == None or s == "" :
+    if s is None or s == "":
         raise RuntimeError("nil or empty regCred string")
 
     ss = s.split("\r\n")
     lineCount = len(ss)
     global i
     i = 0
-    
-    
-    def skipSAndTrim() :
+
+    def skipSAndTrim():
         """Return the first string containing something other than whitespace"""
         global i
         if i >= lineCount:
@@ -131,11 +133,11 @@ def parseRegCred(s):
             if len(s) > 0:
                 break
         return s
-       
+
     s = skipSAndTrim()
     if s != 'regCred {':
         raise RuntimeError('not a well-formed regCred')
-    
+
     s = skipSAndTrim()
     parts = s.split(': ')
     if len(parts) != 2 or parts[0] != 'Name':
@@ -150,9 +152,9 @@ def parseRegCred(s):
         raise RuntimeError('not a well-formed regCred')
     hex = parts[1].strip()
     id = binascii.a2b_hex(hex)
-    
-    # XXX could require length of 20 or 32    
-        
+
+    # XXX could require length of 20 or 32
+
     s = skipSAndTrim()
     parts = s.split(': ')
     if len(parts) != 2 or parts[0] != 'CommsPubKey':
@@ -168,20 +170,20 @@ def parseRegCred(s):
     s = skipSAndTrim()
     if s != 'EndPoints {':
         raise RuntimeError('not a well-formed regCred')
-  
+
     # collect endPoints
     endPoints = []
 
-    while True :
+    while True:
         s = skipSAndTrim()
         if s == '}':
             break
         parts = s.split(': ')
-        if len(parts) != 2 :
+        if len(parts) != 2:
             raise RuntimeError('not a well-formed regCred endPoint')
         protocol = parts[0].strip()
-        address  = parts[1].strip()
-        endPoints.append( '%s: %s' % (protocol, address) )
+        address = parts[1].strip()
+        endPoints.append('%s: %s' % (protocol, address))
 
     s = skipSAndTrim()
     parts = s.split(': ')
@@ -189,5 +191,4 @@ def parseRegCred(s):
         raise RuntimeError('not a well-formed regCred')
     v = parts[1].strip()
     version = parseDecimalVersion(v)
-    return  RegCred(name, id, ck, sk, endPoints, version)
-
+    return RegCred(name, id, ck, sk, endPoints, version)

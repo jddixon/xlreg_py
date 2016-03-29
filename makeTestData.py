@@ -2,48 +2,52 @@
 
 # ~/dev/py/xlreg_py/makeTestData
 
-import  os, subprocess, sys, time
+import os
+import subprocess
+import sys
+import time
 from Crypto.Cipher import AES
 from xlattice.util import decimalVersion as dv
-from xlReg import regCred 
+from xlReg import regCred
 import rnglib
 
-OPENSSL     = '/usr/bin/openssl'
-SSH_KEYGEN  = '/usr/bin/ssh-keygen'
-KEY_BITS    = 1024
-KEY_BYTES   = KEY_BITS / 8
-SHA1_BYTES  = 20
+OPENSSL = '/usr/bin/openssl'
+SSH_KEYGEN = '/usr/bin/ssh-keygen'
+KEY_BITS = 1024
+KEY_BYTES = KEY_BITS / 8
+SHA1_BYTES = 20
 
-TEST_DATA_DIR  = "./testData"
+TEST_DATA_DIR = "./testData"
 
 # REG CRED TEST DATA ################################################
 REG_CRED_DATA_DIR = os.path.join(TEST_DATA_DIR, 'regCred')
 
 # HELLO AND REPLY TEST DATA #########################################
-MAX_MSG     = KEY_BYTES -1 - 2 * SHA1_BYTES # one more than max value
-AES_IV_LEN      = 16
-AES_KEY_LEN     = 32
-AES_BLOCK_LEN   = 16
-SALT_LEN        =  8
-VERSION_LEN     =  4
+MAX_MSG = KEY_BYTES - 1 - 2 * SHA1_BYTES  # one more than max value
+AES_IV_LEN = 16
+AES_KEY_LEN = 32
+AES_BLOCK_LEN = 16
+SALT_LEN = 8
+VERSION_LEN = 4
 
 HELLO_DATA_LEN = AES_IV_LEN + AES_KEY_LEN + SALT_LEN + VERSION_LEN
 UNPADDED_REPLY_LEN = HELLO_DATA_LEN + SALT_LEN
-PADDING_LEN = ((UNPADDED_REPLY_LEN + AES_BLOCK_LEN - 1)/AES_BLOCK_LEN) * \
-                AES_BLOCK_LEN - UNPADDED_REPLY_LEN
+PADDING_LEN = ((UNPADDED_REPLY_LEN + AES_BLOCK_LEN - 1) / AES_BLOCK_LEN) * \
+    AES_BLOCK_LEN - UNPADDED_REPLY_LEN
 HELLO_REPLY_LEN = HELLO_DATA_LEN + SALT_LEN + PADDING_LEN
 
-HR_TEST_DIR    = os.path.join(TEST_DATA_DIR, 'helloAndReply')
-HR_KEY_FILE    = 'key-rsa'
+HR_TEST_DIR = os.path.join(TEST_DATA_DIR, 'helloAndReply')
+HR_KEY_FILE = 'key-rsa'
 HR_PUBKEY_FILE = 'key-rsa.pub'
-HR_PEM_FILE    = 'key-rsa.pem'
+HR_PEM_FILE = 'key-rsa.pem'
 
-PATH_TO_HR_KEY          = os.path.join(HR_TEST_DIR, HR_KEY_FILE)
-PATH_TO_HR_PUBKEY       = os.path.join(HR_TEST_DIR, HR_PUBKEY_FILE)
-PATH_TO_HR_PEM          = os.path.join(HR_TEST_DIR, HR_PEM_FILE)
-PATH_TO_HELLO           = os.path.join(HR_TEST_DIR, 'hello-data')
-PATH_TO_REPLY           = os.path.join(HR_TEST_DIR, 'reply-data')
+PATH_TO_HR_KEY = os.path.join(HR_TEST_DIR, HR_KEY_FILE)
+PATH_TO_HR_PUBKEY = os.path.join(HR_TEST_DIR, HR_PUBKEY_FILE)
+PATH_TO_HR_PEM = os.path.join(HR_TEST_DIR, HR_PEM_FILE)
+PATH_TO_HELLO = os.path.join(HR_TEST_DIR, 'hello-data')
+PATH_TO_REPLY = os.path.join(HR_TEST_DIR, 'reply-data')
 PATH_TO_ENCRYPTED_REPLY = os.path.join(HR_TEST_DIR, 'reply-encrypted')
+
 
 def makeOrClearTestDir(pathToDir):
     # create test directory if it doesn't exist
@@ -57,6 +61,7 @@ def makeOrClearTestDir(pathToDir):
 
 # REG CRED DATA #####################################################
 
+
 def makeRegCredData():
     makeOrClearTestDir(REG_CRED_DATA_DIR)
 
@@ -69,13 +74,13 @@ def makeRegCredData():
 
     # B: parse the regCred file to get name, id, commsPubKey, sigPubKey,
     #    endPoints, version
-    rc          = regCred.parseRegCred(regCredData)
-    name        = rc.getName()
-    id          = rc.getID()            # byte array
+    rc = regCred.parseRegCred(regCredData)
+    name = rc.getName()
+    id = rc.getID()            # byte array
     commsPubKey = rc.getCommsPubKey()   # plain old string
-    sigPubKey   = rc.getSigPubKey()
-    endPoints   = rc.getEndPoints()     # list of strings
-    version     = rc.getVersion()       # DecimalVersion object
+    sigPubKey = rc.getSigPubKey()
+    endPoints = rc.getEndPoints()     # list of strings
+    version = rc.getVersion()       # DecimalVersion object
 
     # C: write to RC_TEST_DIR / name.str
     with open(os.path.join(REG_CRED_DATA_DIR, 'name.str'), 'w') as f:
@@ -95,7 +100,7 @@ def makeRegCredData():
 
     # G: write to RC_TEST_DIR / endPoints = NL-terminated strings
     #   without final NL
-    eps = "\n".join(endPoints) 
+    eps = "\n".join(endPoints)
     with open(os.path.join(REG_CRED_DATA_DIR, 'endPoints'), 'w') as f:
         f.write(eps)
 
@@ -112,8 +117,8 @@ def makeHelloReplyData(rng):
 
     # A, B: generate an ssh2 key pair in HR_TEST_DIR -------------------
     cmd = [SSH_KEYGEN, '-q', '-t', 'rsa', '-b', str(KEY_BITS),
-            '-N', '',                       # empty passphrase
-            '-f', PATH_TO_HR_KEY]
+           '-N', '',                       # empty passphrase
+           '-f', PATH_TO_HR_KEY]
     result = subprocess.check_call(cmd)
     if result != 0:
         print("ssh-keygen call failed (result: %d); aborting" % result)
@@ -123,7 +128,7 @@ def makeHelloReplyData(rng):
 
     # C: generate 'pem' = PKCS8 version of public key ---------------
     # this command writes to stdout
-    f =  open(PATH_TO_HR_PEM, 'w')
+    f = open(PATH_TO_HR_PEM, 'w')
     cmd = [SSH_KEYGEN, '-e', '-m', 'PKCS8', '-f', PATH_TO_HR_PUBKEY, ]
     result = subprocess.check_call(cmd, stdout=f)
     if result != 0:
@@ -133,7 +138,7 @@ def makeHelloReplyData(rng):
     f.close()       # GEEP
 
     # D: write version1.str -----------------------------------------
-    dv1 = dv.DecimalVersion(1,2,3,4)
+    dv1 = dv.DecimalVersion(1, 2, 3, 4)
     v1s = dv1.__str__()
     with open(os.path.join(HR_TEST_DIR, 'version1.str'), 'w') as f:
         f.write(v1s)
@@ -143,7 +148,7 @@ def makeHelloReplyData(rng):
     rng.nextBytes(helloData)      # that many random bytes
 
     # append version number -------------------------------
-    dv1 = dv.DecimalVersion(1,2,3,4)
+    dv1 = dv.DecimalVersion(1, 2, 3, 4)
     # XXX silly but will do for now
     # XXX version is big-endian
     helloData.append(dv1.getA())
@@ -165,20 +170,25 @@ def makeHelloReplyData(rng):
         f.write(key1)
 
     # H: write salt1 ------------------------------------------------
-    salt1 = helloData[AES_IV_LEN+AES_KEY_LEN:AES_IV_LEN + AES_KEY_LEN+SALT_LEN]
+    salt1 = helloData[
+        AES_IV_LEN +
+        AES_KEY_LEN:AES_IV_LEN +
+        AES_KEY_LEN +
+        SALT_LEN]
     with open(os.path.join(HR_TEST_DIR, 'salt1'), 'w') as f:
         f.write(salt1)  # GEEP
 
     # I: write version1 ---------------------------------------------
-    version1 = helloData[AES_IV_LEN+AES_KEY_LEN+SALT_LEN:]
+    version1 = helloData[AES_IV_LEN + AES_KEY_LEN + SALT_LEN:]
     with open(os.path.join(HR_TEST_DIR, 'version1'), 'w') as f:
         f.write(version1)
 
     # J: write hello-encrypted --------------------------------------
-    # openssl rsautl -in test_dir/data -inkey test_dir/key-rsa.pem -pubin -encrypt -out test_dir/hello-encrypted -oaep
+    # openssl rsautl -in test_dir/data -inkey test_dir/key-rsa.pem -pubin
+    # -encrypt -out test_dir/hello-encrypted -oaep
     cmd = [OPENSSL, 'rsautl', '-in', PATH_TO_HELLO,
-            '-inkey', PATH_TO_HR_PEM, '-pubin', '-encrypt',
-            '-oaep', '-out', os.path.join(HR_TEST_DIR, 'hello-encrypted')]
+           '-inkey', PATH_TO_HR_PEM, '-pubin', '-encrypt',
+           '-oaep', '-out', os.path.join(HR_TEST_DIR, 'hello-encrypted')]
     result = subprocess.check_call(cmd)
     if result != 0:
         print("OAEP encryption call failed (result: %d); aborting" % result)
@@ -189,7 +199,7 @@ def makeHelloReplyData(rng):
     rng.nextBytes(replyData)      # that many random bytes
 
     # append version number -------------------------------
-    dv2 = dv.DecimalVersion(5,6,7,8)
+    dv2 = dv.DecimalVersion(5, 6, 7, 8)
     replyData.append(dv2.getA())
     replyData.append(dv2.getB())
     replyData.append(dv2.getC())
@@ -218,7 +228,11 @@ def makeHelloReplyData(rng):
         f.write(key2)
 
     # N: write salt2 ------------------------------------------------
-    salt2 = replyData[AES_IV_LEN+AES_KEY_LEN:AES_IV_LEN + AES_KEY_LEN+SALT_LEN]
+    salt2 = replyData[
+        AES_IV_LEN +
+        AES_KEY_LEN:AES_IV_LEN +
+        AES_KEY_LEN +
+        SALT_LEN]
     with open(os.path.join(HR_TEST_DIR, 'salt2'), 'w') as f:
         f.write(salt2)
 
@@ -246,16 +260,17 @@ def makeHelloReplyData(rng):
 
     # R: AES-encrypt padded reply as replyEncrypted -----------------
     keyBuff = buffer(key1)
-    ivBuff  = buffer(iv1)
+    ivBuff = buffer(iv1)
     cipher1s = AES.new(keyBuff, AES.MODE_CBC, ivBuff)
     outBuff = buffer(replyData)
     replyEncrypted = cipher1s.encrypt(outBuff)
 
     # S: write reply-encrypted --------------------------------------
     with open(os.path.join(HR_TEST_DIR, 'reply-encrypted'), 'w') as f:
-        f.write(replyEncrypted) # GEEPGEEP
+        f.write(replyEncrypted)  # GEEPGEEP
 
 # MAIN ##############################################################
+
 
 def main():
     # set up random number generator --------------------------------

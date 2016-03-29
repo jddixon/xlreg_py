@@ -1,5 +1,8 @@
 xlreg_py/CHANGES
 
+v0.1.15
+    2016-03-29
+        * add and execute auto8it                                   SLOC  807
 v0.1.14
     2016-02-22
         * LICENSE update                                            SLOC  673
@@ -54,6 +57,7 @@ v0.1.1
 v0.1.0
     2014-01-26
         * DecimalVersion and test                                   SLOC  461
+
 
 
 
