@@ -1,3 +1,0 @@
-cd /home/jdd/dev/py/xlreg_py
-
-autopep8 -air xlReg *.py 

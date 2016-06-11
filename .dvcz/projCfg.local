@@ -14,9 +14,10 @@ code:local:portland.regCred.dat
 code:local:stockton.regCred.dat
 code:local:testDataTestTemplate
 
-bash:std:auto8it
+bash:std:bkp2u
 bash:std:countem
 bash:std:installit
+bash:std:styleit
 bash:std:test.all
 
 

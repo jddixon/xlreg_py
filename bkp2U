@@ -4,9 +4,13 @@ if [ ! -z "${DEV_BASE// }" ]
 then
   cd $DEV_BASE/py/xlreg_py
   
-  rm -rf build/* tmp/* 
+  blListGen \
+    -d ../xlreg_py \
+    -1L  \
+    -u $DVCZ_UDIR \
+    -X .ssh \
+    $@
   
-  pySloc -L py  -X dist -v $@
 else
   echo "DEV_BASE is not defined"
 fi
