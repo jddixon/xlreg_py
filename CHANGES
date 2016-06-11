@@ -1,5 +1,8 @@
 xlreg_py/CHANGES
 
+v0.1.17
+    2016-06-11
+        * add bkp2u, other bash scripts                             SLOC  978
 v0.1.16
     2016-05-05
         * add .dvcz/projCfg*                                        SLOC  906
@@ -60,6 +63,7 @@ v0.1.1
 v0.1.0
     2014-01-26
         * DecimalVersion and test                                   SLOC  461
+
 
 
 

@@ -4,9 +4,10 @@ if [ ! -z "${DEV_BASE// }" ]
 then
   cd $DEV_BASE/py/xlreg_py
   
-  rm -rf build/* tmp/* 
+  autopep8 -ai -r xlReg *.py
+  echo "not styling img/ subdir"
+  echo "not styling testData/ subdir"
   
-  pySloc -L py  -X dist -v $@
 else
   echo "DEV_BASE is not defined"
 fi
