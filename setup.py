@@ -24,5 +24,9 @@ setup(name='xlreg_py',
       #
       # following could be in scripts/ subdir; SQuote
       scripts=['xlRegClient.py'],
-      # MISSING url
+      # MISSING description
+      classifiers=[
+          'License :: OSI Approved :: MIT License',
+          'Programming Language :: Python :: 3',
+      ],
       )

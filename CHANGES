@@ -1,5 +1,8 @@
 xlreg_py/CHANGES
 
+v0.1.18
+    2016-07-14
+        * correct testPKCS7.py; add ghpDoc/{css,img}                SLOC 1514
 v0.1.17
     2016-06-11
         * add bkp2u, other bash scripts                             SLOC  978
@@ -63,6 +66,7 @@ v0.1.1
 v0.1.0
     2014-01-26
         * DecimalVersion and test                                   SLOC  461
+
 
 
 
