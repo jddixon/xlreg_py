@@ -7,18 +7,20 @@ zPjEShF9rvcNa9XEy1dKpcDz9Szbm2SlxOgM83fDDGtOq4SSCSqndtxrOvXXPB57
 H1mJV/FmerbXRPm5ERJVNIxtLk7Gr2Ce45FVlWyJGMhpfVlKkkk+bRQ02OFfazJI
 GQIDAQAB
 -----END RSA PUBLIC KEY-----
-xlreg_py v0.1.17
-2016-06-11 22:24:00
+xlreg_py v0.1.18
+2016-07-14 15:54:27
 # START CONTENT #
 xlreg_py
  .copyright da5046f3d0695c0b841b17b172db883917846836
  .dvcz
-  projCfg 7aad55a5b7ed0b05c0ee08e3dace1b67fc059719
+  builds 3d4bec75456c04fb6220b219cb19608f5f59fd59
+  lastBuildList 8383153bedabbadc2d523944414260534c66e723
+  projCfg de9ef9cf10428339dd93f345af193bdaea64c3ef
   projCfg.local 8e664c4a1c3abf05e4f0a9249529a1a0ce451022
-  version d2e4aa6fa8edf8563c02d3882a7dccde079b21d4
+  version d2effebf5fd0c4c0f50149b22b22873d5885bc28
  .gitignore 62ec303b629341cacbecf961ecfbc11bf64082f4
  .gitignore.local 701e71ad917b19e7f6b7fd4bdc542180e9d977a7
- CHANGES 8a93c7fef889ccf605b538c04943b56bc2aba370
+ CHANGES 21f7893c9280bfe15d52b8440a33bd473709a849
  LICENSE.md 42de349b4de7129392b3961ece4de861f00c0f6a
  MANIFEST.in a6a50ae327936d231329c0527021f271eaec64ea
  Makefile 47f382dea3aa1d5c35f344efb1eca6ed6a390e81
@@ -45,23 +47,30 @@ xlreg_py
   xlreg_py-0.1.15.tar.gz 9c817e1a3d6ed66f8e84f9e224e06423d175fd93
   xlreg_py-0.1.16.tar.gz e40e4accf1ebf2ea083258d4923d597e79eecfa6
   xlreg_py-0.1.17.tar.gz 735d06723c7dd3996af16d6f194529bc5f9cab0b
+  xlreg_py-0.1.18.tar.gz 3b57edf66682d72f373408f477ced7ad95630963
  ghpDoc
   TODO c50d5bfa3d7491ad424c1547d63f01d810868c2c
+  css
+   LICENSE.html5-boilerplate.md ded771b3245b190da0e81c76de5a80d41392c0a6
+   ghp.css 1d6ebe8a6cf8f61f4645a793cb087dfae2420f33
+   main.css 018ed80b8a6e6607bc7c08595fa5a7fa56853885
+   normalize.css cba40c7ce3d558d00ff79d7505ac3d348015ec9c
+  img
+   GitHub-Mark-32px.png fabe53eb72f9b6d3d47cd95aff31ffc45c2fdbf8
+   chunk.jpg de2b27e41f1547fc14b13399f5906b4303b49657
+   chunk2.jpg d0593d312dbb8ea837c17b28cb639726e29ea93b
+   cluster-with-clients.jpg c167d04c0c6b5736ef9fe4cdc3fcce1956fdea78
+   simple-cluster.jpg 6b223ddd25937c1ef75ef328f36fc3436f10bd62
+   xl-registration.jpg 15cbf951f9db173a45428b32dcec87aca83bbdf0
+   xlattice-2014.jpg f185aaad06db71acd9454f31054c62c56d36f37f
   index.md 04702455d69dda6b4f6ee1f213bcbda86562be38
- img
-  GitHub-Mark-32px.png fabe53eb72f9b6d3d47cd95aff31ffc45c2fdbf8
-  cluster-with-clients.jpg c167d04c0c6b5736ef9fe4cdc3fcce1956fdea78
-  simple-cluster.jpg 6b223ddd25937c1ef75ef328f36fc3436f10bd62
-  xl-registration.jpg 15cbf951f9db173a45428b32dcec87aca83bbdf0
-  xlattice-2014.jpg f185aaad06db71acd9454f31054c62c56d36f37f
-  xlattice.batik.jpg debe9220564203118dc53df0f5a48d77669fe367
  installit daa8f3379d51a553f1b24e6c84e7b0e76acc888b
  makeTestData.py 1b663f100a8446c16a02252fae129104be09f15b
  p.proto 6c50df9c67a7adf8af8ff8435d5eeab311962867
  portland.regCred.dat 68ff2add4724b54bf6908e3e88d8bea2787dbc15
- setup.py 8781b9e314fd655bc1dce69ed749869db42bf3af
+ setup.py 02edbec44c0c8dffbf60184d60333da93146adb5
  stockton.regCred.dat 5ceba4ce39a1c647d66603f2eee245e7bbe24348
- styleit 7e54aefb45219ef85af6662aa443b0442f517eb4
+ styleit d9d38d03706f3063ff84df108ba4038124dcc88c
  test.all 7296635583df81d3c9912161868a65a92b806421
  testData
   helloAndReply
@@ -92,15 +101,15 @@ xlreg_py
    sk-rsa.pub 658d032d300bca19ac23eb90337471d4cdeee6e3
    version.str 1b390cd54a0c0d4f27fa7adf23e3c45536e9f37c
  testDataTestTemplate 8407450724e103cc445e817e2eb80186f62cc565
- testPKCS7.py 23b8411959a9e29e35a2a07bde907844b2af462e
+ testPKCS7.py ad994b00ca459fca2aa2b189e12435cbfe38c73a
  testRegCred.py 0213e21d5571344a08945d6a2be12ac3a6d9d2fd
  update.test_dirs 9e6fbe21794ab606944867afd922f3ff16d7e753
  xlReg
-  __init__.py a1313df1b43b99a02e9daa13a4c9b6bffafc8964
+  __init__.py 2c2e4441d1839537af24304505d589d78dc57cc7
   errors.py aad7b89f5ec1b271cb129423f9a195cc3fec35bd
   p_pb2.py 5b81efae704ce191879fee9cc55e4373c67bcd61
   regCred.py e243e232fb80f3437eff2e4849c4b1811081e605
  xlRegClient.py 07e952e23a10d0fb7e3fc2b947ab25b65f7a9452
 # END CONTENT #
 
-Oou/Leq1uZuT3GboI65n2wxDHUd7PDHTGFKktUrxTqnCd9PaJp/mZKDM4tGn3SBalRkvHz/HVXhpO/snHDqyBBsHtD0RA7I/IkBNPjLDm4pePZXZIgdBZzN0ifpz613UyWfcSr1s3HxW/31MMtLCcCA49ZtKb5mBfipAvdsQrTTwqtTGYx65MQGTFbAW4A4rgQcYzkgUCGP2V0JYgBfnqj0ke67OjRCeuoz8s6xthiG9gAvD6jANhiiF1xKrC7Ax96Neim8b8MnnlDTMOByfZWJYCyBUPXcTtKlG98mc4G4LvpqJ2axYoefghZ8flRpYzYN3fZoSD5uN8HYYrWPDkw==
+ZknUBuMPhjXe2SJCcN90A/+uAVo6pwelqO2LFG8qb7/Qh1vIwLIH7qwRCPFl1auL0SvTYSkqSPPc4xN6Hbpm8izievxiImRilNNPHsKTongWOqkmyEn8niUqfqqv4qmGFs38TWtua7ZbRd7VxTGtC6Shy6ebQ5UYbhJ8hk8CLy/+Jmye3DHoa2rPjzUiDVT7ugDlGAnJLPOUr/REOUtu9YAgZQlbl7Z2F8yns+3qFSO/iGiH2/xrPfLG5xJd6JfXuY+9LxXv1PbKgnozAxeb3gEFzQD5o0oPuPDWTAyqMG67mbpLiVpvIIGKu6kg/PW3jI9rqsrPgbdjNEeOoSdwUw==

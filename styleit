@@ -5,7 +5,6 @@ then
   cd $DEV_BASE/py/xlreg_py
   
   autopep8 -ai -r xlReg *.py
-  echo "not styling img/ subdir"
   echo "not styling testData/ subdir"
   
 else
