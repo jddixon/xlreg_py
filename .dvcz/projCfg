@@ -2,8 +2,8 @@
 project:xlreg_py
 package:xlReg
 mainlang:py
-version:0.1.17
-versionDate:2016-06-11
+version:0.1.18
+versionDate:2016-07-14
 :?dirs?:
 dir:std:ghpDoc
 dir:std:dist
@@ -29,9 +29,8 @@ code:local:p.proto
 code:local:portland.regCred.dat
 code:local:stockton.regCred.dat
 code:local:testDataTestTemplate
-txt:std:.copyright
+txt:std:LICENSE-MIT.md
 txt:std:CHANGES
-txt:std:LICENSE.md
 txt:std:README.jdd
 txt:std:README.md
 txt:std:TODO
