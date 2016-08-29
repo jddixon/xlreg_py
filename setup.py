@@ -24,9 +24,14 @@ setup(name='xlreg_py',
       #
       # following could be in scripts/ subdir; SQuote
       scripts=['xlRegClient.py'],
-      # MISSING description
+      description='Python 3 client for xlReg server',
+      url='https://jddixon/github.io/xlreg_py',
       classifiers=[
+          'Development Status :: 2 - Pre-Alpha',
+          'Intended Audience :: Developers',
           'License :: OSI Approved :: MIT License',
-          'Programming Language :: Python :: 3',
+          'Natural Language :: English',
+          'Programming Language :: Python 3',
+          'Topic :: Software Development :: Libraries :: Python Modules',
       ],
       )
