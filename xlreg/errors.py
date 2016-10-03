@@ -1,5 +1,7 @@
 # xlreg_py/xlReg/errors.py
 
+""" Error codes and messages for Python xlReg package. """
+
 BAD_ATTRS_LINE = -1
 BAD_VERSION = -2
 CANT_FIND_CLUSTER_BY_ID = -3
