@@ -19,5 +19,6 @@ THIS.IS.A.GIT*
 __pycache__
 build
 cover
+htmlcov
 junk*
 tmp

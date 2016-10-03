@@ -4,7 +4,7 @@ if [ ! -z "${DEV_BASE// }" ]
 then
   cd $DEV_BASE/py/xlreg_py
   
-  autopep8 -ai -r xlReg *.py
+  autopep8 -ai -r xlreg *.py
   echo "not styling testData/ subdir"
   
 else

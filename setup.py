@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+# ~/dev/py/xlreg/setup.py
 
-# ~/dev/py/xlReg/setup.py
+""" Set up the Python xlReg client. """
 
 import re
 from distutils.core import setup
-__version__ = re.search("__version__\s*=\s*'(.*)'",
-                        open('xlReg/__init__.py').read()).group(1)
+__version__ = re.search(r"__version__\s*=\s*'(.*)'",
+                        open('xlreg/__init__.py').read()).group(1)
 
 # see http://docs.python.org/distutils/setupscript.html
 
@@ -20,10 +21,10 @@ setup(name='xlreg_py',
       #
       # ftlog is not a package because it doesn't have its own
       # subdir and __init__.py
-      packages=['xlReg', ],
+      packages=['xlreg', ],
       #
       # following could be in scripts/ subdir; SQuote
-      scripts=['xlRegClient.py'],
+      scripts=['xlreg_client.py'],
       description='Python 3 client for xlReg server',
       url='https://jddixon/github.io/xlreg_py',
       classifiers=[
