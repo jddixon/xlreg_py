@@ -8,5 +8,5 @@ nosetests \
     --cover-erase \
     --cover-branches \
     --cover-inclusive  \
-    --cover-package=xlreg_py  \
+    --cover-package=xlreg  \
     xlreg # test_pkcs7.py test_reg_cred.py
