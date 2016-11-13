@@ -70,16 +70,16 @@ them to persistent store.</p>
 
 <p>A booting xlReg client establishes an encrypted connection to an xlReg server
 (by default this is xlreg.xlattice.net).
-If this is the client&rsquo;s first conversation with the xlReg server, the client
+If this is the client&#39;s first conversation with the xlReg server, the client
 provides the server with configuration information including its RSA public
 keys.  (The client does <strong>not</strong> register its secret RSA <strong>private</strong> keys.)
-The configuration information is signed with the applicant&rsquo;s private
-*sig&rdquo; key.  The server uses the
-client&rsquo;s RSA public key, provided as part of the configuration information, to
-verify the client&rsquo;s digital signature on the configuration data.  This proves
+The configuration information is signed with the applicant&#39;s private
+*sig&quot; key.  The server uses the
+client&#39;s RSA public key, provided as part of the configuration information, to
+verify the client&#39;s digital signature on the configuration data.  This proves
 that the configuration information is intact and that the applicant has the
 private key corresponding to the public key.  In other words, the server has
-in a certain sense confirmed the applicant&rsquo;s identity.  Having done this,
+in a certain sense confirmed the applicant&#39;s identity.  Having done this,
 the xlReg server issues the client with a unique node ID, a 20-byte value,
 completing client registration.</p>
 
@@ -105,7 +105,7 @@ with cluster configuration data.  This includes</p>
 <li>the cluster size, the  maximum number of cluster members</li>
 </ul>
 
-<p>It also includes for each current cluster member the member&rsquo;s</p>
+<p>It also includes for each current cluster member the member&#39;s</p>
 
 <ul>
 <li>nodeID,</li>
@@ -143,15 +143,15 @@ with the public keys shown in the registry credentials below.</p>
 
 <pre><code>regCred {
     Name: xlReg
-    ID: 355b60727489f2a72300a7184cb3c4b4d86e505e
-    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoYlUZbWxnuFdNzAxORmiKg0Zjp2X5FYXR/Y/Uu2rfIoXg5KG4VCFVMMidzGh4hK7kM/6QR2pNl3Ab76zzWKBx/aWs7l4NdKVH63vmtOF5mTw4HA0qpO4iBQdsPoBwRZFmsQit1vGN7OLFSgutY0xfyneuJePWtxhjOHlfPDOGwZrkdGY5UdV65q+Ie56B7lShIuvE/xzGVtFIt9dNQTbOhQdJZrhRIiM5MXzzGMdgl65/LhsVuAL654MDxHkYaYRcaVXDbKQ44iXM8657VJSsdELpaqZuSedpc8BRocbHHiT/61mUKaXMULRonFBi7UHwckAtQiap93VfGmSR319b
+    ID: f2384769af97880208e76d012d8cf5b1b8be0b7b
+    CommsPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDH6nJcf4cAbb1RWVvNS6YHjatZJQCerhmISdyhBDmNJAUuBpr+LcrOe0d+kxEPQB+IbNKfvj7ROd8Aet74s5sJ0AcZyFXLFPvt6eugLCzrXmgDo60qoUtZgxaxisQvsoAZB2FR+nqJAG8E84o3rGD1bNM/2WgjvuWoLpfy+RE8hCUFku7yo9JdOunhc4rpCkBeX9M7g8oWPanHDWMrSwsE8CBf/4pXlEiNNd3YHkwQseUrkCvpLCDuYYV8xjzAYexoBWrVGwpeTO/QtwdebwPxa7ArEQfPwgA5hn6S9iy9+EK6zay7OKqKioaOoYDlJ+Z1rAIi6dBJXdRVHGsMc/kl
 
-    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3KHOjgx+UsfJFc7P5tzuG7Wi5fQfckAEKP3Z3krfMTQze88LT6hqqx4ykgqZtA2URnn06Pjnvk6Y+MKgF/J2KaiWZx3B7/zWtSsPGgnPFWYiSq/qpHuUdWQdmNJ+BvNAWVCIDS4jH4vEbZqV6XIrDmm6SeB/Xas4QTxYPXjakJ7rHwINAP9mBBBWFAjx0AVDgveDyhFSfAClwgwbLP5RRHeZMNHWw/RqVl1tqcj2AJkSXkyy4a8vNrFwsIHH8EfTmn7T+/RFgQxYlJkkvZRvXZWEwBqzum5TqsPPmytmrHmP2V7WUfHJOv04MSc54Qu+CJXEYUmDTtdTYdBH+rKdt
+    SigPubKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCk84/cQ/YnxOLElukZpeQ9QT9FdgcYujmIUGOaFcWtxUJJoSXgBterjgJ+fE5vvNN/kdX97Ps9Mz8PHTAUyClUn5DMxFYApDp/UwnBk0MNqaCnqt3p9ymflIZiex1+/pSWcSpqZYW9hIUQddEGWG6a4dWyD2lhoD1II5Iuj0xMgN167fgsA7otgd/wTitp2jrJE+0cZ4eQShpkuMd9BvNJmkMoyF5PzBnMcRxZ9RvM4zEOe23GRSGGAuPUvTaVEeYY3TVFgF4YfXiYOrPQynS6B7+fnWXu2XDQrwP3mZxYAYJqL5nZvQypCilc8dDxFunf5B+GxdAwqyQbTNwM3ksH
 
     EndPoints {
          TcpEndPoint: 54.186.197.123:56789
     }
-    Version: 1.9.10
+    Version: 1.9.20
 }
 </code></pre>
 
@@ -162,26 +162,26 @@ with the public keys shown in the registry credentials below.</p>
 <p>The xlReg server and its supporting libraries are written in
 <a href="http://golang.org">the Go programming language</a>, a high-performance
 systems programming language incorporating certain features of
-<a href="http://en.wikipedia.org/wiki/Tony_Hoare">Tony Hoare</a>&rsquo;s
+<a href="http://en.wikipedia.org/wiki/Tony_Hoare">Tony Hoare</a>&#39;s
 revolutionary <strong>CSP</strong>,
 <a href="http://www.usingcsp.com">Communicating Sequential Processes</a>.</p>
 
-<p>Google&rsquo;s Go language is a stable product.  It has been available for
+<p>Google&#39;s Go language is a stable product.  It has been available for
 several years and the compiler is widely acknowledged to be very fast
-and to generate fast, compact code.  The Go language itself &ndash;
-the compiler and its libraries &ndash; is free and open source.</p>
+and to generate fast, compact code.  The Go language itself --
+the compiler and its libraries -- is free and open source.</p>
 
 <h2>Server Source Code</h2>
 
 <p>Software developers can currently obtain the xlReg server source code at
-<a href="https://github.com/jddixon/xlReg_go/">xlReg_go&rsquo;s Github project page</a>
+<a href="https://github.com/jddixon/xlReg_go/">xlReg_go&#39;s Github project page</a>
 so that if you are impatient to begin using xlReg you can build and operate
 your own server.</p>
 
 <h2>Client Source Code</h2>
 
 <p>This is best obtained through
-<a href="https://github.com/jddixon/xlreg_py/">this client&rsquo;s Github project page</a>.</p>
+<a href="https://github.com/jddixon/xlreg_py/">this client&#39;s Github project page</a>.</p>
 
 <h2>Project Status</h2>
 
