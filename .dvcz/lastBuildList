@@ -1,4 +1,4 @@
------BEGIN RSA PUBLIC KEY-----
+-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoM2sBgX0ChP2JriXkOxS
 e2FjHYVzBGkNvgf0vIAa7FFYZi2pWmxBAVXgl3tTiB3quqqud/MbKqdejM6gkKBK
 v8f7hlcBQLD6BLIZ/RRfhIElc+WlDVfKSnBTB4va5qTQAgvuq5i8+oMj7G8WEy5d
@@ -6,31 +6,31 @@ v8f7hlcBQLD6BLIZ/RRfhIElc+WlDVfKSnBTB4va5qTQAgvuq5i8+oMj7G8WEy5d
 zPjEShF9rvcNa9XEy1dKpcDz9Szbm2SlxOgM83fDDGtOq4SSCSqndtxrOvXXPB57
 H1mJV/FmerbXRPm5ERJVNIxtLk7Gr2Ce45FVlWyJGMhpfVlKkkk+bRQ02OFfazJI
 GQIDAQAB
------END RSA PUBLIC KEY-----
-xlreg_py v0.1.20
-2016-10-03 00:48:06
+-----END PUBLIC KEY-----
+xlreg_py v0.1.21
+2016-11-13 04:50:13
 # BEGIN CONTENT #
 xlreg_py
  .dvcz
-  builds c5d970cd46c95e10b93449723289b21c6a80c169
+  builds ca102231fe74a830853e2e6a7330c726216b87ff
   copyright 803f3e50518123ef8a08d34f2238e89b62d0c9a2
-  lastBuildList 85f7d8403390d13503ffa93aa2e1e7bdabe9c844
+  lastBuildList 6bdf88e308ee38a825f8d526c3f8f8140622f909
   license 5977a55c75bb4612004451a56b0b4c22d9d3311d
   projCfg 4c1747a4e77635552817ebea30a9c5162b7e557a
   projCfg.local ea7140058c6760877105620d57822cdfdc2ab316
-  version c649ceee7112ebeecc7d3024ed375252ccea46cb
+  version 8b17a815a8cc5f088df1fb81894f95f5d63eac9c
  .gitignore ed03959998e066d859db16732a83aa8627994b3f
  .gitignore.local 701e71ad917b19e7f6b7fd4bdc542180e9d977a7
- CHANGES 8959bfce856331ffb9cf020f7146f74515052d0e
+ CHANGES 54ed3559d2f68b43d52bf5fbc9260202331f50da
  LICENSE-MIT.md d1cecfadc47b23486f6bc8a863cfdde348c3eb46
  MANIFEST.in a6a50ae327936d231329c0527021f271eaec64ea
  Makefile 47f382dea3aa1d5c35f344efb1eca6ed6a390e81
  README.jdd db0fce30440eb29bcf206275943841243fcba939
- README.md c89ea490b2a4c1d1e58f2a4e520fa16d0c4daf63
- TODO 95b5f850f7cec47c6b6338feeed78501614a0529
- bkp2U 669ee0a73ba9472a746c84d66f7b3b96891920ef
- checkCoverage 2670982295f78dd5c864b1bb2e82f89ee0ebe9ed
- countem 8f538bd428466266754ebffcc88162270acf16c8
+ README.md 224b723ce53d879b85d35111d092289c269fac3c
+ TODO c8dda06aabb82537b738f4d21e5bc68564e7cf9b
+ bkp2U 0338b87491dd0fceef204250711043b983319bfd
+ checkCoverage 9355db56cf9bc5b22d348e5d00cdaf7063e76039
+ countem fdc99f54dde8cb9707a5cd46e8908319e12c03b5
  dist
   xlReg_py-0.1.0.tar.gz fdbc1d32aae7d68de46165584f5e6e6b98d02dd2
   xlReg_py-0.1.1.tar.gz 764c887e4f92fb2cfa852051f04d30192adfd0a2
@@ -52,6 +52,7 @@ xlreg_py
   xlreg_py-0.1.18.tar.gz 3b57edf66682d72f373408f477ced7ad95630963
   xlreg_py-0.1.19.tar.gz 164915720de179df2caf642e4cb38e3eafd4c6eb
   xlreg_py-0.1.20.tar.gz 6d5a3b31c2b2ebaf61e469eb0552225dcc6e2235
+  xlreg_py-0.1.21.tar.gz d4fbf3a4322d0543b680b6708768b96a767d9502
  doPyLint 460fa369d08c7777b6d31c89e26eeccafd7b0e8a
  ghpDoc
   TODO c50d5bfa3d7491ad424c1547d63f01d810868c2c
@@ -68,7 +69,7 @@ xlreg_py
    simple-cluster.jpg 6b223ddd25937c1ef75ef328f36fc3436f10bd62
    xl-registration.jpg 15cbf951f9db173a45428b32dcec87aca83bbdf0
    xlattice-2014.jpg f185aaad06db71acd9454f31054c62c56d36f37f
-  index.md 04702455d69dda6b4f6ee1f213bcbda86562be38
+  index.md b2b92a70d0ef98c49df5855c0ec138870a8cfd19
  installit daa8f3379d51a553f1b24e6c84e7b0e76acc888b
  make_test_data.py 0ca5f9bf3bda2622a943dca2030d4e99ad15577e
  p.proto 6c50df9c67a7adf8af8ff8435d5eeab311962867
@@ -111,11 +112,11 @@ xlreg_py
  test_reg_cred.py 3819829b0352ec78990d60b971969744f167e528
  update.test_dirs 9e6fbe21794ab606944867afd922f3ff16d7e753
  xlreg
-  __init__.py 9ec1e175b6bd8fcf435d6a0cc65fbef5f163f2ea
+  __init__.py 5be8eb87307491253fb0269cb29f7d624fdec74e
   errors.py 8a4c46cdebd4cf371f318bdfbe3373fc64e8bbd7
   p_pb2.py 5b81efae704ce191879fee9cc55e4373c67bcd61
   reg_cred.py 465409de57be5c0a748a36fd7489e838841e2e0d
  xlreg_client.py 00c88ad57af5f771c16587d3ceb5c61daaaf8d4f
 # END CONTENT #
 
-Y0GBU4nHtUbraNALsBT1bM7yHLqS1UruMAFJPvH+dHkeDN3SMUa4Zhjg413u38j/sA5azcrR1PIScqQjTz+PJ830BIr/LV1OJs/OGon9SngyZxFK2/+iRS6LQJzsjN0I34VUj5n8h/SSiNtO3gvZPE+VJtdecU1uzk8n2oyRC0IHHmvflNe2ASlDwalFIpg5uIoSpuHmSQoX+puaWqoJcVQKTBd2KQ7bE2FrWcftGr5hSNn8ieFQKV2sexLJUshsLuLGpwkl5N0DvcDNAC0NPzTZgcwsgMcFqRBRpK7QBb+YJDLP4jv1bwB3wwYUPvgoULitLKUBWCsC4WaswSLpGQ==
+G0NRm5bdyj+9Ud8Ta1rPwD42NyY1SdlpD+2t/MgzTFyBQsEXB10DdeAU1MnJLh3DFU2SKWhUqUBA7cFWgPLsRTfWrm8hSRAsHs4noWcPv0TceRoJk0aLeYB2Lr86D/DKv5v98Gc5SHi3BbH1ifRBxmfZvdkKUhMNNnkdJOL32z9JDshFULf9moLoAZXvc1SFaC6TliI319A/EpF4JT1vn2T/iiT7PJIqbpoxe98aMoy/8zgeQS5IgVmbAq3RxdwuavX0POgoLfAGyATeMLwFL/1FJTZQ/NBessykccSwUScwcav9ZKLmInfgfqL8vNCOZ/1fON65dMMNldcDtYNmgg==

@@ -1,5 +1,8 @@
 xlreg_py/CHANGES
 
+v0.1.21
+    2016-11-12
+        * update web page for xlReg 1.9.20                          SLOC 1665
 v0.1.20
     2016-10-02
         * add pylint, coverage                                      SLOC 1545
@@ -72,6 +75,7 @@ v0.1.1
 v0.1.0
     2014-01-26
         * DecimalVersion and test                                   SLOC  461
+
 
 
 
