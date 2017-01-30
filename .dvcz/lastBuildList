@@ -1,27 +1,27 @@
------BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoM2sBgX0ChP2JriXkOxS
-e2FjHYVzBGkNvgf0vIAa7FFYZi2pWmxBAVXgl3tTiB3quqqud/MbKqdejM6gkKBK
-v8f7hlcBQLD6BLIZ/RRfhIElc+WlDVfKSnBTB4va5qTQAgvuq5i8+oMj7G8WEy5d
-7cYucWyUJMtHvT4pCDtBWeeqQ62tByWjv34Ud/+A9Mjf0leiWxM3tiToVsqIKb4s
-zPjEShF9rvcNa9XEy1dKpcDz9Szbm2SlxOgM83fDDGtOq4SSCSqndtxrOvXXPB57
-H1mJV/FmerbXRPm5ERJVNIxtLk7Gr2Ce45FVlWyJGMhpfVlKkkk+bRQ02OFfazJI
-GQIDAQAB
------END PUBLIC KEY-----
-xlreg_py v0.1.21
-2016-11-13 04:50:13
+-----BEGIN RSA PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl9xsFHvzEsi3G8q8dUOM
+3v4WLJefw8Kv0hHBGFPFQF1WRPldwPGNdVKql8zcO52KO4hzFNHNSBCGgH8cbtAk
+mLWB78ackABFJzhY9TEbPkLnoMXJHAXQpZK/JAudSixuAZIXYtIyBWfgLaHjurAT
+6+DBgC1oQXNrfT4Fvpe1QbHMejjGb41v/r/8ck/dWDr1YzcRFIbiJPj+sQq+X0Uy
+Giaje1YAJPNVBt3dlOA5lhBp4GpSYBskJ9UR2Zyt3lgAGK3dEwxYETLMh9VWEV8i
+k2lyCIE/V/CDb9eVDYQgYSJYrnQ/JAPST7NbcY8aI+/0l7QVBhLBpmOCvmS6ofvz
+/QIDAQAB
+-----END RSA PUBLIC KEY-----
+xlreg_py v0.1.22
+2017-01-30 01:49:11
 # BEGIN CONTENT #
 xlreg_py
  .dvcz
-  builds ca102231fe74a830853e2e6a7330c726216b87ff
+  builds ad09a6f6abc7f903717e190d61d29bd631e1839d
   copyright 803f3e50518123ef8a08d34f2238e89b62d0c9a2
-  lastBuildList 6bdf88e308ee38a825f8d526c3f8f8140622f909
+  lastBuildList 68d2432932f017b43a0ad6a46bc1c7a7e4523699
   license 5977a55c75bb4612004451a56b0b4c22d9d3311d
   projCfg 4c1747a4e77635552817ebea30a9c5162b7e557a
   projCfg.local ea7140058c6760877105620d57822cdfdc2ab316
-  version 8b17a815a8cc5f088df1fb81894f95f5d63eac9c
- .gitignore ed03959998e066d859db16732a83aa8627994b3f
+  version a56e77ccb1d33474b4dd2e578e25e77c90e0103d
+ .gitignore a29a464d1f999a8323f7cafe43fe2587b321f818
  .gitignore.local 701e71ad917b19e7f6b7fd4bdc542180e9d977a7
- CHANGES 54ed3559d2f68b43d52bf5fbc9260202331f50da
+ CHANGES d344dfaad8ffd74c8f75a04e3119ee7f1561ebe2
  LICENSE-MIT.md d1cecfadc47b23486f6bc8a863cfdde348c3eb46
  MANIFEST.in a6a50ae327936d231329c0527021f271eaec64ea
  Makefile 47f382dea3aa1d5c35f344efb1eca6ed6a390e81
@@ -53,6 +53,7 @@ xlreg_py
   xlreg_py-0.1.19.tar.gz 164915720de179df2caf642e4cb38e3eafd4c6eb
   xlreg_py-0.1.20.tar.gz 6d5a3b31c2b2ebaf61e469eb0552225dcc6e2235
   xlreg_py-0.1.21.tar.gz d4fbf3a4322d0543b680b6708768b96a767d9502
+  xlreg_py-0.1.22.tar.gz 091dc4f547de7964ea93ecfc3eb88f56a29b6c69
  doPyLint 460fa369d08c7777b6d31c89e26eeccafd7b0e8a
  ghpDoc
   TODO c50d5bfa3d7491ad424c1547d63f01d810868c2c
@@ -71,7 +72,7 @@ xlreg_py
    xlattice-2014.jpg f185aaad06db71acd9454f31054c62c56d36f37f
   index.md b2b92a70d0ef98c49df5855c0ec138870a8cfd19
  installit daa8f3379d51a553f1b24e6c84e7b0e76acc888b
- make_test_data.py 0ca5f9bf3bda2622a943dca2030d4e99ad15577e
+ make_test_data.py 3059d761d0131c0461537214d28f68d5f03ee050
  p.proto 6c50df9c67a7adf8af8ff8435d5eeab311962867
  portland.regCred.dat 68ff2add4724b54bf6908e3e88d8bea2787dbc15
  pylintrc ffb69d7625dd33c10ceba1c5e8f7eee523980b78
@@ -108,15 +109,15 @@ xlreg_py
    sk-rsa.pub 658d032d300bca19ac23eb90337471d4cdeee6e3
    version.str 1b390cd54a0c0d4f27fa7adf23e3c45536e9f37c
  test_data_test_template 8407450724e103cc445e817e2eb80186f62cc565
- test_pkcs7.py db97ba52d583d01dba20a82038772e25d9b8fec3
- test_reg_cred.py 3819829b0352ec78990d60b971969744f167e528
+ test_pkcs7.py aadfa150271b493fbc85852c279de590d8f8ceb0
+ test_reg_cred.py fc250fd9284049761021b1c9d81e5511461567eb
  update.test_dirs 9e6fbe21794ab606944867afd922f3ff16d7e753
  xlreg
-  __init__.py 5be8eb87307491253fb0269cb29f7d624fdec74e
+  __init__.py 5a56e8550f55032efe8edbc9a22fed4d306f414f
   errors.py 8a4c46cdebd4cf371f318bdfbe3373fc64e8bbd7
   p_pb2.py 5b81efae704ce191879fee9cc55e4373c67bcd61
-  reg_cred.py 465409de57be5c0a748a36fd7489e838841e2e0d
+  reg_cred.py fee42ceca0827a919d39753d039fbd6fe688886b
  xlreg_client.py 00c88ad57af5f771c16587d3ceb5c61daaaf8d4f
 # END CONTENT #
 
-G0NRm5bdyj+9Ud8Ta1rPwD42NyY1SdlpD+2t/MgzTFyBQsEXB10DdeAU1MnJLh3DFU2SKWhUqUBA7cFWgPLsRTfWrm8hSRAsHs4noWcPv0TceRoJk0aLeYB2Lr86D/DKv5v98Gc5SHi3BbH1ifRBxmfZvdkKUhMNNnkdJOL32z9JDshFULf9moLoAZXvc1SFaC6TliI319A/EpF4JT1vn2T/iiT7PJIqbpoxe98aMoy/8zgeQS5IgVmbAq3RxdwuavX0POgoLfAGyATeMLwFL/1FJTZQ/NBessykccSwUScwcav9ZKLmInfgfqL8vNCOZ/1fON65dMMNldcDtYNmgg==
+XrNZ4EKi1fj74xpG/oo0lsbJiCexrxv92ozH7JbXj048BYbLTPlAyeh8LKPyvrgqurNCiIiKzpKvjmJwS1KtG9y2UN52yTEG4NuH+mzfkUwo4KDwY7tkZNcHdBeSzHjJmkAta9V0DNjm/4ImS3Ozj5Nkh7ncocbe4jrOdcCOhbO1H5pac4x+pjBtl/cNsjpHbGLM9FoivahiT3UpbgZ4YXvjljZHztuOWGkiE3i4sD/+3Fb5K4jNUr7EOw9qKDVh4SHHsVKiblTOJsog2GJ7YP+gMjjQg6q7nPVsKMDfm+pwRgIUG582NeGPZBrU/R539/cAkBDSxyHZPv4dcYRllQ==
