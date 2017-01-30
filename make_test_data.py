@@ -147,7 +147,7 @@ def make_hello_reply_data(rng):
 
     # generate low-quality random data ==============================
     hello_data = bytearray(HELLO_DATA_LEN - VERSION_LEN)
-    rng.nextBytes(hello_data)      # that many random bytes
+    rng.next_bytes(hello_data)      # that many random bytes
 
     # append version number -------------------------------
     dv1 = dv.DecimalVersion(1, 2, 3, 4)
@@ -198,7 +198,7 @@ def make_hello_reply_data(rng):
 
     # generate more low-quality random data =========================
     replyData = bytearray(HELLO_DATA_LEN - VERSION_LEN)
-    rng.nextBytes(replyData)      # that many random bytes
+    rng.next_bytes(replyData)      # that many random bytes
 
     # append version number -------------------------------
     dv2 = dv.DecimalVersion(5, 6, 7, 8)

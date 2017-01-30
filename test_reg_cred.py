@@ -11,7 +11,7 @@ import unittest
 from Crypto.PublicKey import RSA
 
 from xlattice.util import DecimalVersion
-from xlReg import regCred as rc
+from xlreg import reg_cred as rc
 import rnglib as xr
 
 KEY_BITS = 1024
@@ -39,13 +39,13 @@ class TestRegCred(unittest.TestCase):
     def _build_id(self, rng):
         """ construct an SHA1-like NodeID """
         data = self._build_data(SHA1_BYTES)
-        rng.nextBytes(data)
+        rng.next_bytes(data)
         return data
 
     def test_empty(self):
         """ Verify that the regCred object is not empty. """
         try:
-            rc1 = rc.parseRegCred(None)
+            rc1 = rc.parse_reg_cred(None)
             self.fail("parsed nil string")
         except RuntimeError:
             pass
@@ -113,31 +113,31 @@ class TestRegCred(unittest.TestCase):
         sk_pub = sk_priv.publickey()
         sk_ = sk_pub.exportKey(format='OpenSSH')
 
-        ep_count = 1 + rng.nextInt16(3)  # so from 1 to 3
+        ep_count = 1 + rng.next_int16(3)  # so from 1 to 3
         end_points = []
         for ndx in range(ep_count):
-            port = 1000 + rng.nextInt16(64000)    # values don't much matter
+            port = 1000 + rng.next_int16(64000)    # values don't much matter
             ep_ = "TcpEndPoint: 127.0.0.1:%d" % port
             end_points.append(ep_)
 
-        dv1 = DecimalVersion(rng.nextByte(), rng.nextByte(),
-                             rng.nextByte(), rng.nextByte())
+        dv1 = DecimalVersion(rng.next_byte(), rng.next_byte(),
+                             rng.next_byte(), rng.next_byte())
 
         #                name, id_,  ck_, sk_, end_points, version
         rc1 = rc.RegCred(name, id_, ck_, sk_, end_points, dv1)
 
-        self.assertEqual(rc1.getName(), name)
-        self.assertEqual(rc1.getID(), id_)
-        self.assertEqual(rc1.getCommsPubKey(), ck_)
-        self.assertEqual(rc1.getSigPubKey(), sk_)
-        eps1 = rc1.getEndPoints()
+        self.assertEqual(rc1.get_name(), name)
+        self.assertEqual(rc1.get_id(), id_)
+        self.assertEqual(rc1.get_comms_pub_key(), ck_)
+        self.assertEqual(rc1.get_sig_pub_key(), sk_)
+        eps1 = rc1.get_end_points()
         self.assertEqual(len(end_points), len(eps1))
         for ndx, ep_ in enumerate(eps1):
             self.assertEqual(ep_, eps1[ndx])
 
         # ye olde round-trip
         str1 = rc1.__str__()
-        rc2 = rc.parseRegCred(str1)
+        rc2 = rc.parse_reg_cred(str1)
         str2 = rc2.__str__()
         self.assertEqual(str2, str1)
 
