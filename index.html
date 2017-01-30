@@ -9,7 +9,8 @@
 </head>
 <body>
 <div class="content">
-<h1 class="libTop">xlreg_py</h1>
+<h1>
+<a id="user-content-xlreg_py" class="anchor" href="#xlreg_py" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>xlreg_py</h1>
 
 <p>The Python client for the xlReg cluster registry.</p>
 
@@ -29,9 +30,10 @@ RSA keys used to set up
 encrypted communications
 between members of the cluster and between cluster members and clients.</p>
 
-<h2>The xlReg Service</h2>
+<h2>
+<a id="user-content-the-xlreg-service" class="anchor" href="#the-xlreg-service" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The xlReg Service</h2>
 
-<p><img src="img/xl-registration.jpg" alt="xl-registration" style="float:left" title="members registering with xlReg"></p>
+<p><a href="img/xl-registration.jpg" target="_blank"><img src="img/xl-registration.jpg" alt="xl-registration" title="members registering with xlReg" style="max-width:100%;"></a></p>
 
 <p><a href="http://jddixon.github.io/xlReg_go">xlReg</a>
 is a service which provides its clients with unique nodeIDs and allows them
@@ -66,20 +68,20 @@ them to persistent store.</p>
 
 <p>`## Registration</p>
 
-<p><img src="img/simple-cluster.jpg" alt="simple-cluster" style="float:right" title="small cluster, no clients"></p>
+<p><a href="img/simple-cluster.jpg" target="_blank"><img src="img/simple-cluster.jpg" alt="simple-cluster" title="small cluster, no clients" style="max-width:100%;"></a></p>
 
 <p>A booting xlReg client establishes an encrypted connection to an xlReg server
 (by default this is xlreg.xlattice.net).
-If this is the client&#39;s first conversation with the xlReg server, the client
+If this is the client's first conversation with the xlReg server, the client
 provides the server with configuration information including its RSA public
 keys.  (The client does <strong>not</strong> register its secret RSA <strong>private</strong> keys.)
-The configuration information is signed with the applicant&#39;s private
-*sig&quot; key.  The server uses the
-client&#39;s RSA public key, provided as part of the configuration information, to
-verify the client&#39;s digital signature on the configuration data.  This proves
+The configuration information is signed with the applicant's private
+*sig" key.  The server uses the
+client's RSA public key, provided as part of the configuration information, to
+verify the client's digital signature on the configuration data.  This proves
 that the configuration information is intact and that the applicant has the
 private key corresponding to the public key.  In other words, the server has
-in a certain sense confirmed the applicant&#39;s identity.  Having done this,
+in a certain sense confirmed the applicant's identity.  Having done this,
 the xlReg server issues the client with a unique node ID, a 20-byte value,
 completing client registration.</p>
 
@@ -94,7 +96,8 @@ completing client registration.</p>
 <p>The third option is used, for example, by nodes intending to become clients
 of an existing cluster.</p>
 
-<h2>Acquiring Configuration Data</h2>
+<h2>
+<a id="user-content-acquiring-configuration-data" class="anchor" href="#acquiring-configuration-data" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Acquiring Configuration Data</h2>
 
 <p>After a new member has joined a cluster the server provides it
 with cluster configuration data.  This includes</p>
@@ -105,16 +108,18 @@ with cluster configuration data.  This includes</p>
 <li>the cluster size, the  maximum number of cluster members</li>
 </ul>
 
-<p>It also includes for each current cluster member the member&#39;s</p>
+<p>It also includes for each current cluster member the member's</p>
 
 <ul>
 <li>nodeID,</li>
 <li>IP address(es),</li>
-<li><strong>sig</strong> RSA public key, and</li>
-<li><strong>comms</strong> RSA public key</li>
+<li>
+<strong>sig</strong> RSA public key, and</li>
+<li>
+<strong>comms</strong> RSA public key</li>
 </ul>
 
-<p><img src="img/cluster-with-clients.jpg" alt="cluster-with-clients" style="float:left" title="cluster with clients"></p>
+<p><a href="img/cluster-with-clients.jpg" target="_blank"><img src="img/cluster-with-clients.jpg" alt="cluster-with-clients" title="cluster with clients" style="max-width:100%;"></a></p>
 
 <p>The new cluster member can then use this information to communicate with
 other members.  Cluster members need no further assistance from the
@@ -136,7 +141,8 @@ is available at the <a href="http://www.xlattice.org">2003-2006 Java XLattice we
 <a href="http://jddixon.github.io/xlReg_go/xlReg_protocol.html">xlReg protocol</a>.
 An xlReg server has been in test for several months.</p>
 
-<h2>Public Development Server</h2>
+<h2>
+<a id="user-content-public-development-server" class="anchor" href="#public-development-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Public Development Server</h2>
 
 <p>There is currently an xlReg server running on xlreg.xlattice.org:56789,
 with the public keys shown in the registry credentials below.</p>
@@ -157,33 +163,37 @@ with the public keys shown in the registry credentials below.</p>
 
 <p>The IP address in the reg credentials above is of course that of xlreg.xlattice.org.</p>
 
-<h2>Server Implementation</h2>
+<h2>
+<a id="user-content-server-implementation" class="anchor" href="#server-implementation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Server Implementation</h2>
 
 <p>The xlReg server and its supporting libraries are written in
 <a href="http://golang.org">the Go programming language</a>, a high-performance
 systems programming language incorporating certain features of
-<a href="http://en.wikipedia.org/wiki/Tony_Hoare">Tony Hoare</a>&#39;s
+<a href="http://en.wikipedia.org/wiki/Tony_Hoare">Tony Hoare</a>'s
 revolutionary <strong>CSP</strong>,
 <a href="http://www.usingcsp.com">Communicating Sequential Processes</a>.</p>
 
-<p>Google&#39;s Go language is a stable product.  It has been available for
+<p>Google's Go language is a stable product.  It has been available for
 several years and the compiler is widely acknowledged to be very fast
 and to generate fast, compact code.  The Go language itself --
 the compiler and its libraries -- is free and open source.</p>
 
-<h2>Server Source Code</h2>
+<h2>
+<a id="user-content-server-source-code" class="anchor" href="#server-source-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Server Source Code</h2>
 
 <p>Software developers can currently obtain the xlReg server source code at
-<a href="https://github.com/jddixon/xlReg_go/">xlReg_go&#39;s Github project page</a>
+<a href="https://github.com/jddixon/xlReg_go/">xlReg_go's Github project page</a>
 so that if you are impatient to begin using xlReg you can build and operate
 your own server.</p>
 
-<h2>Client Source Code</h2>
+<h2>
+<a id="user-content-client-source-code" class="anchor" href="#client-source-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Client Source Code</h2>
 
 <p>This is best obtained through
-<a href="https://github.com/jddixon/xlreg_py/">this client&#39;s Github project page</a>.</p>
+<a href="https://github.com/jddixon/xlreg_py/">this client's Github project page</a>.</p>
 
-<h2>Project Status</h2>
+<h2>
+<a id="user-content-project-status" class="anchor" href="#project-status" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project Status</h2>
 
 <p>The xlReg server is currently a good beta: it is reasonably reliable and
 there are no known serious bugs.</p>
