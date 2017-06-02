@@ -1,11 +1,14 @@
 xlreg_py/CHANGES
 
+v0.1.23
+    2017-06-02
+        * drop dist/* from repos; plus minor edits                  SLOC 1540
 v0.1.22
     2017-01-29
         * update to pycrypto 2.7.1 alpha (because of internal
             errors in 2.6.1)
         * introduced RegCredError
-        * corrected test_reg_cred.py and parse_reg_cred()           SLOC 1508:1
+        * corrected test_reg_cred.py and parse_reg_cred()           SLOC 1508
 v0.1.21
     2016-11-12
         * update web page for xlReg 1.9.20                          SLOC 1665
@@ -81,6 +84,7 @@ v0.1.1
 v0.1.0
     2014-01-26
         * DecimalVersion and test                                   SLOC  461
+
 
 
 
