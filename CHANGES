@@ -1,5 +1,8 @@
 xlreg_py/CHANGES
 
+v0.1.24
+    2017-07-05
+        * restructure for pytest, add MANIFEST.in                   SLOC 1528
 v0.1.23
     2017-06-02
         * drop dist/* from repos; plus minor edits                  SLOC 1540
@@ -84,6 +87,7 @@ v0.1.1
 v0.1.0
     2014-01-26
         * DecimalVersion and test                                   SLOC  461
+
 
 
 

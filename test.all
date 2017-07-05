@@ -4,8 +4,7 @@ if [ ! -z "${DEV_BASE// }" ]
 then
   cd $DEV_BASE/py/xlreg_py
   
-  ./test_pkcs7.py
-  ./test_reg_cred.py
+  pytest
   
 else
   echo "DEV_BASE is not defined"
