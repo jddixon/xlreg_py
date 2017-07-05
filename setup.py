@@ -6,7 +6,7 @@
 import re
 from distutils.core import setup
 __version__ = re.search(r"__version__\s*=\s*'(.*)'",
-                        open('xlreg/__init__.py').read()).group(1)
+                        open('src/xlreg/__init__.py').read()).group(1)
 
 # see http://docs.python.org/distutils/setupscript.html
 
@@ -21,10 +21,10 @@ setup(name='xlreg_py',
       #
       # ftlog is not a package because it doesn't have its own
       # subdir and __init__.py
-      packages=['xlreg', ],
+      packages=['src/xlreg', ],
       #
       # following could be in scripts/ subdir; SQuote
-      scripts=['xlreg_client.py'],
+      scripts=['src/xlreg_client.py'],
       description='Python 3 client for xlReg server',
       url='https://jddixon/github.io/xlreg_py',
       classifiers=[

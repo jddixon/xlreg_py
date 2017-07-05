@@ -2,7 +2,7 @@
 
 txt:std:LICENSE-MIT.md
 
-dir:pkg:xlReg
+dir:pkg:xlreg
 dir:clr:tmp
 
 code:std:.dvcz/projCfg.local

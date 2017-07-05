@@ -141,5 +141,6 @@ class TestRegCred(unittest.TestCase):
         str2 = rc2.__str__()
         self.assertEqual(str2, str1)
 
+
 if __name__ == '__main__':
     unittest.main()
