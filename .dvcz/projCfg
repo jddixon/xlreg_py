@@ -2,8 +2,8 @@
 project:xlreg_py
 package:xlreg
 mainlang:py
-version:0.1.23
-versionDate:2017-06-02
+version:0.1.24
+versionDate:2017-07-05
 :?dirs?:
 dir:std:ghpDoc
 dir:std:dist
@@ -48,6 +48,7 @@ bash:std:doPyLint
 bash:std:checkCoverage
 bash:std:bkp2u
 bash:local:update.test_dirs
+py:std:setup.cfg
 py:std:setup.py
 py:local:make_test_data.py
 dunno:local:test_data_test_template

@@ -2,8 +2,8 @@
 
 """ xlReg client package for python. """
 
-__version__ = '0.1.24'
-__version_date__ = '2017-07-05'
+__version__ = '0.1.25'
+__version_date__ = '2017-08-08'
 
 __all__ = ['__version__', '__version_date__',
            'AES_BLOCK_SIZE', ]
