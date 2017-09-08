@@ -1,0 +1,3 @@
+# xlreg_py/requirements.txt
+protobuf
+
