@@ -88,7 +88,7 @@ class RegCred(object):
         strings.append('    Name: %s' % self._name)
 
         # uncommenting this yields 'odd length string' error
-        #strings.append("    ID: %s" % binascii.b2a_hex(self._id))
+        # strings.append("    ID: %s" % binascii.b2a_hex(self._id))
         strings.append("    ID: %s" % dump_byte_array(self._id))
 
         strings.append(
@@ -130,7 +130,9 @@ def parse_reg_cred(line):
     line_count = len(lines)
 
     def skip_line_and_trim(ndx):
-        """Return the first string containing something other than whitespace"""
+        """
+        Return the first string containing something other than whitespace.
+        """
         if ndx >= line_count:
             raise RegCredError('no next line')
         while ndx < line_count:
@@ -144,7 +146,7 @@ def parse_reg_cred(line):
     ndx, line = skip_line_and_trim(ndx)
     if line != 'regCred {':
         raise RegCredError(
-            "expected 'regCred {' but found '%s': not a well-formed regCred" % line)
+            "expected 'regCred {' but found '%s': not well-formed" % line)
 
     ndx, line = skip_line_and_trim(ndx)
     parts = line.split(': ')

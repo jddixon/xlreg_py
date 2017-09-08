@@ -45,7 +45,7 @@ class TestRegCred(unittest.TestCase):
     def test_empty(self):
         """ Verify that the regCred object is not empty. """
         try:
-            rc1 = rc.parse_reg_cred(None)
+            rc.parse_reg_cred(None)
             self.fail("parsed nil string")
         except RuntimeError:
             pass

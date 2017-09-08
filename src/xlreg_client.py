@@ -4,7 +4,7 @@
 """ Module for python xlReg client. """
 
 import sys
-import time
+# import time
 from argparse import ArgumentParser
 
 # from xlattice.util import DecimalVersion, parseDecimalVersion
@@ -22,10 +22,8 @@ def main():
     """ Entry point for xlReg client program. """
 
     # program defaults ----------------------------------------------
-    today = time.localtime(time.time())    # struct time
-    new_date = '%4d-%02d-%02d' % (today.tm_year,
-                                  today.tm_mon,
-                                  today.tm_mday)
+    # today = time.localtime(time.time())    # struct time
+    # new_date = '%4d-%02d-%02d' % (today.tm_year, today.tm_mon, today.tm_mday)
 
     # parse the command line ----------------------------------------
     parser = ArgumentParser(description='example xlReg client')

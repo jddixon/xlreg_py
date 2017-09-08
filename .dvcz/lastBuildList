@@ -7,30 +7,34 @@ Giaje1YAJPNVBt3dlOA5lhBp4GpSYBskJ9UR2Zyt3lgAGK3dEwxYETLMh9VWEV8i
 k2lyCIE/V/CDb9eVDYQgYSJYrnQ/JAPST7NbcY8aI+/0l7QVBhLBpmOCvmS6ofvz
 /QIDAQAB
 -----END PUBLIC KEY-----
-xlreg_py v0.1.25
-2017-08-08 19:29:58
+xlreg_py v0.1.26
+2017-09-08 19:02:06
 # BEGIN CONTENT #
 xlreg_py
+ .cache
+  v
+   cache
+    lastfailed 94556ffac7fb52359e2f8d8625592e2c45c0fc2b
  .dvcz
-  builds ef340987062a95421307b709d6cef53c1dd168d2
+  builds 14e190105d0f1359addc28f6b7aaa65589a2b7ec
   copyright 4d8d885e40d66a840aa68d7d17b7007f41270444
-  lastBuildList e7126e6cc4138ad326f4d4c222402b5b787dce92
+  lastBuildList d684332c783e397e6c49acdbfd066f4629faa364
   license 5977a55c75bb4612004451a56b0b4c22d9d3311d
-  projCfg c0ea5887199c21970a382540261fe0d3268dadee
+  projCfg 6b897822c8e0c7ff26c27d62ac2a6a39aa3f899c
   projCfg.local 0595bf63d7959aafe29f042e4719d9580feb1ea9
-  version 6b70bdca580864e982c83b4d53571df00f6cd467
- .gitignore 9b81ca41b8f8cdad84069782f69745729f2dd932
+  version b08c0a9af9b625b76334848377e197f9e1202b0b
+ .gitignore f588928d66e053d08e0c1d824b6874a244573090
  .gitignore.local 701e71ad917b19e7f6b7fd4bdc542180e9d977a7
- CHANGES 93da99577bb5035bdd5caceca9807ab2ecad4c1f
+ CHANGES 491a989bfaf5a4eeb29fabb9e46cea337ffa3cff
  LICENSE-MIT.md dbe8833d7e1124b4e47613ba1e39a66ccc03dd80
- MANIFEST.in 4adf906b2cd5a5e68a3d78a36d9c643627646b7e
+ MANIFEST.in ee87ecf6928c0c4c69376734eba9cf532ce748b1
  Makefile 47f382dea3aa1d5c35f344efb1eca6ed6a390e81
  README.jdd db0fce30440eb29bcf206275943841243fcba939
  README.md 224b723ce53d879b85d35111d092289c269fac3c
  TODO c8dda06aabb82537b738f4d21e5bc68564e7cf9b
  bkp2U 83eb83c5ab8af4688d58b2919e26073ce4e0321d
  checkCoverage 1b7b8d9e183d405a667cc79a619bf7aca7ffd66a
- countem 4306212b6a7e680206f0e43fc31208e91b64d6ed
+ countem 6129baea200a1883fec16222622c2789218ffc0d
  doPyLint 31321ad99eb3b9ac0928a68c29a8b5b88c9472fb
  ghpDoc
   TODO c50d5bfa3d7491ad424c1547d63f01d810868c2c
@@ -53,14 +57,15 @@ xlreg_py
  p.proto 6c50df9c67a7adf8af8ff8435d5eeab311962867
  portland.regCred.dat 68ff2add4724b54bf6908e3e88d8bea2787dbc15
  pylintrc ffb69d7625dd33c10ceba1c5e8f7eee523980b78
- setup.py 5ad126210e04d792247405627cd60c4b8a9259c6
+ requirements.txt 959ef41fdd2bc384ec6eff85e0ba75e573ec0a4a
+ setup.py b4a4203108a9aa4314ad26404b987b06db535e21
  src
   xlreg
-   __init__.py 78913c279e77679b69cafa73b2eee6751e359b50
+   __init__.py db663f1f84d890229940cdbbe4f84b41cd03d538
    errors.py 8a4c46cdebd4cf371f318bdfbe3373fc64e8bbd7
-   p_pb2.py 5b81efae704ce191879fee9cc55e4373c67bcd61
-   reg_cred.py fee42ceca0827a919d39753d039fbd6fe688886b
-  xlreg_client.py e296949a6f21bfda5de69430b52362a35d6a118d
+   p_pb2.py be1dfa21fe30aa86a18d5172a8b6f0b55b9a8981
+   reg_cred.py bf3c6e091dc637497d67cd139b6a27de94a706e3
+  xlreg_client.py c8275e71e2610543b0fc30bc6ebb1d1a3c029def
  stockton.regCred.dat 5ceba4ce39a1c647d66603f2eee245e7bbe24348
  styleit b01b1bfd1939d522941473ffaf8feb492fc5aacd
  test.all f3e55be10329a713aba57d4a02ba6427925e2e11
@@ -93,10 +98,12 @@ xlreg_py
    sk-rsa.pub 658d032d300bca19ac23eb90337471d4cdeee6e3
    version.str 1b390cd54a0c0d4f27fa7adf23e3c45536e9f37c
  test_data_test_template 8407450724e103cc445e817e2eb80186f62cc565
+ test_requirements.txt 9cba0d4b8afaf2956099957c4c190079a9cc64a1
  tests
   test_pkcs7.py aadfa150271b493fbc85852c279de590d8f8ceb0
-  test_reg_cred.py 2f86f9c3ec06be3dc15d9e2bad67c3c21748d75e
+  test_reg_cred.py 0f23fbce7e7fae9607267434a2977a3cfe655bd1
+ tox.ini 07b5875dc551314d11f89b2b87d57d4b20053bbf
  update.test_dirs 9e6fbe21794ab606944867afd922f3ff16d7e753
 # END CONTENT #
 
-f/qEkz/EpGt8efciTsGbQxnmrBccGEdQxs+YXFA9nGRgxip2K7TlIUYdGCy2TGS4Sf0Ct0Qc1LD7bjHA/ShLLYmqLO2yu2Jnjajq0E/9TOR/56oanZ6/Ca0ZtJcGt+dbZYcKeQTCX1IM0iReqsdoOa3TOIGcxN278tjMvxuC7d1tuH8fQBlX3IQ8838rM+VfeSol3bnqhq8I3fvt8Ddyimbwa5vxYlXESbYq+lij4MjSRfwBONkOzaD5LfTq16pKtqZazD+SEy3duXYo82Z1omcQDoW8qLPGW93v9ppSHCkSr1cMZ1NkQ7mwtd9OD2KqEqI/lMPm0P437Gf1Mk/3jA==
+QVmNAs9bZCBphgnwoP5xR8uJi5e/i3ra0+lve2Dx3Qu8kjgXLNY33z+MLgH3GPoOePhE92I6dc8sO1/W1MicnH9TMq4HRJ1deDPjaazj8tKzSIzqycg9dvuCvzL/YvFf190KhPvdEcoJ2BmO2Fx2RJrLyly543mRS5u87IcfjCv/HAq/qb1xUEq7guBHC2VRhlHeRxVJ+DrTVEeOLA8JnQBmXovLyzcNN2MX90Z9z6lp7LV6cE+sMXissxSvRmxvAZR3P4+EmsbXZq5iFOfCN+OObxmR/fyzRuWlB1jlE4RK/TY0OfGJSZCVr497vpZ3kefKePmVhdjOQe5+iw61MA==

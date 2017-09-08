@@ -3,13 +3,14 @@
 from google.protobuf import descriptor
 from google.protobuf import message
 from google.protobuf import reflection
-from google.protobuf import descriptor_pb2
+# from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 
 DESCRIPTOR = descriptor.FileDescriptor(
     name='p.proto',
     package='reg',
+    # pylint: disable=line-too-long
     serialized_pb='\n\x07p.proto\x12\x03reg\"\xce\x05\n\x08XLRegMsg\x12\x1d\n\x02Op\x18\x01 \x01(\x0e\x32\x11.reg.XLRegMsg.Tag\x12\r\n\x05\x41\x65sIV\x18\x02 \x01(\x0c\x12\x0e\n\x06\x41\x65sKey\x18\x03 \x01(\x0c\x12\r\n\x05Salt1\x18\x04 \x01(\x0c\x12\r\n\x05Salt2\x18\x05 \x01(\x0c\x12\x0f\n\x07Version\x18\x06 \x01(\r\x12\x12\n\nClientName\x18\x08 \x01(\t\x12\x10\n\x08\x43lientID\x18\t \x01(\x0c\x12\x13\n\x0b\x43lientAttrs\x18\n \x01(\x04\x12(\n\x0b\x43lientSpecs\x18\x0b \x01(\x0b\x32\x13.reg.XLRegMsg.Token\x12\x11\n\tClusterID\x18\r \x01(\x0c\x12\x13\n\x0b\x43lusterName\x18\x0e \x01(\t\x12\x13\n\x0b\x43lusterSize\x18\x0f \x01(\r\x12\x14\n\x0c\x43lusterAttrs\x18\x10 \x01(\x04\x12\x15\n\rEndPointCount\x18\x11 \x01(\r\x12\r\n\x05Which\x18\x14 \x01(\x04\x12#\n\x06Tokens\x18\x15 \x03(\x0b\x32\x13.reg.XLRegMsg.Token\x12\x0e\n\x06\x44igSig\x18\x16 \x01(\x0c\x12\x0f\n\x07\x45rrDesc\x18\x17 \x01(\t\x1ar\n\x05Token\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\r\n\x05\x41ttrs\x18\x02 \x01(\x04\x12\n\n\x02ID\x18\x03 \x01(\x0c\x12\x10\n\x08\x43ommsKey\x18\x04 \x01(\x0c\x12\x0e\n\x06SigKey\x18\x05 \x01(\x0c\x12\x0e\n\x06MyEnds\x18\x06 \x03(\t\x12\x0e\n\x06\x44igSig\x18\x07 \x01(\x0c\"\xbc\x01\n\x03Tag\x12\x12\n\x0eRegCredRequest\x10\x01\x12\x10\n\x0cRegCredReply\x10\x02\x12\n\n\x06\x43lient\x10\x03\x12\x0c\n\x08\x43lientOK\x10\x04\x12\n\n\x06\x43reate\x10\x05\x12\x0f\n\x0b\x43reateReply\x10\x06\x12\x08\n\x04Join\x10\x07\x12\r\n\tJoinReply\x10\x08\x12\x0e\n\nGetCluster\x10\t\x12\x12\n\x0e\x43lusterMembers\x10\n\x12\x07\n\x03\x42ye\x10\x0b\x12\x07\n\x03\x41\x63k\x10\x0c\x12\t\n\x05\x45rror\x10\r')
 
 
@@ -233,7 +234,8 @@ _XLREGMSG = descriptor.Descriptor(
             is_extension=False, extension_scope=None,
             options=None),
         descriptor.FieldDescriptor(
-            name='ClusterName', full_name='reg.XLRegMsg.ClusterName', index=11,
+            name='ClusterName', full_name='reg.XLRegMsg.ClusterName',
+            index=11,
             number=14, type=9, cpp_type=9, label=1,
             has_default_value=False, default_value=str("", "utf-8"),
             message_type=None, enum_type=None, containing_type=None,
@@ -247,14 +249,16 @@ _XLREGMSG = descriptor.Descriptor(
             is_extension=False, extension_scope=None,
             options=None),
         descriptor.FieldDescriptor(
-            name='ClusterAttrs', full_name='reg.XLRegMsg.ClusterAttrs', index=13,
+            name='ClusterAttrs', full_name='reg.XLRegMsg.ClusterAttrs',
+            index=13,
             number=16, type=4, cpp_type=4, label=1,
             has_default_value=False, default_value=0,
             message_type=None, enum_type=None, containing_type=None,
             is_extension=False, extension_scope=None,
             options=None),
         descriptor.FieldDescriptor(
-            name='EndPointCount', full_name='reg.XLRegMsg.EndPointCount', index=14,
+            name='EndPointCount', full_name='reg.XLRegMsg.EndPointCount',
+            index=14,
             number=17, type=13, cpp_type=3, label=1,
             has_default_value=False, default_value=0,
             message_type=None, enum_type=None, containing_type=None,
