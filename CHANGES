@@ -1,5 +1,8 @@
 xlreg_py/CHANGES
 
+v0.1.27
+    2017-10-16
+        * add projConfig.toml                                       SLOC 1613
 v0.1.26
     2017-09-08
         * add tox.ini, *requirements.txt; plus p3p8                 SLOC 1575
@@ -93,6 +96,7 @@ v0.1.1
 v0.1.0
     2014-01-26
         * DecimalVersion and test                                   SLOC  461
+
 
 
 

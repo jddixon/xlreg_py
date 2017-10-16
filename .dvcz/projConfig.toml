@@ -1,0 +1,31 @@
+projConfig.toml for xlreg_py
+
+[meta]
+    version = '0.1.0'
+
+[project]
+    name = 'xlreg_py'  # distro name
+    package = 'xlreg_py'  # internal name
+    main_lang = 'py'
+    version = '0.1.27'
+    version_date = '2017-10-16'
+    author = 'Jim Dixon'
+    author_email = 'jddixon@gmail.com'
+    copyright = '2014-2017'
+    description = 'Python 3 client for xlReg server'
+    dev_status = '2'
+    license = 'mit'
+    relpath = 'None'
+    state = 'private'
+    url = 'https://jddixon.github.io/xlreg_py'
+
+[py]
+    packages=['xlreg']
+    package_dir = ['src']
+    test_dir = ['tests']
+    py_modules=['xlreg_client']
+    scripts=['src/xlreg_client.py']
+    ext_modules=[]
+    distshare=[]
+    requirements=[]
+    test_requirements=[]
