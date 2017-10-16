@@ -12,7 +12,7 @@ if exists('README.md'):
         long_desc = file.read()
 
 setup(name='xlreg_py',
-      version='0.1.26',
+      version='0.1.27',
       author='Jim Dixon',
       author_email='jddixon@gmail.com',
       long_description=long_desc,
@@ -22,6 +22,7 @@ setup(name='xlreg_py',
       include_package_data=False,
       zip_safe=False,
       scripts=['src/xlreg_client.py'],
+      ext_modules=[],
       description='Python 3 client for xlReg server',
       url='https://jddixon.github.io/xlreg_py',
       classifiers=[
