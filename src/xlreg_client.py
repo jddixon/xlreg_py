@@ -15,7 +15,7 @@ from xlreg import __version__, __version_date__
 
 def do_client_stuff(options):
     """ STUB for what the client needs to do. """
-    pass
+    _ = options     # silence warnings
 
 
 def main():

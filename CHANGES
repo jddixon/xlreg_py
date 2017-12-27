@@ -1,5 +1,8 @@
 xlreg_py/CHANGES
 
+v0.1.28
+    2017-12-27
+        * pylinting; update config files                            SLOC 1612
 v0.1.27
     2017-10-16
         * add projConfig.toml                                       SLOC 1613
@@ -96,6 +99,7 @@ v0.1.1
 v0.1.0
     2014-01-26
         * DecimalVersion and test                                   SLOC  461
+
 
 
 
