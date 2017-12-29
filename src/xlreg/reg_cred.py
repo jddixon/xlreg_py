@@ -10,7 +10,7 @@ SHA2_BYTES = 32
 
 
 class RegCredError(RuntimeError):
-    pass
+    """ xlReg-related exception. """
 
 
 class RegCred(object):
@@ -43,7 +43,7 @@ class RegCred(object):
         # NOTE need better chesk(s)
         self._sig_pub_key = sk_
 
-        if end_points is None or len(end_points) == 0:
+        if not end_points:
             raise RegCredError('nil or empty end_points list')
 
         self._end_points = []
@@ -138,7 +138,7 @@ def parse_reg_cred(line):
         while ndx < line_count:
             line = lines[ndx].strip()
             ndx += 1
-            if len(line) > 0:
+            if line:
                 break
         return ndx, line
 

@@ -62,7 +62,7 @@ class TestRegCred(unittest.TestCase):
                 path_to_file = os.path.join(path_to_dir, file)
                 os.unlink(path_to_file)
 
-    def _make_key_pair(self, rng, dir_path, keyName):
+    def _make_key_pair(self, dir_path, key_name):
         """
         Create ssh RSA key pair (KEY_NAME-rsa and KEY_NAME-rsa.pub)
         and PEM version of public key (KEY_NAME-rsa.pem) in a directory
@@ -70,9 +70,9 @@ class TestRegCred(unittest.TestCase):
         """
         self._make_or_clear_test_dir(dir_path)
 
-        path_to_key = os.path.join(dir_path, keyName + '-rsa')
-        path_to_pub = os.path.join(dir_path, keyName + '-rsa.pub')
-        path_to_pem = os.path.join(dir_path, keyName + '-rsa.pem')
+        path_to_key = os.path.join(dir_path, key_name + '-rsa')
+        path_to_pub = os.path.join(dir_path, key_name + '-rsa.pub')
+        path_to_pem = os.path.join(dir_path, key_name + '-rsa.pem')
 
         # generate an ssh2 key pair in dir_path
         cmd = [SSH_KEYGEN, '-q', '-t', 'rsa', '-b', str(KEY_BITS),
