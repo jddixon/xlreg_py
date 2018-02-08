@@ -1,5 +1,8 @@
 xlreg_py/TODO
 
+2018-01-14
+    * AES_BLOCK_BYTES definition shd come from xlattice.crypto
+
 2016-10-02
     * needs further refactoring: pylint returns 9.58/10.0
     * coverage blows up, problem with protobuf ??
