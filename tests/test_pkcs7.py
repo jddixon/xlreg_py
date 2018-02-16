@@ -6,7 +6,7 @@
 
 import unittest
 import rnglib
-from xlattice.crypto import(
+from xlcrypto import(
     add_pkcs7_padding, pkcs7_padding, strip_pkcs7_padding, AES_BLOCK_BYTES)
 
 

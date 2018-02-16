@@ -8,18 +8,18 @@ k2lyCIE/V/CDb9eVDYQgYSJYrnQ/JAPST7NbcY8aI+/0l7QVBhLBpmOCvmS6ofvz
 /QIDAQAB
 -----END PUBLIC KEY-----
 xlreg_py
-2018-01-15 18:58:00
+2018-02-16 15:58:16
 # BEGIN CONTENT #
 xlreg_py
  .dvcz
-  builds 00e539ceb07efdcef90fb83af0ba07b74215371c
-  lastBuildList 1f465eedb163a01290387623d30246590f329e14
+  builds d21373606f54fd96c60711f3bda8c9e7ec8535b4
+  lastBuildList f80af558a1bffb8c863c681b69a3e212935d2fe1
   projCfg 6b897822c8e0c7ff26c27d62ac2a6a39aa3f899c
   projCfg.local 0595bf63d7959aafe29f042e4719d9580feb1ea9
-  projConfig.toml 3daacc97b026b60f521b9af6283c79808d027cd1
+  projConfig.toml 30ceebc4f3ac4110b5a6ce1f32a5c0445a73dac4
  .gitignore f588928d66e053d08e0c1d824b6874a244573090
  .gitignore.local 701e71ad917b19e7f6b7fd4bdc542180e9d977a7
- CHANGES 4173736bfa2b619ccf60027ad6691bd81c9e57cf
+ CHANGES 30ed83e28fc51025a1727e66ef951424321584fd
  LICENSE-MIT.md dbe8833d7e1124b4e47613ba1e39a66ccc03dd80
  MANIFEST.in ee87ecf6928c0c4c69376734eba9cf532ce748b1
  Makefile 47f382dea3aa1d5c35f344efb1eca6ed6a390e81
@@ -47,19 +47,19 @@ xlreg_py
    xlattice-2014.jpg f185aaad06db71acd9454f31054c62c56d36f37f
   index.md b2b92a70d0ef98c49df5855c0ec138870a8cfd19
  installit daa8f3379d51a553f1b24e6c84e7b0e76acc888b
- make_test_data.py 27aaff70c49b6ff9b438c929afa55ab627ce7099
+ make_test_data.py c49451debe969b926adb6a3647d30bdf9fbd77fc
  p.proto 6c50df9c67a7adf8af8ff8435d5eeab311962867
  portland.regCred.dat 68ff2add4724b54bf6908e3e88d8bea2787dbc15
  pylintrc ffb69d7625dd33c10ceba1c5e8f7eee523980b78
  requirements.txt 2a85d22624bb206e2d4f49c976d8c7be2d9aabee
- setup.py d74c6c8e9e2b136f942b162691fe8f9c4d5fec99
+ setup.py 6bb5299c7ad836f7d0a7c75c61cc6bae475c4ba9
  src
   xlreg
-   __init__.py 77bc7064175995218914d3b86cbf1aac47fb1567
+   __init__.py 90eacf0b40b5f424f8091095e27d3db477ff1735
    errors.py 8a4c46cdebd4cf371f318bdfbe3373fc64e8bbd7
    p_pb2.py be1dfa21fe30aa86a18d5172a8b6f0b55b9a8981
-   reg_cred.py e06e13e5f9babfc36b6803abed80bd96abc0df25
-  xlreg_client.py c7ba6a1f5fad758e2e3eeb20c5c1bc37fb1aade2
+   reg_cred.py 3e42af211b3277eb62d1a63df4e6d927a9a4e55f
+  xlreg_client.py 17d68d50c7201e372529235f1062628be6c4728d
  stockton.regCred.dat 5ceba4ce39a1c647d66603f2eee245e7bbe24348
  styleit b01b1bfd1939d522941473ffaf8feb492fc5aacd
  test.all f3e55be10329a713aba57d4a02ba6427925e2e11
@@ -94,10 +94,10 @@ xlreg_py
  test_data_test_template 8407450724e103cc445e817e2eb80186f62cc565
  test_requirements.txt 9cba0d4b8afaf2956099957c4c190079a9cc64a1
  tests
-  test_pkcs7.py 12d5717a83f8de59bcc618ba1631e46dd91c4d2c
-  test_reg_cred.py a18918b4af26d371a12094124a780bef14afb007
+  test_pkcs7.py 4d2f27060cf23dfd4c3b1f691fcde795009b2ae0
+  test_reg_cred.py dd9985d0db2a2c94360de6de946997ced2490b60
  tox.ini 592551927ec5d7e82f3dfbe6d622b149c36eed3e
  update.test_dirs 9e6fbe21794ab606944867afd922f3ff16d7e753
 # END CONTENT #
 
-lNzuHwwIC5FPWQqL9NkjOADoTWtgw5lUO2CFV9CvRRHKk1b75y71flv7pB3RR0JVq5FotjSRqOCpyGSUvTjZLqXqjRXcqQ2OqyZi/Tj67giUuu+H9MWcCcCMyF7ttqmBTCHjt9k+In8Yr+WYCeHz8S8ZKA3nhLIsjgudPBX/1kO4KjG391hbMw0y8aZZ0aEDOH13k+UQqG5Uf1tY2m51sYVgcw8prL6SroxnDaisvZz69kXFcMtFXN6sjHa8KtQSdxEu9RMC/07ddHnLlduFfQeM3VInY5jk35G7dDjgEgKUcjhAbyvh8ZYT1SmKhQHUPrDuHItOTMS9OgkbCLpxMg==
+isw/vT1kl7aS79xhzjqd/wWcM72yNwjEyQEKwgaBM5V8uImn/Vt1PteweMxgq5ZcwIWc7k1CsMVQBC5dYO46PPiCztATX48kf08f5tyLWgXCj9qpPQFLLhhsJkFVuHUQv2w4CSPaZ1NYQu9ZI/vL/W43HO84d/b45qnzu8mSBEqCOYvib1ihCScN7yomJkplg8At/EYQCj6QEeUj4uV/g831SUuboDEoCriFo0dJ2EwTf85g9cy7us36PjR83r0o/bL6Pk7v8HLf6AQNOPbF2/nfZ241tsdvGsQxDtOfRpmWca7BoGDByKJeuBlp/PHk5GkLtYxB4u9tfNuIuhzl6g==

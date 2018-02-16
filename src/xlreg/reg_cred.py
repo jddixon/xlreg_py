@@ -3,7 +3,7 @@
 """ Registry credentials as seen by client. """
 
 import binascii
-from xlattice.util import parse_decimal_version
+from xlutil import parse_decimal_version
 
 SHA1_BYTES = 20
 SHA2_BYTES = 32

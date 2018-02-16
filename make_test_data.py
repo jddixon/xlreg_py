@@ -8,7 +8,7 @@ import subprocess
 import sys
 import time
 from Crypto.Cipher import AES
-from xlattice.util import DecimalVersion as dv
+from xlutil import DecimalVersion as dv
 from xlReg import reg_cred
 import rnglib
 
