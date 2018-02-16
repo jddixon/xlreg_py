@@ -7,7 +7,7 @@ import sys
 # import time
 from argparse import ArgumentParser
 
-# from xlattice.util import DecimalVersion, parseDecimalVersion
+# from xlutil import DecimalVersion, parseDecimalVersion
 from xlreg import __version__, __version_date__
 
 # -- implementation -------------------------------------------------

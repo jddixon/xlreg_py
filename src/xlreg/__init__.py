@@ -2,5 +2,5 @@
 
 """ xlReg client package for python. """
 
-__version__ = '0.1.29'
-__version_date__ = '2018-01-15'
+__version__ = '0.1.30'
+__version_date__ = '2018-02-16'

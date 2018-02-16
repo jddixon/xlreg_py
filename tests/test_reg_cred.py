@@ -10,7 +10,7 @@ import time
 import unittest
 from Crypto.PublicKey import RSA
 
-from xlattice.util import DecimalVersion
+from xlutil import DecimalVersion
 from xlreg import reg_cred as rc
 import rnglib as xr
 
