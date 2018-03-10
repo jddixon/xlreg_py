@@ -8,18 +8,22 @@ k2lyCIE/V/CDb9eVDYQgYSJYrnQ/JAPST7NbcY8aI+/0l7QVBhLBpmOCvmS6ofvz
 /QIDAQAB
 -----END PUBLIC KEY-----
 xlreg_py
-2018-02-16 15:58:16
+2018-03-10 22:23:37
 # BEGIN CONTENT #
 xlreg_py
  .dvcz
-  builds d21373606f54fd96c60711f3bda8c9e7ec8535b4
-  lastBuildList f80af558a1bffb8c863c681b69a3e212935d2fe1
+  builds f04530c1fc0e0e64f41d4b84b977ea60da3042ab
+  lastBuildList 8a382ed2deef0a1b2a8a86f0e354c6c6b2e652c8
   projCfg 6b897822c8e0c7ff26c27d62ac2a6a39aa3f899c
   projCfg.local 0595bf63d7959aafe29f042e4719d9580feb1ea9
-  projConfig.toml 30ceebc4f3ac4110b5a6ce1f32a5c0445a73dac4
+  projConfig.toml 364ed63e4e27ec436191e37303018bac86115c19
  .gitignore f588928d66e053d08e0c1d824b6874a244573090
  .gitignore.local 701e71ad917b19e7f6b7fd4bdc542180e9d977a7
- CHANGES 30ed83e28fc51025a1727e66ef951424321584fd
+ .pytest_cache
+  v
+   cache
+    lastfailed bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f
+ CHANGES 8a7d860e2f58d5aae8ba910c053c45146bd2e7f0
  LICENSE-MIT.md dbe8833d7e1124b4e47613ba1e39a66ccc03dd80
  MANIFEST.in ee87ecf6928c0c4c69376734eba9cf532ce748b1
  Makefile 47f382dea3aa1d5c35f344efb1eca6ed6a390e81
@@ -51,11 +55,11 @@ xlreg_py
  p.proto 6c50df9c67a7adf8af8ff8435d5eeab311962867
  portland.regCred.dat 68ff2add4724b54bf6908e3e88d8bea2787dbc15
  pylintrc ffb69d7625dd33c10ceba1c5e8f7eee523980b78
- requirements.txt 2a85d22624bb206e2d4f49c976d8c7be2d9aabee
- setup.py 6bb5299c7ad836f7d0a7c75c61cc6bae475c4ba9
+ requirements.txt 3c430f633ded04772744c8e41e5638013b19ab9f
+ setup.py 5fe1d1b226c50100fc9c91fc935de6a09aa80119
  src
   xlreg
-   __init__.py 90eacf0b40b5f424f8091095e27d3db477ff1735
+   __init__.py eb0b4f318d5e21f8258d6f49672eda0872062eaf
    errors.py 8a4c46cdebd4cf371f318bdfbe3373fc64e8bbd7
    p_pb2.py be1dfa21fe30aa86a18d5172a8b6f0b55b9a8981
    reg_cred.py 3e42af211b3277eb62d1a63df4e6d927a9a4e55f
@@ -92,12 +96,12 @@ xlreg_py
    sk-rsa.pub 658d032d300bca19ac23eb90337471d4cdeee6e3
    version.str 1b390cd54a0c0d4f27fa7adf23e3c45536e9f37c
  test_data_test_template 8407450724e103cc445e817e2eb80186f62cc565
- test_requirements.txt 9cba0d4b8afaf2956099957c4c190079a9cc64a1
+ test_requirements.txt 0703bfc9dd023f9f07d3585e8af05ff9fe2b0ee4
  tests
-  test_pkcs7.py 4d2f27060cf23dfd4c3b1f691fcde795009b2ae0
+  test_pkcs7.py 52a1dd2c90f969669556842dc39a9412644c5a0c
   test_reg_cred.py dd9985d0db2a2c94360de6de946997ced2490b60
- tox.ini 592551927ec5d7e82f3dfbe6d622b149c36eed3e
+ tox.ini d4e9f051f2801f7f7a38944a0a095f6c4627f9b6
  update.test_dirs 9e6fbe21794ab606944867afd922f3ff16d7e753
 # END CONTENT #
 
-isw/vT1kl7aS79xhzjqd/wWcM72yNwjEyQEKwgaBM5V8uImn/Vt1PteweMxgq5ZcwIWc7k1CsMVQBC5dYO46PPiCztATX48kf08f5tyLWgXCj9qpPQFLLhhsJkFVuHUQv2w4CSPaZ1NYQu9ZI/vL/W43HO84d/b45qnzu8mSBEqCOYvib1ihCScN7yomJkplg8At/EYQCj6QEeUj4uV/g831SUuboDEoCriFo0dJ2EwTf85g9cy7us36PjR83r0o/bL6Pk7v8HLf6AQNOPbF2/nfZ241tsdvGsQxDtOfRpmWca7BoGDByKJeuBlp/PHk5GkLtYxB4u9tfNuIuhzl6g==
+S5I5KVvJjIRAK1AILZHpAH6xhxTwhMoZ8vfqqFZn0Xz5RPCAJ/hX7T4LZx0rCQAFS7PMRQ1EiwZ13p27woJb7cX0Uo3vYaWgc5vIDiRbsa343lO526Z/Zl1FPXWSInmPsRKfsQuL+s2E3JmXb0m7qHQ1u3yT7f36dZpjzb9iFJrZKtQkuadp7mIz3rdJOWgXNfD00pZ/jBHl1qIbo3NuSQxMpf4eL2cNg9gHfNpnOzNBqL8cEI2n9wonzkWnoCm4o80Pdm3TzGQ/qFjjniOwF+Qa5JH4TRvNvEWjydWq4u0P0QbCa0cVMyN02tbTNCsWvgcJEM7fMbzqKwHIf7fBpA==

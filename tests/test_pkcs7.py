@@ -6,8 +6,9 @@
 
 import unittest
 import rnglib
-from xlcrypto import(
-    add_pkcs7_padding, pkcs7_padding, strip_pkcs7_padding, AES_BLOCK_BYTES)
+from xlcrypto import(AES_BLOCK_BYTES)
+from xlcrypto.padding import(
+    add_pkcs7_padding, pkcs7_padding, strip_pkcs7_padding)
 
 
 class TestPKCS7(unittest.TestCase):

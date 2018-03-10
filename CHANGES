@@ -1,5 +1,8 @@
 xlreg_py/CHANGES
 
+v0.1.31
+    2018-03-10
+        * edit setup.py and tox config files                        SLOC 1603
 v0.1.30
     2018-02-16
         * xlattice.util replaced by xlutil                          SLOC 
@@ -105,6 +108,7 @@ v0.1.1
 v0.1.0
     2014-01-26
         * DecimalVersion and test                                   SLOC  461
+
 
 
 
